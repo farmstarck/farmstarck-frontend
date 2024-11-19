@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Hamburber Menu */
+
+.hamburger {
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  transition: all 0.25s;
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.hamburger-top,
+.hamburger-middle,
+.hamburger-bottom {
+  position: absolute;
+  top: 0;
+  width: 24px;
+  height: 4px;
+  background: #333;
+  transform: rotate(0);
+  transition: all 0.5s;
+}
+.hamburger-top-light,
+.hamburger-middle-light,
+.hamburger-bottom-light {
+  position: absolute;
+  top: 0;
+  width: 24px;
+  height: 4px;
+  transform: rotate(0);
+  transition: all 0.5s;
+  background: #fff;
+}
+
+.hamburger-top {
+  width: 10px;
+}
+.hamburger-middle {
+  transform: translateY(7px);
+}
+.hamburger-bottom {
+  transform: translateY(14px);
+}
+.open {
+  transform: rotate(90deg);
+  transform: translateY(0px);
+}
+.open .hamburger-top {
+  width: 24px;
+  transform: rotate(45deg) translateY(6px) translate(6px);
+}
+.open .hamburger-middle {
+  display: none;
+}
+.open .hamburger-bottom {
+  border-top: 2px solid #fff;
+  /* height: 6px; */
+  transform: rotate(-45deg) translateY(6px) translate(-6px);
+}

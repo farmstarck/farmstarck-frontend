@@ -1,0 +1,50 @@
+import { Link } from "react-router-dom";
+import CustomButton from "../../common/CustomButton";
+
+type ServiceSectionProps = {
+  section: string;
+  header: string;
+  url: string;
+  paragraph: string;
+  img: string;
+  reverse: boolean;
+  btn: string;
+};
+
+const ServiceSection: React.FC<ServiceSectionProps> = ({
+  section,
+  header,
+  url,
+  btn,
+  img,
+  paragraph,
+  reverse,
+}) => {
+  const sectionClass = reverse ? "md:flex-row-reverse" : "md:flex-row";
+  return (
+    <div
+      className={`flex flex-col-reverse item-center justify-center space-y-3 w-full  ${sectionClass} gap-8 md:justify-between md:space-x-5 md:gap-0`}
+    >
+      <div className="w-full flex flex-col space-y-6 items-center md:w-2/4 md:items-start">
+        <h5 className="text-xs uppercase">{section}</h5>
+        <h2 className="uppercase text-base text-center leading-relaxed sm:text-2xl md:text-3xl md:text-start">
+          {header}
+        </h2>
+        <Link
+          to={url}
+          className="w-5/6 border border-solid border-secondary-dark rounded-full sm:w-1/2 md:w-2/3"
+        >
+          <CustomButton color="white" text={btn} />
+        </Link>
+        <p className="text-xs text-center pt-3 md:text-sm md:text-start">
+          {paragraph}
+        </p>
+      </div>
+      <div className="flex justify-center w-full md:w-1/3 md:mb-0">
+        <img src={img} alt="" className="w-1/2 md:w-5/6" />
+      </div>
+    </div>
+  );
+};
+
+export default ServiceSection;
