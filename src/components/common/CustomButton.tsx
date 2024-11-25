@@ -1,8 +1,6 @@
 type Style = {
   white: string;
   green: string;
-  transparent: string;
-  transparentWhite: string;
 };
 
 interface CustomButtonProps {
@@ -17,26 +15,22 @@ export const CustomButton: React.FC<CustomButtonProps> = ({
   ...props
 }) => {
   const baseStyle: Style = {
-    white: "bg-white",
-    green: "bg-secondary-dark",
-    transparent: "bg-transparent",
-    transparentWhite: "bg-transparent",
+    white: "group bg-white hover:bg-secondary-dark",
+    green: "group bg-secondary-dark hover:bg-white",
   };
   const texStyle: Style = {
-    green: "text-white",
-    white: "text-secondary-dark",
-    transparent: "text-secondary-dark",
-    transparentWhite: "text-white",
+    green: "text-white group-hover:text-secondary-dark",
+    white: "text-secondary-dark group-hover:text-white",
   };
   const iconStyle: Style = {
-    green: "bg-white text-secondary-dark",
-    white: "bg-secondary-dark text-white",
-    transparent: "bg-secondary-dark text-white",
-    transparentWhite: "text-secondary-dark bg-white",
+    green:
+      "bg-white text-secondary-dark group-hover:bg-secondary-dark group-hover:text-white",
+    white:
+      "bg-secondary-dark text-white group-hover:text-secondary-dark group-hover:bg-white",
   };
   return (
     <button
-      className={`flex items-center justify-between p-2 rounded-full w-full cursor-pointer ${baseStyle[color]} `}
+      className={`flex items-center justify-between p-2 rounded-full w-full cursor-pointer transition ease-in-out duration-150 ${baseStyle[color]} `}
       {...props}
     >
       <span className={`pl-3 text-xs  uppercase ${texStyle[color]}`}>

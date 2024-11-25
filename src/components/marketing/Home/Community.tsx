@@ -29,7 +29,7 @@ const Community = () => {
                   to="/"
                   className="w-full md:w-1/2 border border-solid border-secondary-dark rounded-full"
                 >
-                  <CustomButton color="transparent" text="readmore" />
+                  <CustomButton color="white" text="readmore" />
                 </Link>
                 <Link
                   to="/"

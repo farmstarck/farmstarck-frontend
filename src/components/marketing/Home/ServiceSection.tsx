@@ -23,11 +23,11 @@ const ServiceSection: React.FC<ServiceSectionProps> = ({
   const sectionClass = reverse ? "md:flex-row-reverse" : "md:flex-row";
   return (
     <div
-      className={`flex flex-col-reverse item-center justify-center space-y-3 w-full  ${sectionClass} gap-8 md:justify-between md:space-x-5 md:gap-0`}
+      className={`flex flex-col-reverse item-center justify-center w-full  ${sectionClass} gap-3 md:justify-between md:space-x-5 md:gap-0`}
     >
-      <div className="w-full flex flex-col space-y-6 items-center md:w-2/4 md:items-start">
+      <div className="w-full flex flex-col space-y-3 items-center md:w-2/4 md:items-start">
         <h5 className="text-xs uppercase">{section}</h5>
-        <h2 className="uppercase text-base text-center leading-relaxed sm:text-2xl md:text-3xl md:text-start">
+        <h2 className="uppercase text-base text-center leading-tight md:leading-relaxed sm:text-2xl md:text-3xl md:text-start">
           {header}
         </h2>
         <Link

@@ -2,9 +2,9 @@ import { Link } from "react-router-dom";
 import CustomButton from "../../common/CustomButton";
 const HeroSection = () => {
   return (
-    <div className="bg-[url('src/assets/svg/hero-bg.svg')] h-fit w-full bg-auto bg-no-repeat p-5 md:p-0 ">
+    <div className="bg-[url('src/assets/svg/hero-bg.svg')] bg-bottom-4 md:bg-left-center h-fit w-full  bg-no-repeat p-5 md:p-0 ">
       <div className="flex flex-col justify-center items-center max-w-2xl m-auto min-h-screen space-y-7">
-        <h1 className="uppercase font-medium text-white text-2xl text-center leading-relaxed sm:text-2xl md:text-4xl">
+        <h1 className="uppercase font-medium text-white text-2xl text-center sm:leading-relaxed sm:text-2xl md:text-4xl">
           JOIN US IN ACHIEVING AGRICULTURAL EXCELLENCE
         </h1>
         <p className="text-xs text-center text-white md:text-sm">
@@ -22,9 +22,9 @@ const HeroSection = () => {
           </Link>
           <Link
             to="/marketplace"
-            className="w-full border border-solid border-gray-50 rounded-full"
+            className="w-full border border-solid border-secondary-dark rounded-full"
           >
-            <CustomButton color="transparentWhite" text="explore marketplace" />
+            <CustomButton color="white" text="explore marketplace" />
           </Link>
         </div>
       </div>

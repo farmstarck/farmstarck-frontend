@@ -66,6 +66,6 @@
 }
 .open .hamburger-bottom {
   border-top: 2px solid #fff;
-  /* height: 6px; */
+  height: 6px;
   transform: rotate(-45deg) translateY(6px) translate(-6px);
 }

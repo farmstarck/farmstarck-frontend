@@ -89,82 +89,107 @@ const Navbar = () => {
             ></span>
           </button>
         </div>
-        <div className="relative max-w-6xl my-auto bg-slate-700">
-          <div
-            id="menu"
-            className="w-full absolute right-0 hidden flex-col mt-3 items-start self-end py-8 px-14 md:w-64 space-y-4  bg-white sm:self drop-shadow-md rounded-md "
+        <div className="relative max-w-6xl my-auto bg-slate-700"></div>
+      </div>
+      <div
+        id="menu"
+        className="w-full h-screen absolute right-0 top-0 hidden flex-col items-start self-end py-8 px-7 sm:px-14 md:w-1/3 space-y-8  bg-white sm:self drop-shadow-md "
+      >
+        <div className="w-full flex justify-end">
+          <button
+            id="menu-btn"
+            className="open block hamburger focus:outline-none"
+            onClick={menuToggle}
           >
-            <Link to="/" onClick={closeMenu}>
-              <div className="py-2 px-4 bg-secondary-dark rounded cursor-pointer text-white text-sm">
-                SIGN IN
-              </div>
-            </Link>
-            <div className="flex flex-col items-start space-y-2 text-base text-primary">
-              <Link
-                to="about"
-                className="transition ease-in-out duration-75 hover:text-secondary-light "
-                onClick={closeMenu}
-              >
-                ABOUT
-              </Link>
-              <Link
-                to="services"
-                className="transition ease-in-out duration-75 hover:text-secondary-light "
-                onClick={closeMenu}
-              >
-                OUR SERVICES
-              </Link>
-              <Link
-                to="marketplace"
-                className="transition ease-in-out duration-75 hover:text-secondary-light "
-                onClick={closeMenu}
-              >
-                MARKETPLACE
-              </Link>
-              <Link
-                to="community"
-                className="transition ease-in-out duration-75 hover:text-secondary-light "
-                onClick={closeMenu}
-              >
-                COMMUNITY
-              </Link>
-              <Link
-                to="contact"
-                className="transition ease-in-out duration-75 hover:text-secondary-light "
-                onClick={closeMenu}
-              >
-                CONTACT
-              </Link>
-            </div>
-            <div className="pt-5">
-              <p className="font-thin text-xs text-gray-500">EMAIL US @</p>
-              <h4 className="text-xs">info@farmstarck.com</h4>
-            </div>
-            <div className="pb-4">
-              <p className="font-thin text-xs text-gray-500">PHONE NUMBER</p>
-              <h4 className="text-xs">+234 000 0000 000</h4>
-            </div>
-            <div className="flex space-x-3 items-end">
-              <Link to="/">
-                <img src={XIcon} alt="x-icon" className="w-4" />
-              </Link>
-              <Link to="/">
-                <img src={LinkedInIcon} alt="linkendin-icon" className="w-4" />
-              </Link>
-              <Link to="/">
-                <img src={DiscordIcon} alt="discord-icon" className="w-4" />
-              </Link>
-              <Link to="/">
-                <img src={InstagramIcon} alt="instagram-icon" className="w-4" />
-              </Link>
-              <Link to="/">
-                <img src={FacbookIcon} alt="facebook-icon" className="w-4" />
-              </Link>
-              <Link to="/">
-                <img src={WhatsappIcon} alt="whatsapp-icon" className="w-4" />
-              </Link>
-            </div>
+            <span
+              className="hamburger-top"
+              style={{
+                background: `${route === "/" && !isScrolled ? "#333" : ""}`,
+              }}
+            ></span>
+            <span
+              className="hamburger-middle"
+              style={{
+                background: `${route === "/" && !isScrolled ? "#333" : ""}`,
+              }}
+            ></span>
+            <span
+              className="hamburger-bottom"
+              style={{
+                background: `${route === "/" && !isScrolled ? "#333" : ""}`,
+              }}
+            ></span>
+          </button>
+        </div>
+        <Link to="/" onClick={closeMenu}>
+          <div className="py-3 px-9 bg-secondary-dark rounded cursor-pointer text-white text-sm">
+            SIGN IN
           </div>
+        </Link>
+        <div className="flex flex-col items-start space-y-2 text-base text-primary mt-32">
+          <Link
+            to="about"
+            className="text-lg transition ease-in-out duration-75 hover:text-secondary-dark "
+            onClick={closeMenu}
+          >
+            ABOUT
+          </Link>
+          <Link
+            to="services"
+            className="text-base md:text-lg transition ease-in-out duration-75 hover:text-secondary-dark "
+            onClick={closeMenu}
+          >
+            OUR SERVICES
+          </Link>
+          <Link
+            to="marketplace"
+            className="text-base md:text-lg  transition ease-in-out duration-75 hover:text-secondary-dark "
+            onClick={closeMenu}
+          >
+            MARKETPLACE
+          </Link>
+          <Link
+            to="community"
+            className="text-base md:text-lg  transition ease-in-out duration-75 hover:text-secondary-dark "
+            onClick={closeMenu}
+          >
+            COMMUNITY
+          </Link>
+          <Link
+            to="contact"
+            className="text-base md:text-lg  transition ease-in-out duration-75 hover:text-secondary-dark "
+            onClick={closeMenu}
+          >
+            CONTACT
+          </Link>
+        </div>
+        <div className="pt-5">
+          <p className="font-thin text-sm text-gray-500">EMAIL US @</p>
+          <h4 className="text-sm">info@farmstarck.com</h4>
+        </div>
+        <div className="pb-4">
+          <p className="font-thin text-sm text-gray-500">PHONE NUMBER</p>
+          <h4 className="text-sm">+234 000 0000 000</h4>
+        </div>
+        <div className="flex space-x-3 items-end">
+          <Link to="/">
+            <img src={XIcon} alt="x-icon" className="w-5" />
+          </Link>
+          <Link to="/">
+            <img src={LinkedInIcon} alt="linkendin-icon" className="w-5" />
+          </Link>
+          <Link to="/">
+            <img src={DiscordIcon} alt="discord-icon" className="w-5" />
+          </Link>
+          <Link to="/">
+            <img src={InstagramIcon} alt="instagram-icon" className="w-5" />
+          </Link>
+          <Link to="/">
+            <img src={FacbookIcon} alt="facebook-icon" className="w-5" />
+          </Link>
+          <Link to="/">
+            <img src={WhatsappIcon} alt="whatsapp-icon" className="w-5" />
+          </Link>
         </div>
       </div>
     </nav>

@@ -20,6 +20,9 @@ export default {
         subHeading: ["camptonBold"],
         subHeading2: ["camptonMedium"],
       },
+      backgroundPosition: {
+        "bottom-4": "center top",
+      },
     },
   },
   plugins: [],
