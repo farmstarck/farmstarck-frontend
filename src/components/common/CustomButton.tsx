@@ -33,7 +33,9 @@ export const CustomButton: React.FC<CustomButtonProps> = ({
       className={`flex items-center justify-between p-2 rounded-full w-full cursor-pointer transition ease-in-out duration-150 ${baseStyle[color]} `}
       {...props}
     >
-      <span className={`pl-3 text-xs  uppercase ${texStyle[color]}`}>
+      <span
+        className={`pl-3 text-btn-txt md:text-xs  uppercase ${texStyle[color]}`}
+      >
         {text}
       </span>
       <span

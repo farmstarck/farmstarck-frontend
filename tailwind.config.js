@@ -23,6 +23,15 @@ export default {
       backgroundPosition: {
         "bottom-4": "center top",
       },
+      fontSize: {
+        "btn-txt": [
+          "0.65rem",
+          {
+            lineHeight: "1rem",
+            letterSpacing: "-0.01em",
+          },
+        ],
+      },
     },
   },
   plugins: [],
