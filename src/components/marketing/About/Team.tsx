@@ -1,4 +1,3 @@
-import Img1 from "../../../assets/svg/CHIDERA.svg";
 import Twitter from "../../../assets/svg/about-twitter.svg";
 import Linkedin from "../../../assets/svg/about-linkedin.svg";
 import { Link } from "react-router-dom";
