@@ -79,8 +79,11 @@ const Network = () => {
         OUR COMMUNITY NETWORK OUR FIRST NETWORTH
       </h2>
       <div className="grid grid-cols-2 w-full  gap-y-10  gap-x-10 md:gap-x-16 justify-center items-stretch sm:grid-cols-3">
-        {data?.map((data) => (
-          <div className="flex flex-col space-y-2 w-full md:w-2/3  py-7 items-center bg-gradient-to-b from-secondary-light via-secondary-light to-gray-50 mix-blend-plus-lighter">
+        {data?.map((data, index) => (
+          <div
+            className="flex flex-col space-y-2 w-full md:w-2/3  py-7 items-center bg-gradient-to-b from-secondary-light via-secondary-light to-gray-50 mix-blend-plus-lighter"
+            key={index}
+          >
             <div className="w-20 flex justify-center">{data.icons}</div>
             <p className="text-xs font-medium"> {data.title}</p>
           </div>
