@@ -3,6 +3,7 @@ import CustomButton from "./common/CustomButton";
 import LogoLightImg from "../assets/svg/logo-light.svg";
 import AppStoreImg from "../assets/svg/applestore.svg";
 import GooglePlayImg from "../assets/svg/googleplay.svg";
+import footerBg from "../assets/svg/footer-bg.svg";
 import FootAccordion from "./common/FooterAccordion";
 
 const Footer = () => {
@@ -93,7 +94,10 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-[url('src/assets/svg/footer-bg.svg')] bg-center h-fit w-full bg-auto space-y-7  bg-no-repeat mt-20 p-5 md:py-14 md:space-y-12">
+    <footer
+      className="bg-center h-fit w-full bg-auto space-y-7  bg-no-repeat mt-20 p-5 md:py-14 md:space-y-12"
+      style={{ backgroundImage: `url(${footerBg})` }}
+    >
       <div className="max-w-3xl m-auto bg-white bg-opacity-5 px-4 py-5 md:px-20 md:max-w-6xl md:py-10">
         <div className="space-y-4 flex flex-col items-center justify-center md:space-y-8">
           <h1 className="text-lg uppercase font-normal text-white md:text-4xl text-center">
