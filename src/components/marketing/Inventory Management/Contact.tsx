@@ -1,8 +1,5 @@
 import toast from "react-hot-toast";
-import UserLight from "../../../assets/svg/user-white.svg";
-import Userdark from "../../../assets/svg/user-dark.svg";
 import CustomButton from "../../common/CustomButton";
-import { useState } from "react";
 
 const Contact = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
