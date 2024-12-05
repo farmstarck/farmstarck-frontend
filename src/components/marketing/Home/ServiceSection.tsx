@@ -41,7 +41,7 @@ const ServiceSection: React.FC<ServiceSectionProps> = ({
         </p>
       </div>
       <div className="flex justify-center w-full md:w-1/3 md:mb-0">
-        <img src={img} alt="" className="w-1/2 md:w-5/6" />
+        <img src={img} alt="" className="w-1/2 md:w-5/6" loading="lazy" />
       </div>
     </div>
   );

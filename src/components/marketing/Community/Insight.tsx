@@ -22,7 +22,7 @@ const Insight: React.FC<InsightSectionProps> = ({
     <div className="p-5 bg-secondary-light">
       <div className="max-w-3xl mx-auto flex flex-col items-center gap-8 md:flex-row sm:p-10">
         <div className="w-2/3 sm:w-1/2  md:w-1/3">
-          <img src={img} alt="" />
+          <img src={img} alt="" loading="lazy" />
         </div>
         <div className="w-full flex flex-col items-center md:w-2/4 md:items-start">
           <h5 className="text-xs capitalize mb-2 md:mb-0">{section}</h5>

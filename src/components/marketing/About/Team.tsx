@@ -32,7 +32,7 @@ const Team: React.FC<TeamProps> = ({
       <div className="flex flex-col space-y-4 w-full md:w-1/2">
         <div className="flex flex-col items-center gap-5 md:flex-row">
           <div className="w-1/2">
-            <img src={img} alt="" className="w-fit" />
+            <img src={img} alt="" className="w-fit" loading="lazy" />
           </div>
           <div className="space-y-1 flex flex-col items-center md:items-start">
             <div className="space-x-2 md:space-x-0 md:-space-y-2 flex flex-row items-center md:flex-col md:items-start">
@@ -42,10 +42,10 @@ const Team: React.FC<TeamProps> = ({
             <p className="text-xs  text-secondary-dark">{position}</p>
             <div className="flex gap-2 items-center">
               <Link to={twitter}>
-                <img src={Twitter} alt="" className="w-4" />
+                <img src={Twitter} alt="" className="w-4" loading="lazy" />
               </Link>
               <Link to={linkedin}>
-                <img src={Linkedin} alt="" className="w-4" />
+                <img src={Linkedin} alt="" className="w-4" loading="lazy" />
               </Link>
             </div>
           </div>

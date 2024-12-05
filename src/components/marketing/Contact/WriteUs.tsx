@@ -46,9 +46,19 @@ const WriteUs = () => {
                     }`}
                   >
                     {role === "farmer" ? (
-                      <img src={UserLight} alt="" className="w-3 md:w-4" />
+                      <img
+                        src={UserLight}
+                        alt=""
+                        className="w-3 md:w-4"
+                        loading="lazy"
+                      />
                     ) : (
-                      <img src={Userdark} alt="" className="w-3 md:w-4" />
+                      <img
+                        src={Userdark}
+                        alt=""
+                        className="w-3 md:w-4"
+                        loading="lazy"
+                      />
                     )}
                   </div>
                   <label className="text-btn-txt md:text-xs">Farmer</label>
@@ -63,9 +73,19 @@ const WriteUs = () => {
                     }`}
                   >
                     {role === "investor" ? (
-                      <img src={UserLight} alt="" className="w-3 md:w-4" />
+                      <img
+                        src={UserLight}
+                        alt=""
+                        className="w-3 md:w-4"
+                        loading="lazy"
+                      />
                     ) : (
-                      <img src={Userdark} alt="" className="w-3 md:w-4" />
+                      <img
+                        src={Userdark}
+                        alt=""
+                        className="w-3 md:w-4"
+                        loading="lazy"
+                      />
                     )}
                   </div>
                   <label className="text-btn-txt md:text-xs">Investor</label>
@@ -80,9 +100,19 @@ const WriteUs = () => {
                     }`}
                   >
                     {role === "merchant" ? (
-                      <img src={UserLight} alt="" className="w-3 md:w-4" />
+                      <img
+                        src={UserLight}
+                        alt=""
+                        className="w-3 md:w-4"
+                        loading="lazy"
+                      />
                     ) : (
-                      <img src={Userdark} alt="" className="w-3 md:w-4" />
+                      <img
+                        src={Userdark}
+                        alt=""
+                        className="w-3 md:w-4"
+                        loading="lazy"
+                      />
                     )}
                   </div>
                   <label className="text-btn-txt md:text-xs">Merchant</label>
@@ -97,9 +127,19 @@ const WriteUs = () => {
                     }`}
                   >
                     {role === "user" ? (
-                      <img src={UserLight} alt="" className="w-3 md:w-4" />
+                      <img
+                        src={UserLight}
+                        alt=""
+                        className="w-3 md:w-4"
+                        loading="lazy"
+                      />
                     ) : (
-                      <img src={Userdark} alt="" className="w-3 md:w-4" />
+                      <img
+                        src={Userdark}
+                        alt=""
+                        className="w-3 md:w-4"
+                        loading="lazy"
+                      />
                     )}
                   </div>
                   <label className="text-btn-txt md:text-xs">User</label>

@@ -243,7 +243,7 @@ const Footer = () => {
             </h2>
             <ul className="flex flex-col gap-2 font-thin text-sm">
               <li className="text-white transition ease-out duration-100 hover:text-opacity-80">
-                +234 000 0000 000
+                +234 813 039 5444
               </li>
               <li className="text-white transition ease-out duration-100 hover:text-opacity-80">
                 info@farmstarck.com
@@ -263,7 +263,7 @@ const Footer = () => {
           STAY CONNNECTED
         </h2>
         <div className="flex space-x-6 items-end justify-end">
-          <Link to="/">
+          <Link to="https://x.com/farmstarck?s=21&t=1LZ4ghO_eX6kdqKI8zG_vw">
             <svg
               width="20"
               height="24"
@@ -278,7 +278,7 @@ const Footer = () => {
               />
             </svg>
           </Link>
-          <Link to="/">
+          <Link to="https://www.linkedin.com/company/farmstarck/">
             <svg
               width="20"
               height="28"
@@ -295,7 +295,7 @@ const Footer = () => {
               />
             </svg>
           </Link>
-          <Link to="/">
+          {/* <Link to="/">
             <svg
               width="25"
               height="25"
@@ -309,8 +309,8 @@ const Footer = () => {
                 fillOpacity="0.7"
               />
             </svg>
-          </Link>
-          <Link to="/">
+          </Link> */}
+          <Link to="https://www.instagram.com/farmstarck/profilecard/?igsh=MWNrbzlic3drcGU2aw==">
             <svg
               width="22"
               height="25"
@@ -335,7 +335,7 @@ const Footer = () => {
               />
             </svg>
           </Link>
-          <Link to="/">
+          <Link to="https://www.facebook.com/profile.php?id=61562747617838&mibextid=LQQJ4d">
             <svg
               width="22"
               height="27"
@@ -350,7 +350,7 @@ const Footer = () => {
               />
             </svg>
           </Link>
-          <Link to="/">
+          {/* <Link to="/">
             <svg
               width="22"
               height="26"
@@ -364,7 +364,7 @@ const Footer = () => {
                 fillOpacity="0.7"
               />
             </svg>
-          </Link>
+          </Link> */}
         </div>
         <button
           onClick={scrollToTop}

@@ -21,7 +21,7 @@ const Container: React.FC<ContainerSectionProps> = ({
   return (
     <div className="flex flex-col gap-5 items-center md:items-start">
       <h5 className="text-xs uppercase">{section}</h5>
-      <img src={img} alt="" className="w-5/6 rounded-md" />
+      <img src={img} alt="" className="w-5/6 rounded-md" loading="lazy" />
       <div className="w-full md:w-2/3">
         <h2 className="uppercase text-base text-center leading-tight  sm:text-2xl md:text-2xl md:text-start">
           {header}

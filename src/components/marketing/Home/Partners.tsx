@@ -23,7 +23,12 @@ const Partners = () => {
               key={stat.id}
               className="flex-shrink-0 snap-center mx-auto flex max-w-xs flex-col gap-y-4 justify-center"
             >
-              <img src={stat.value} alt="" className="w-16 md:w-20" />
+              <img
+                src={stat.value}
+                alt=""
+                className="w-16 md:w-20"
+                loading="lazy"
+              />
             </div>
           ))}
         </div>

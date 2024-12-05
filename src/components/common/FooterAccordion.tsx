@@ -15,7 +15,6 @@ type AccordionProps = {
   items: AccordionItem[];
 };
 
-
 const FooterAccordion: React.FC<AccordionProps> = ({ items }) => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
@@ -32,7 +31,7 @@ const FooterAccordion: React.FC<AccordionProps> = ({ items }) => {
             onClick={() => toggleAccordion(index)}
             className="w-full flex justify-between items-center p-3 bg-transparent text-left focus:outline-none"
           >
-            <span className="uppercase text-white text-xs">{item.title}</span>
+            <span className="uppercase text-white text-sm">{item.title}</span>
             <span
               className={`transform transition-transform duration-300 ${
                 activeIndex === index ? "rotate-180" : ""
@@ -54,7 +53,7 @@ const FooterAccordion: React.FC<AccordionProps> = ({ items }) => {
               activeIndex === index ? "max-h-96" : "max-h-0"
             }`}
           >
-            <div className="p-4 text-white font-thin text-sm">
+            <div className="p-4 text-white font-normal text-sm">
               {Array.isArray(item.content) ? (
                 <ul className="space-y-2">
                   {item.content.map((listItem, i) => (
@@ -100,9 +99,9 @@ const FooterAccordion: React.FC<AccordionProps> = ({ items }) => {
             activeIndex === 2 ? "max-h-96" : "max-h-0"
           }`}
         >
-          <div className="p-4 text-white font-thin text-sm">
+          <div className="p-4 text-white font-normal text-sm">
             <ul className="space-y-2">
-              <li className="pb-3">+234 000 0000 000</li>
+              <li className="pb-3">+234 813 039 5444</li>
               <li className="pb-3">info@farmstarck.com</li>
               <li className="pb-3">
                 Lorem ispum do not know the current address of farstack company

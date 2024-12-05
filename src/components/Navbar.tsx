@@ -172,24 +172,24 @@ const Navbar = () => {
           <h4 className="text-sm">+234 000 0000 000</h4>
         </div>
         <div className="flex space-x-3 items-end">
-          <Link to="/">
+          <Link to="https://x.com/farmstarck?s=21&t=1LZ4ghO_eX6kdqKI8zG_vw">
             <img src={XIcon} alt="x-icon" className="w-5" />
           </Link>
-          <Link to="/">
+          <Link to="https://www.linkedin.com/company/farmstarck/">
             <img src={LinkedInIcon} alt="linkendin-icon" className="w-5" />
           </Link>
-          <Link to="/">
+          {/* <Link to="/">
             <img src={DiscordIcon} alt="discord-icon" className="w-5" />
-          </Link>
-          <Link to="/">
+          </Link> */}
+          <Link to="https://www.instagram.com/farmstarck/profilecard/?igsh=MWNrbzlic3drcGU2aw==">
             <img src={InstagramIcon} alt="instagram-icon" className="w-5" />
           </Link>
-          <Link to="/">
+          <Link to="https://www.facebook.com/profile.php?id=61562747617838&mibextid=LQQJ4d">
             <img src={FacbookIcon} alt="facebook-icon" className="w-5" />
           </Link>
-          <Link to="/">
+          {/* <Link to="/">
             <img src={WhatsappIcon} alt="whatsapp-icon" className="w-5" />
-          </Link>
+          </Link> */}
         </div>
       </div>
     </nav>

@@ -13,7 +13,12 @@ const Community = () => {
       <div className="bg-secondary-light w-full px-5 py-10">
         <div className="relative w-full max-w-3xl m-auto mx-auto">
           <div className="flex flex-col items-center space-y-4 md:flex-row md:gap-10">
-            <img src={DepotImg} alt="" className="w-1/2 md:w-5/6" />
+            <img
+              src={DepotImg}
+              alt=""
+              className="w-1/2 md:w-5/6"
+              loading="lazy"
+            />
             <div className="flex flex-col  items-center space-y-4 md:items-start">
               <p className="font-thin text-xs">December 2024</p>
               <h3 className="font-medium text-sm uppercase">industry report</h3>
