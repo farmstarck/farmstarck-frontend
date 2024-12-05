@@ -4,10 +4,10 @@ import LogoDarkImg from "../assets/svg/logo-dark.svg";
 import LogoLightImg from "../assets/svg/logo-light.svg";
 import XIcon from "../assets/svg/twitter.svg";
 import LinkedInIcon from "../assets/svg/linkedin.svg";
-import DiscordIcon from "../assets/svg/discord.svg";
+// import DiscordIcon from "../assets/svg/discord.svg";
 import InstagramIcon from "../assets/svg/instagram.svg";
 import FacbookIcon from "../assets/svg/facebook.svg";
-import WhatsappIcon from "../assets/svg/whatsapp.svg";
+// import WhatsappIcon from "../assets/svg/whatsapp.svg";
 
 import { Link } from "react-router-dom";
 const Navbar = () => {
