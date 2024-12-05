@@ -169,7 +169,7 @@ const Navbar = () => {
         </div>
         <div className="pb-4">
           <p className="font-thin text-sm text-gray-500">PHONE NUMBER</p>
-          <h4 className="text-sm">+234 000 0000 000</h4>
+          <h4 className="text-sm">+234 813 039 5444</h4>
         </div>
         <div className="flex space-x-3 items-end">
           <Link to="https://x.com/farmstarck?s=21&t=1LZ4ghO_eX6kdqKI8zG_vw">
