@@ -10,7 +10,7 @@ const ServiceSections = () => {
     {
       section: "inventory managament",
       header: "Monitor, Manage, and Maximize Your Yield - All in One Platform",
-      url: "/",
+      url: "/inventory-management",
       paragraph:
         "Explore our all-in-one solution for farmers, agribusinesses, and distributors. Our platform simplifies your inventory management by tracking stock levels, automating reports, and offering real-time insights to optimize your resources and increase productivity. Manage your produce from farm to market with ease.",
       img: Img1,

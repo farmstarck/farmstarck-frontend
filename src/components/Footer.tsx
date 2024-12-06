@@ -224,7 +224,7 @@ const Footer = () => {
                 <li>Partnership</li>
               </Link>
               <Link
-                to="/"
+                to="/community"
                 className="text-white transition ease-out duration-100 hover:text-opacity-80"
               >
                 <li>Community</li>
