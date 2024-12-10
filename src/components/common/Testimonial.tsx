@@ -5,6 +5,8 @@ import QuoteImg from "../../assets/svg/quote.svg";
 type TestimonialProps = {
   title?: string;
   header: string;
+  headerLeft?: boolean;
+  description?: string;
 };
 
 const testimonials = [
@@ -31,7 +33,12 @@ const testimonials = [
   },
 ];
 
-const CustomTestimonial: React.FC<TestimonialProps> = ({ title, header }) => {
+const CustomTestimonial: React.FC<TestimonialProps> = ({
+  title,
+  header,
+  headerLeft,
+  description,
+}) => {
   const [current, setCurrent] = useState(0);
 
   const handlePrev = () => {
@@ -45,11 +52,24 @@ const CustomTestimonial: React.FC<TestimonialProps> = ({ title, header }) => {
   useEffect(() => {}, [current]);
   return (
     <div>
-      <div className="flex flex-col items-center mb-10">
+      <div
+        className={`flex flex-col ${
+          headerLeft
+            ? "items-center max-w-3xl m-auto md:items-start"
+            : "items-center"
+        } mb-10`}
+      >
         <h5 className="text-xs uppercase">{title}</h5>
-        <h2 className="uppercase text-lg text-center leading-relaxed sm:text-2xl md:text-3xl md:text-start">
+        <h2
+          className={`uppercase text-lg text-center leading-relaxed sm:text-2xl ${
+            headerLeft ? "md:text-4xl mb-5" : "md:text-3xl"
+          } md:text-start`}
+        >
           {header}
         </h2>
+        <p className="text-center md:text-start text-xs md:text-sm">
+          {description}
+        </p>
       </div>
       {/* Testimonial Content */}
       <div className="flex flex-col items-center justify-center px-0 md:px-16 gap:3 md:gap-10 md:flex-row">

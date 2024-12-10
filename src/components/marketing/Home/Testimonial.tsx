@@ -1,5 +1,5 @@
 import CustomTestimonial from "../../common/Testimonial";
-import Statistics from "./Statistics";
+import Statistics from "../../common/Statistics";
 import Partners from "./Partners";
 
 const Testimonial: React.FC = () => {
