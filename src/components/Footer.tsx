@@ -37,7 +37,7 @@ const Footer = () => {
       title: "OTHERS",
       content: [
         {
-          url: "/",
+          url: "/become-a-farmer",
           name: "Farmers",
         },
         {
@@ -206,7 +206,7 @@ const Footer = () => {
             </h2>
             <ul className="flex flex-col gap-2 font-thin text-sm">
               <Link
-                to="/"
+                to="/become-a-farmer"
                 className="text-white transition ease-out duration-100 hover:text-opacity-80"
               >
                 <li>Farmers</li>

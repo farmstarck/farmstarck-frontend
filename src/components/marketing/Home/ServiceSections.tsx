@@ -20,7 +20,7 @@ const ServiceSections = () => {
     {
       section: "farmers empowerment",
       header: "EMPOWERING FARMERS WITH OUR FUNDING SOLUTIONS",
-      url: "/",
+      url: "/become-a-farmer",
       paragraph:
         "Farmstark is committed to supporting farmers by providing financial solutions that help you grow and sustain your agricultural business. Learn about our funding opportunities, how to qualify, and hear from farmers who have successfully leveraged our resources.",
       img: Img2,

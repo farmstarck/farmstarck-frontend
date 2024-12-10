@@ -12,7 +12,7 @@ const Containers = () => {
     {
       section: "become a farmer",
       header: "Join the Farmstark Family AND BECOME A SUCCESSFUL FARMER",
-      url: "/",
+      url: "/become-a-farmer",
       paragraph:
         "Welcome to Farmstark! We're here to support your farming journey every step of the way. By joining us, you'll become part of a community committed to improving food security and strengthening the agricultural supply chain in Nigeria. Let’s grow together!",
       img: Img1,
