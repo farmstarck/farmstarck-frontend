@@ -30,7 +30,7 @@ const Containers = () => {
     {
       section: "farmers enpowerment",
       header: "EMPOWERING FARMERS WITH OUR FUNDING SOLUTIONS",
-      url: "/",
+      url: "/farm-funding",
       paragraph:
         "Farmstark is committed to supporting farmers by providing financial solutions that help you grow and sustain your agricultural business. Learn about our funding opportunities, how to qualify, and hear from farmers who have successfully leveraged our resources.",
       img: Img3,
