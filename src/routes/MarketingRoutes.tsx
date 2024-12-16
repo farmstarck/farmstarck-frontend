@@ -19,6 +19,9 @@ const FarmFundingPage = lazy(() => import("../pages/marketing/FarmFunding"));
 const InvestmentOpportunityPage = lazy(
   () => import("../pages/marketing/InvestmentOpportunity")
 );
+const BecomeAPartnerPage = lazy(
+  () => import("../pages/marketing/BecomeAPartner")
+);
 
 // Define the marketing routes and their corresponding components
 const MarketingRoutes: RouteObject[] = [
@@ -103,6 +106,14 @@ const MarketingRoutes: RouteObject[] = [
         element: (
           <Suspense fallback={<div>Loading...</div>}>
             <InvestmentOpportunityPage />
+          </Suspense>
+        ),
+      },
+      {
+        path: "become-partner",
+        element: (
+          <Suspense fallback={<div>Loading...</div>}>
+            <BecomeAPartnerPage />
           </Suspense>
         ),
       },

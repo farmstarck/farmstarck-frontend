@@ -8,7 +8,7 @@ const InvestmentOpportunity = () => {
     <div>
       <GenericHero
         header="Investment Opportunity"
-        paragraph="JDiscover how you can be part of the agricultural revolution with Farmstark. Explore various investment opportunities, understand potential returns, and manage your risks effectively. Our intuitive dashboard keeps you informed about your investments every step of the way."
+        paragraph="Discover how you can be part of the agricultural revolution with Farmstark. Explore various investment opportunities, understand potential returns, and manage your risks effectively. Our intuitive dashboard keeps you informed about your investments every step of the way."
       />
       <Intro />
       <Features />
