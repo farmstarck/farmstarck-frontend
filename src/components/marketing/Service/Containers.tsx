@@ -21,7 +21,7 @@ const Containers = () => {
     {
       section: "inventory management",
       header: "Monitor, Manage, and Maximize Your Yield - All in One Platform",
-      url: "/",
+      url: "/inventory-management",
       paragraph:
         "Explore our all-in-one solution for farmers, agribusinesses, and distributors. Our platform simplifies your inventory management by tracking stock levels, automating reports, and offering real-time insights to optimize your resources and increase productivity. Manage your produce from farm to market with ease.",
       img: Img2,
@@ -39,7 +39,7 @@ const Containers = () => {
     {
       section: "become a merchant",
       header: "EXPAND YOUR BUSINESS WITH FARMSTACK",
-      url: "/",
+      url: "/become-merchant",
       paragraph:
         "Join Farmstark and connect with a vast network of farmers and consumers. Whether you're a retailer or a wholesaler, our platform offers you the tools and support to grow your business and reach new markets.",
       img: Img4,
@@ -66,7 +66,7 @@ const Containers = () => {
     {
       section: "investment opportunity",
       header: "INVEST IN THE FUTURE OF AGRICULTURE",
-      url: "/",
+      url: "/investment-opportunity",
       paragraph:
         "Discover how you can be part of the agricultural revolution with Farmstark. Explore various investment opportunities, understand potential returns, and manage your risks effectively. Our intuitive dashboard keeps you informed about your investments every step of the way",
       img: Img7,

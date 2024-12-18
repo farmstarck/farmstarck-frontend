@@ -30,7 +30,7 @@ const ServiceSections = () => {
     {
       section: "become a merchant",
       header: "EXPAND YOUR BUSINESS WITH FARMSTACK",
-      url: "/",
+      url: "/become-merchant",
       paragraph:
         "Join Farmstark and connect with a vast network of farmers and consumers. Whether you're a retailer or a wholesaler, our platform offers you the tools and support to grow your business and reach new markets.",
       img: Img3,
@@ -40,7 +40,7 @@ const ServiceSections = () => {
     {
       section: "partnership",
       header: "COLLABORATING FOR A SUSTAINABLE AGRICULTURAL FUTURE",
-      url: "/",
+      url: "/become-partner",
       paragraph:
         "Farmstark is committed to supporting farmers by providing financial solutions that help you grow and sustain your agricultural business. Learn about our funding opportunities, how to qualify, and hear from farmers who have successfully leveraged our resources.",
       img: Img4,

@@ -41,19 +41,19 @@ const Footer = () => {
           name: "Farmers",
         },
         {
-          url: "/",
+          url: "/investment-opportunity",
           name: "Investment",
         },
         {
-          url: "/",
+          url: "/become-partner",
           name: "Partnership",
         },
         {
-          url: "/",
+          url: "/community",
           name: "Community",
         },
         {
-          url: "/",
+          url: "/career",
           name: "Career",
         },
       ],
@@ -212,13 +212,13 @@ const Footer = () => {
                 <li>Farmers</li>
               </Link>
               <Link
-                to="/"
+                to="/investment-opportunity"
                 className="text-white transition ease-out duration-100 hover:text-opacity-80"
               >
                 <li>Investment</li>
               </Link>
               <Link
-                to="/"
+                to="/become-partner"
                 className="text-white transition ease-out duration-100 hover:text-opacity-80"
               >
                 <li>Partnership</li>
@@ -230,7 +230,7 @@ const Footer = () => {
                 <li>Community</li>
               </Link>
               <Link
-                to="/"
+                to="/career"
                 className="text-white transition ease-out duration-100 hover:text-opacity-80"
               >
                 <li>Career</li>
