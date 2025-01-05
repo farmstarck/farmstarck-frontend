@@ -1,6 +1,7 @@
 import { Suspense, lazy } from "react";
 import { RouteObject } from "react-router-dom";
 import MarketingLayout from "../layouts/MarketingLayout";
+import { MarketPlacePage } from "../pages/marketing/marketplace";
 
 // Lazy load pages
 const HomePage = lazy(() => import("../pages/marketing/Home"));
@@ -8,7 +9,6 @@ const AboutPage = lazy(() => import("../pages/marketing/About"));
 const ContactPage = lazy(() => import("../pages/marketing/Contact"));
 const CommunityPage = lazy(() => import("../pages/marketing/Community"));
 const ServicesPage = lazy(() => import("../pages/marketing/Services"));
-const MarketPlacePage = lazy(() => import("../pages/marketing/MarketPlace"));
 const InventoryManagementPage = lazy(
   () => import("../pages/marketing/InventoryManagement")
 );

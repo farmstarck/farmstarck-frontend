@@ -8,6 +8,8 @@ export default {
         secondary: {
           light: "rgb(214, 238, 214)",
           dark: "#00C700",
+          veryDark: "#045904",
+          cart: "rgb(112, 219, 112)",
         },
         btn: {
           primary: "#00C700",

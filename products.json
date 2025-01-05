@@ -1,0 +1,176 @@
+[
+    {
+    "id": "1",
+      "name": "full basket of tomatoes",
+      "description": "In the past years, Joshua gained significant deal execution experience as lead user experience and user interface designer as a freelancer, Lorem ipsum dolor sit amet consectetur. Rhoncus sagittis commodo nec egestas nisl. Amet dolor tortor eget pharetra porttitor. Dui augue amet pellentesque diam. Metus blandit faucibus aliquam elementum et euismod nunc.",
+      "category": "vegetables",
+      "pricePerUnit": 1500,
+      "discountPerUnit": 1000,
+      "type": "bulk",
+      "unit": "kg",
+      "rating": 4.94,
+      "sku": "STRCK245",
+      "stockQuantity": 150,
+      "isAvailable": true,
+      "imageUrl": "https://couplespark-dev.s3.us-east-2.amazonaws.com/images/1735980205926-product-tomatoe.png",
+      "reviews": [
+        {
+          "rating": 5,
+          "comment": "Excellent!",
+          "author": "John Doe",
+          "date": "2024-05-23T08:56:21.618Z"
+        },
+        {
+          "rating": 4,
+          "comment": "Good",
+          "author": "Jane Smith",
+          "date": "2024-05-23T08:56:21.618Z"
+        }
+      ]
+    },
+    {
+        "id": "2",
+      "name": "full bag of green apples",
+      "description": "In the past years, Joshua gained significant deal execution experience as lead user experience and user interface designer as a freelancer, Lorem ipsum dolor sit amet consectetur. Rhoncus sagittis commodo nec egestas nisl. Amet dolor tortor eget pharetra porttitor. Dui augue amet pellentesque diam. Metus blandit faucibus aliquam elementum et euismod nunc.",
+      "category": "fruit",
+      "pricePerUnit": 2000,
+      "discountPerUnit": 1500,
+      "type": "unit",
+      "unit": "kg",
+      "rating": 3.9,
+      "sku": "STRCK995",
+      "stockQuantity": 100,
+      "isAvailable": true,
+      "imageUrl": "https://couplespark-dev.s3.us-east-2.amazonaws.com/images/1735980205921-product-apple.png",
+      "reviews": [
+        {
+          "rating": 5,
+          "comment": "Excellent!",
+          "author": "John Doe",
+          "date": "2024-05-23T08:56:21.618Z"
+        },
+        {
+          "rating": 4,
+          "comment": "Good",
+          "author": "Jane Smith",
+          "date": "2024-05-23T08:56:21.618Z"
+        }
+      ]
+    },
+    {
+        "id": "3",
+      "name": "1 full crate of eggs",
+      "description": "In the past years, Joshua gained significant deal execution experience as lead user experience and user interface designer as a freelancer, Lorem ipsum dolor sit amet consectetur. Rhoncus sagittis commodo nec egestas nisl. Amet dolor tortor eget pharetra porttitor. Dui augue amet pellentesque diam. Metus blandit faucibus aliquam elementum et euismod nunc.",
+      "category": "vegetables",
+      "pricePerUnit": 4500,
+      "discountPerUnit": 0,
+      "type": "unit",
+      "unit": "kg",
+      "rating": 5,
+      "sku": "STRCK195",
+      "stockQuantity": 200,
+      "isAvailable": true,
+      "imageUrl": "https://couplespark-dev.s3.us-east-2.amazonaws.com/images/1735980205926-product-egg.png",
+      "reviews": [
+        {
+          "rating": 5,
+          "comment": "Excellent!",
+          "author": "John Doe",
+          "date": "2024-05-23T08:56:21.618Z"
+        },
+        {
+          "rating": 4,
+          "comment": "Good",
+          "author": "Jane Smith",
+          "date": "2024-05-23T08:56:21.618Z"
+        }
+      ]
+    },
+    {
+        "id": "4",
+      "name": "1 full barn of white yams",
+      "description": "In the past years, Joshua gained significant deal execution experience as lead user experience and user interface designer as a freelancer, Lorem ipsum dolor sit amet consectetur. Rhoncus sagittis commodo nec egestas nisl. Amet dolor tortor eget pharetra porttitor. Dui augue amet pellentesque diam. Metus blandit faucibus aliquam elementum et euismod nunc.",
+      "category": "barns",
+      "pricePerUnit": 2500,
+      "discountPerUnit": 1800,
+      "type": "bulk",
+      "unit": "kg",
+      "rating": 4.2,
+      "sku": "STRCK103",
+      "stockQuantity": 90,
+      "isAvailable": true,
+      "imageUrl": "https://couplespark-dev.s3.us-east-2.amazonaws.com/images/1735980205926-product-yam.png",
+      "reviews": [
+        {
+          "rating": 5,
+          "comment": "Excellent!",
+          "author": "John Doe",
+          "date": "2024-05-23T08:56:21.618Z"
+        },
+        {
+          "rating": 4,
+          "comment": "Good",
+          "author": "Jane Smith",
+          "date": "2024-05-23T08:56:21.618Z"
+        }
+      ]
+    },
+    {
+        "id": "5",
+      "name": "full sack of yellow corn",
+      "description": "In the past years, Joshua gained significant deal execution experience as lead user experience and user interface designer as a freelancer, Lorem ipsum dolor sit amet consectetur. Rhoncus sagittis commodo nec egestas nisl. Amet dolor tortor eget pharetra porttitor. Dui augue amet pellentesque diam. Metus blandit faucibus aliquam elementum et euismod nunc.",
+      "category": "grains",
+      "pricePerUnit": 300,
+      "discountPerUnit": 0,
+      "type": "unit",
+      "unit": "kg",
+      "rating":2.5,
+      "sku": "STRCK103",
+      "stockQuantity": 2090,
+      "isAvailable": true,
+      "imageUrl": "https://couplespark-dev.s3.us-east-2.amazonaws.com/images/1735980205925-product-corn.png",
+      "reviews": [
+        {
+          "rating": 5,
+          "comment": "Excellent!",
+          "author": "John Doe",
+          "date": "2024-05-23T08:56:21.618Z"
+        },
+        {
+          "rating": 4,
+          "comment": "Good",
+          "author": "Jane Smith",
+          "date": "2024-05-23T08:56:21.618Z"
+        }
+      ]
+    },
+    {
+        "id": "6",
+      "name": "full bag of unripe banana",
+      "description": "In the past years, Joshua gained significant deal execution experience as lead user experience and user interface designer as a freelancer, Lorem ipsum dolor sit amet consectetur. Rhoncus sagittis commodo nec egestas nisl. Amet dolor tortor eget pharetra porttitor. Dui augue amet pellentesque diam. Metus blandit faucibus aliquam elementum et euismod nunc.",
+      "category": "friuts",
+      "pricePerUnit": 650,
+      "discountPerUnit": 0,
+      "type": "unit",
+      "unit": "kg",
+      "rating":4.5,
+      "sku": "STRCK123",
+      "stockQuantity": 90,
+      "isAvailable": true,
+      "imageUrl": "https://couplespark-dev.s3.us-east-2.amazonaws.com/images/1735980205925-product-banana.png",
+      "reviews": [
+        {
+          "rating": 5,
+          "comment": "Excellent!",
+          "author": "John Doe",
+          "date": "2024-05-23T08:56:21.618Z"
+        },
+        {
+          "rating": 4,
+          "comment": "Good",
+          "author": "Jane Smith",
+          "date": "2024-05-23T08:56:21.618Z"
+        }
+      ]
+    }
+  ]
