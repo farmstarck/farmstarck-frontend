@@ -32,7 +32,7 @@ const selectedCategories = categories.filter((_, index) => index < 6);
 
 const CategorySection = () => {
   return (
-    <div className="flex flex-col gap-5">
+    <div className="flex flex-col gap-5 sm:p-5">
       <div className="flex justify-between">
         <h5 className="text-gray-600 text-sm md:text-base">Categories</h5>
         <Link
