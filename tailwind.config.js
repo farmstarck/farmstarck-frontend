@@ -15,6 +15,7 @@ export default {
           primary: "#00C700",
           secondary: "#FFFFFF",
         },
+        backdrop: "rgba(0, 0, 0, 0.6)",
       },
       fontFamily: {
         body: ["campton"],
