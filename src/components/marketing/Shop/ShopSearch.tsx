@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import jsonProducts from "../../../../products.json";
+import jsonProducts from "../../../../data/products.json";
 import CloseImg from "../../../assets/svg/close.svg";
 import SearchImg from "../../../assets/svg/magnifier.svg";
 import LargSearchImg from "../../../assets/svg/large-magnifier.svg";
@@ -38,7 +38,7 @@ const ShopSearch: React.FC<ShopSearchProps> = ({
   return (
     <>
       {/* mobile search display */}
-      <div className="fixed top-0 left-0 w-full h-full z-50 bg-white p-5 flex flex-col gap-6 md:hidden">
+      <div className="absolute top-0 left-0 w-full h-screen z-50 bg-white p-5 flex flex-col gap-6 md:hidden">
         <div className="flex justify-end">
           <img
             src={CloseImg}

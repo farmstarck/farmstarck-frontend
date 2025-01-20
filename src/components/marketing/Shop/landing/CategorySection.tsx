@@ -1,51 +1,29 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Icon from "../../../../assets/svg/shop-cat-icon.svg";
-
-const categories = [
-  {
-    name: "bulk",
-  },
-  {
-    name: "grains",
-  },
-  {
-    name: "units",
-  },
-  {
-    name: "vegetables",
-  },
-  {
-    name: "seed/nuts",
-  },
-  {
-    name: "livestock",
-  },
-  {
-    name: "barns",
-  },
-  {
-    name: "poultry",
-  },
-];
-
-const selectedCategories = categories.filter((_, index) => index < 6);
+import fetchedCategotries from "../../../../../data/categories.json";
 
 const CategorySection = () => {
+  const [categories, setCategories] = useState(fetchedCategotries);
+
+  useEffect(() => {
+    setCategories((prev) => prev.filter((_, index) => index < 6));
+  }, []);
   return (
     <div className="flex flex-col gap-5 sm:p-5">
       <div className="flex justify-between">
         <h5 className="text-gray-600 text-sm md:text-base">Categories</h5>
         <Link
-          to="shop-categories"
+          to="categories"
           className="text-gray-500 text-sm transition ease-out duration-200 hover:text-secondary-dark"
         >
           View All
         </Link>
       </div>
       <div className="flex  justify-between gap-5 overflow-x-scroll snap-x snap-mandatory scrollbar-hide ">
-        {selectedCategories?.map((category) => (
+        {categories?.map((category) => (
           <Link
-            to={`shop-categories/${category.name}`}
+            to={`/marketplace/categories/${category.name}`}
             key={category.name}
             className="flex flex-col justify-center flex-shrink-0 snap-center  border border-secondary-light w-20 py-2 rounded-xl items-center gap-2"
           >

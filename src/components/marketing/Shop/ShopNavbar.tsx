@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import jsonProducts from "../../../../products.json";
+import jsonProducts from "../../../../data/products.json";
 import LargSearchImg from "../../../assets/svg/large-magnifier.svg";
 import WishListImg from "../../../assets/svg/wishlist.svg";
 import CartImg from "../../../assets/svg/cart.svg";

@@ -13,6 +13,7 @@
       "stockQuantity": 150,
       "isAvailable": true,
       "imageUrl": "https://couplespark-dev.s3.us-east-2.amazonaws.com/images/1735980205926-product-tomatoe.png",
+      "images":["https://couplespark-dev.s3.us-east-2.amazonaws.com/images/1735980205926-product-tomatoe.png","https://couplespark-dev.s3.us-east-2.amazonaws.com/images/1735980205921-product-apple.png","https://couplespark-dev.s3.us-east-2.amazonaws.com/images/1735980205926-product-egg.png", "https://couplespark-dev.s3.us-east-2.amazonaws.com/images/1735980205926-product-yam.png","https://couplespark-dev.s3.us-east-2.amazonaws.com/images/1735980205925-product-corn.png", "https://couplespark-dev.s3.us-east-2.amazonaws.com/images/1735980205925-product-banana.png"],
       "reviews": [
         {
           "rating": 5,
@@ -42,6 +43,7 @@
       "stockQuantity": 100,
       "isAvailable": true,
       "imageUrl": "https://couplespark-dev.s3.us-east-2.amazonaws.com/images/1735980205921-product-apple.png",
+      "images":["https://couplespark-dev.s3.us-east-2.amazonaws.com/images/1735980205926-product-tomatoe.png","https://couplespark-dev.s3.us-east-2.amazonaws.com/images/1735980205921-product-apple.png","https://couplespark-dev.s3.us-east-2.amazonaws.com/images/1735980205926-product-egg.png", "https://couplespark-dev.s3.us-east-2.amazonaws.com/images/1735980205926-product-yam.png","https://couplespark-dev.s3.us-east-2.amazonaws.com/images/1735980205925-product-corn.png", "https://couplespark-dev.s3.us-east-2.amazonaws.com/images/1735980205925-product-banana.png"],
       "reviews": [
         {
           "rating": 5,
@@ -71,6 +73,7 @@
       "stockQuantity": 200,
       "isAvailable": true,
       "imageUrl": "https://couplespark-dev.s3.us-east-2.amazonaws.com/images/1735980205926-product-egg.png",
+      "images":["https://couplespark-dev.s3.us-east-2.amazonaws.com/images/1735980205926-product-tomatoe.png","https://couplespark-dev.s3.us-east-2.amazonaws.com/images/1735980205921-product-apple.png","https://couplespark-dev.s3.us-east-2.amazonaws.com/images/1735980205926-product-egg.png", "https://couplespark-dev.s3.us-east-2.amazonaws.com/images/1735980205926-product-yam.png","https://couplespark-dev.s3.us-east-2.amazonaws.com/images/1735980205925-product-corn.png", "https://couplespark-dev.s3.us-east-2.amazonaws.com/images/1735980205925-product-banana.png"],
       "reviews": [
         {
           "rating": 5,
@@ -100,6 +103,7 @@
       "stockQuantity": 90,
       "isAvailable": true,
       "imageUrl": "https://couplespark-dev.s3.us-east-2.amazonaws.com/images/1735980205926-product-yam.png",
+      "images":["https://couplespark-dev.s3.us-east-2.amazonaws.com/images/1735980205926-product-tomatoe.png","https://couplespark-dev.s3.us-east-2.amazonaws.com/images/1735980205921-product-apple.png","https://couplespark-dev.s3.us-east-2.amazonaws.com/images/1735980205926-product-egg.png", "https://couplespark-dev.s3.us-east-2.amazonaws.com/images/1735980205926-product-yam.png","https://couplespark-dev.s3.us-east-2.amazonaws.com/images/1735980205925-product-corn.png", "https://couplespark-dev.s3.us-east-2.amazonaws.com/images/1735980205925-product-banana.png"],
       "reviews": [
         {
           "rating": 5,
@@ -129,6 +133,7 @@
       "stockQuantity": 2090,
       "isAvailable": true,
       "imageUrl": "https://couplespark-dev.s3.us-east-2.amazonaws.com/images/1735980205925-product-corn.png",
+      "images":["https://couplespark-dev.s3.us-east-2.amazonaws.com/images/1735980205926-product-tomatoe.png","https://couplespark-dev.s3.us-east-2.amazonaws.com/images/1735980205921-product-apple.png","https://couplespark-dev.s3.us-east-2.amazonaws.com/images/1735980205926-product-egg.png", "https://couplespark-dev.s3.us-east-2.amazonaws.com/images/1735980205926-product-yam.png","https://couplespark-dev.s3.us-east-2.amazonaws.com/images/1735980205925-product-corn.png", "https://couplespark-dev.s3.us-east-2.amazonaws.com/images/1735980205925-product-banana.png"],
       "reviews": [
         {
           "rating": 5,
@@ -158,6 +163,7 @@
       "stockQuantity": 90,
       "isAvailable": true,
       "imageUrl": "https://couplespark-dev.s3.us-east-2.amazonaws.com/images/1735980205925-product-banana.png",
+      "images":["https://couplespark-dev.s3.us-east-2.amazonaws.com/images/1735980205926-product-tomatoe.png","https://couplespark-dev.s3.us-east-2.amazonaws.com/images/1735980205921-product-apple.png","https://couplespark-dev.s3.us-east-2.amazonaws.com/images/1735980205926-product-egg.png", "https://couplespark-dev.s3.us-east-2.amazonaws.com/images/1735980205926-product-yam.png","https://couplespark-dev.s3.us-east-2.amazonaws.com/images/1735980205925-product-corn.png", "https://couplespark-dev.s3.us-east-2.amazonaws.com/images/1735980205925-product-banana.png"],
       "reviews": [
         {
           "rating": 5,

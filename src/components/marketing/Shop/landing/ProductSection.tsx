@@ -1,5 +1,5 @@
 import { useState } from "react";
-import jsonProducts from "../../../../../products.json";
+import jsonProducts from "../../../../../data/products.json";
 import ProductThumbnail from "./ProductThumbnail";
 import { Link } from "react-router-dom";
 

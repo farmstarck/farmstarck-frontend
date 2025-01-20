@@ -15,7 +15,7 @@ const Navbar = () => {
 
   const [isScrolled, setIsScrolled] = useState(false);
   const [route, setRoute] = useState("");
-
+  const [productRoute, setProductsRoute] = useState(false);
   const menuToggle = () => {
     const menu = document.getElementById("menu")!;
     const btn = document.getElementById("menu-btn")!;
@@ -43,6 +43,14 @@ const Navbar = () => {
   }, []);
 
   useEffect(() => {
+    const productPath = location.pathname.split("/");
+
+    if (productPath[2] === "categories" && productPath[3]) {
+      setProductsRoute(true);
+    } else {
+      setProductsRoute(false);
+    }
+
     setRoute(location.pathname);
   }, [location]);
 
@@ -50,7 +58,10 @@ const Navbar = () => {
     <nav
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
         isScrolled ? "bg-white " : "bg-transparent"
-      } ${isScrolled && route !== "/marketplace" && "shadow-md"}`}
+      } ${
+        isScrolled && route !== "/marketplace" && !productRoute && "shadow-md"
+      } 
+     `}
     >
       <div className="relative p-5">
         <div className="flex justify-between items-center max-w-6xl m-auto  md:px-0">

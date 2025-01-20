@@ -1,7 +1,11 @@
 import { Suspense, lazy } from "react";
 import { RouteObject } from "react-router-dom";
 import MarketingLayout from "../layouts/MarketingLayout";
-import { MarketPlacePage } from "../pages/marketing/marketplace";
+import {
+  MarketPlacePage,
+  CategoryPage,
+  CategoryDisplayPage,
+} from "../pages/marketing/marketplace";
 
 // Lazy load pages
 const HomePage = lazy(() => import("../pages/marketing/Home"));
@@ -74,14 +78,6 @@ const MarketingRoutes: RouteObject[] = [
         ),
       },
       {
-        path: "marketplace",
-        element: (
-          <Suspense fallback={<div>Loading...</div>}>
-            <MarketPlacePage />
-          </Suspense>
-        ),
-      },
-      {
         path: "inventory-management",
         element: (
           <Suspense fallback={<div>Loading...</div>}>
@@ -134,6 +130,31 @@ const MarketingRoutes: RouteObject[] = [
         element: (
           <Suspense fallback={<div>Loading...</div>}>
             <CareerPage />
+          </Suspense>
+        ),
+      },
+      // Marketplace routes
+      {
+        path: "marketplace",
+        element: (
+          <Suspense fallback={<div>Loading...</div>}>
+            <MarketPlacePage />
+          </Suspense>
+        ),
+      },
+      {
+        path: "marketplace/categories",
+        element: (
+          <Suspense fallback={<div>Loading...</div>}>
+            <CategoryPage />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/marketplace/categories/:name",
+        element: (
+          <Suspense fallback={<div>Loading...</div>}>
+            <CategoryDisplayPage />
           </Suspense>
         ),
       },

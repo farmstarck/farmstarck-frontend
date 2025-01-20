@@ -28,7 +28,6 @@ const MarketPlacePage = () => {
       <BackDrop isOpen={isModalOpen} handleClose={handleModalClose}>
         <RequestProductForm />
       </BackDrop>
-      {/* <ShopSearch /> */}
     </div>
   );
 };

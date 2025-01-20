@@ -1,4 +1,6 @@
 import MarketPlacePage from "./MarketPlace";
+import CategoryPage from "./Category";
+import CategoryDisplayPage from "./CategoryDisplay";
 
 export type ProductProps = {
   id: string;
@@ -23,4 +25,4 @@ type ReviewProps = {
   author: string;
   date: string;
 };
-export { MarketPlacePage };
+export { MarketPlacePage, CategoryPage, CategoryDisplayPage };
