@@ -33,10 +33,8 @@ const CategoryDisplay = () => {
   }, [page]);
 
   useEffect(() => {
-    console.log(":::SORT", bySort);
-    console.log(":::CATEGORY", byCategory);
-    console.log(":::PRICE", byPrice);
-  }, [willFilter]);
+    console.log(bySort, byCategory, byPrice, willFilter);
+  });
 
   return (
     <div>

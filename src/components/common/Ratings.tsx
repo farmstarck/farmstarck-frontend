@@ -20,7 +20,7 @@ const Ratings: React.FC<RatingsProps> = ({ initialRating, readonly }) => {
           viewBox="0 0 24 24"
           strokeWidth="1.5"
           stroke=""
-          className="size-3 stroke-secondary-dark"
+          className="size-4 stroke-secondary-dark"
         >
           <path
             strokeLinecap="round"
@@ -36,7 +36,7 @@ const Ratings: React.FC<RatingsProps> = ({ initialRating, readonly }) => {
           viewBox="0 0 24 24"
           strokeWidth="1.5"
           stroke=""
-          className="size-3 stroke-secondary-dark fill-secondary-dark"
+          className="size-4 stroke-secondary-dark fill-secondary-dark"
         >
           <path
             strokeLinecap="round"

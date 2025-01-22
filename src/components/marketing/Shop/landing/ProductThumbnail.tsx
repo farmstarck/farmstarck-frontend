@@ -1,10 +1,13 @@
+import { useNavigate } from "react-router-dom";
 import { ProductProps } from "../../../../pages/marketing/marketplace";
 import toast from "react-hot-toast";
 import Ratings from "../../../common/Ratings";
 import AddToCartImg from "../../../../assets/svg/add-cart.svg";
 import AddToWishlistImg from "../../../../assets/svg/add-wishlist.svg";
+import { convertProductNameToSlugs } from "../../../../utils/slugifyProductName";
 
 const ProductThumbnail: React.FC<ProductProps> = ({
+  id,
   name,
   category,
   pricePerUnit,
@@ -14,16 +17,26 @@ const ProductThumbnail: React.FC<ProductProps> = ({
   stockQuantity,
   imageUrl,
 }) => {
+  const navigate = useNavigate();
+
   const handleAddToCart = () => {
     toast.success("Product added to cart successfully!");
   };
   const handleAddToWishlist = () => {
     toast.success("Product added to wishlist successfully!");
   };
+
+  const navigateToRoute = () => {
+    const productSlug = convertProductNameToSlugs(name);
+    navigate(`/marketplace/product/${productSlug}/${id}`);
+  };
   return (
     <div>
       <div className="relative w-full overflow-hidden flex flex-col gap-2 md:gap-5 p-3  rounded-lg bg-secondary-light md:p-6">
-        <div className="flex flex-col h-60 gap-2 items-stretch md:flex-row md:h-32">
+        <div
+          onClick={navigateToRoute}
+          className="flex flex-col h-60 gap-2 cursor-pointer items-stretch md:flex-row md:h-32"
+        >
           <div className="w-full h-32 overflow-hidden  md:w-1/2">
             <img
               src={imageUrl}

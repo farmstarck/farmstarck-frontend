@@ -17,7 +17,7 @@ const Intro = () => {
             waste, and increases profitability for agribusinesses of all sizes.
           </p>
           <Link
-            to="/"
+            to="/underconstruction"
             className="w-full  border border-solid border-secondary-dark rounded-full"
           >
             <CustomButton color="green" text="start your free today" />

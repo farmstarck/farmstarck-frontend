@@ -31,13 +31,13 @@ const Community = () => {
               </p>
               <div className="flex flex-col gap-5 md:flex-row w-full">
                 <Link
-                  to="/"
+                  to="/underconstruction"
                   className="w-full md:w-1/2 border border-solid border-secondary-dark rounded-full"
                 >
                   <CustomButton color="white" text="readmore" />
                 </Link>
                 <Link
-                  to="/"
+                  to="/underconstruction"
                   className="w-full md:w-1/2 border border-solid border-secondary-dark rounded-full"
                 >
                   <CustomButton color="green" text="seemore" />

@@ -86,7 +86,7 @@ const Pricing = () => {
                   </div>
                 ))}
                 <Link
-                  to="/"
+                  to="/underconstruction"
                   className={`px-4 py-2 mt-4 text-sm transition ease-out duration-200 font-medium ${
                     index === 0 && "uppercase"
                   } w-full text-center sm:w-fit border border-solid border-secondary-dark  rounded shadow-xl text-secondary-dark bg-white hover:bg-secondary-dark hover:text-white`}

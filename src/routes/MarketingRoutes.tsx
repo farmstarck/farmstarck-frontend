@@ -5,6 +5,7 @@ import {
   MarketPlacePage,
   CategoryPage,
   CategoryDisplayPage,
+  ViewProductPage,
 } from "../pages/marketing/marketplace";
 
 // Lazy load pages
@@ -30,6 +31,9 @@ const BecomeAMerchantPage = lazy(
   () => import("../pages/marketing/BecomeAMerchant")
 );
 const CareerPage = lazy(() => import("../pages/marketing/Career"));
+const UnderCOnstructionPage = lazy(
+  () => import("../pages/marketing/UnderConstruction")
+);
 
 // Define the marketing routes and their corresponding components
 const MarketingRoutes: RouteObject[] = [
@@ -133,6 +137,14 @@ const MarketingRoutes: RouteObject[] = [
           </Suspense>
         ),
       },
+      {
+        path: "underconstruction",
+        element: (
+          <Suspense fallback={<div>Loading...</div>}>
+            <UnderCOnstructionPage />
+          </Suspense>
+        ),
+      },
       // Marketplace routes
       {
         path: "marketplace",
@@ -155,6 +167,14 @@ const MarketingRoutes: RouteObject[] = [
         element: (
           <Suspense fallback={<div>Loading...</div>}>
             <CategoryDisplayPage />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/marketplace/product/:slug/:id",
+        element: (
+          <Suspense fallback={<div>Loading...</div>}>
+            <ViewProductPage />
           </Suspense>
         ),
       },

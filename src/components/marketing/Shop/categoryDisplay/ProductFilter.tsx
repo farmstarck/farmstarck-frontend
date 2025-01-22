@@ -83,7 +83,7 @@ const ProductFilter: React.FC<filterProps> = ({
           />
         </div>
         <h4 className="text-sm py-4">Filter Options</h4>
-        <div className="flex flex-col gap-5 max-h-[27rem]  md:max-h-[28rem] overflow-y-auto">
+        <div className="flex flex-col gap-5 max-h-[28rem] overflow-y-auto no-scrollbar">
           {/* Handle Sort Filter */}
           <div className="flex flex-col gap-4">
             <div className="bg-secondary-light rounded-md">

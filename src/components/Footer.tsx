@@ -181,7 +181,7 @@ const Footer = () => {
                 <li>Our Services</li>
               </Link>
               <Link
-                to="/"
+                to="/underconstruction"
                 className="text-white transition ease-out duration-100 hover:text-opacity-80"
               >
                 <li>Starck AI</li>
@@ -295,7 +295,7 @@ const Footer = () => {
               />
             </svg>
           </Link>
-          {/* <Link to="/">
+          {/* <Link to="/underconstruction">
             <svg
               width="25"
               height="25"
@@ -350,7 +350,7 @@ const Footer = () => {
               />
             </svg>
           </Link>
-          {/* <Link to="/">
+          {/* <Link to="/underconstruction">
             <svg
               width="22"
               height="26"
@@ -374,8 +374,8 @@ const Footer = () => {
         </button>
         <div className="flex flex-col-reverse space-x-3 items-center text-xs text-white text-opacity-75  md:flex-row">
           <p>© All Right Reserved 2024 Farmstarck</p>
-          <Link to="/">Terms & Condition</Link>
-          <Link to="/">Privacy Policy</Link>
+          <Link to="/underconstruction">Terms & Condition</Link>
+          <Link to="/underconstruction">Privacy Policy</Link>
         </div>
       </div>
     </footer>

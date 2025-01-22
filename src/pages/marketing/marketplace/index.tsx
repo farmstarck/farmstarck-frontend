@@ -1,6 +1,7 @@
 import MarketPlacePage from "./MarketPlace";
 import CategoryPage from "./Category";
 import CategoryDisplayPage from "./CategoryDisplay";
+import ViewProductPage from "./ViewProduct";
 
 export type ProductProps = {
   id: string;
@@ -11,12 +12,13 @@ export type ProductProps = {
   discountPerUnit: number;
   type: string;
   unit: string;
-  rating: GLfloat;
+  rating: number;
   sku: string;
   stockQuantity: number;
   isAvailable: boolean;
   imageUrl: string;
   reviews: ReviewProps[];
+  images: string[];
 };
 
 type ReviewProps = {
@@ -25,4 +27,4 @@ type ReviewProps = {
   author: string;
   date: string;
 };
-export { MarketPlacePage, CategoryPage, CategoryDisplayPage };
+export { MarketPlacePage, CategoryPage, CategoryDisplayPage, ViewProductPage };

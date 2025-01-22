@@ -19,7 +19,7 @@ const HeroSection = () => {
         </p>
         <div className="flex flex-col space-x-3 space-y-2 items-center w-full sm:w-3/4 md:flex-row md:space-y-0">
           <Link
-            to="/"
+            to="/underconstruction"
             className="w-full border border-solid border-secondary-dark rounded-full"
           >
             <CustomButton color="green" text="get started" />

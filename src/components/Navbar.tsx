@@ -67,11 +67,19 @@ const Navbar = () => {
         <div className="flex justify-between items-center max-w-6xl m-auto  md:px-0">
           {route === "/" && !isScrolled ? (
             <Link to="/">
-              <img src={LogoLightImg} className="w-32" alt="farmstarck logo" />
+              <img
+                src={LogoLightImg}
+                className="w-32 md:w-40"
+                alt="farmstarck logo"
+              />
             </Link>
           ) : (
             <Link to="/">
-              <img src={LogoDarkImg} className="w-32" alt="farmstarck logo" />
+              <img
+                src={LogoDarkImg}
+                className="w-32 md:w-40"
+                alt="farmstarck logo"
+              />
             </Link>
           )}
 
@@ -132,7 +140,7 @@ const Navbar = () => {
             ></span>
           </button>
         </div>
-        <Link to="/" onClick={closeMenu}>
+        <Link to="/underconstruction" onClick={closeMenu}>
           <div className="py-3 px-9 bg-secondary-dark rounded cursor-pointer text-white text-sm">
             SIGN IN
           </div>
@@ -189,7 +197,7 @@ const Navbar = () => {
           <Link to="https://www.linkedin.com/company/farmstarck/">
             <img src={LinkedInIcon} alt="linkendin-icon" className="w-5" />
           </Link>
-          {/* <Link to="/">
+          {/* <Link to="/underconstruction">
             <img src={DiscordIcon} alt="discord-icon" className="w-5" />
           </Link> */}
           <Link to="https://www.instagram.com/farmstarck/profilecard/?igsh=MWNrbzlic3drcGU2aw==">
@@ -198,7 +206,7 @@ const Navbar = () => {
           <Link to="https://www.facebook.com/profile.php?id=61562747617838&mibextid=LQQJ4d">
             <img src={FacbookIcon} alt="facebook-icon" className="w-5" />
           </Link>
-          {/* <Link to="/">
+          {/* <Link to="/underconstruction">
             <img src={WhatsappIcon} alt="whatsapp-icon" className="w-5" />
           </Link> */}
         </div>

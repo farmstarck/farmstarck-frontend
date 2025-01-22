@@ -60,7 +60,7 @@ const Benefits = () => {
               </div>
             ))}
             <Link
-              to="/"
+              to="/underconstruction"
               className="w-full md:w-5/6  border border-solid border-secondary-dark rounded-full"
             >
               <CustomButton color="green" text="get started" />

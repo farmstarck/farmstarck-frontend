@@ -20,7 +20,7 @@ const CategorySection = () => {
           View All
         </Link>
       </div>
-      <div className="flex  justify-between gap-5 overflow-x-scroll snap-x snap-mandatory scrollbar-hide ">
+      <div className="flex  justify-between gap-5 overflow-x-scroll snap-x snap-mandatory no-scrollbar ">
         {categories?.map((category) => (
           <Link
             to={`/marketplace/categories/${category.name}`}
