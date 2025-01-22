@@ -15,7 +15,7 @@ const UnderConstruction = () => {
   };
 
   return (
-    <div className="relative flex flex-col gap-4 items-center justify-center h-screen p-3">
+    <div className="relative flex flex-col gap-4 items-center justify-center h-screen p-5">
       <div className="max-w-md w-full m-auto flex flex-col gap-4 items-center justify-center">
         <img src={LogoImg} alt="Logo" className="w-32 md:w-40 mb-4" />
         <h1 className="text-2xl md:text-4xl font-bold text-center">
@@ -50,22 +50,22 @@ const UnderConstruction = () => {
       <img
         src={Img1}
         alt="Veggies"
-        className="absolute top-28 left-0 md:left-14 w-24 md:w-44"
+        className="absolute top-36 left-0 md:left-14 w-24 md:w-44"
       />
       <img
         src={Img2}
         alt="Yellow Peppers"
-        className="absolute top-28 right-0 md:right-14 w-24 md:w-44"
+        className="absolute top-36 right-0 md:right-14 w-24 md:w-44"
       />
       <img
         src={Img3}
         alt="Tomatoes"
-        className="absolute bottom-20 md:bottom-8 right-0 md:right-14 w-24 md:w-44"
+        className="absolute bottom-28 md:bottom-8 right-0 md:right-14 w-24 md:w-44"
       />
       <img
         src={Img4}
         alt="Corn"
-        className="absolute bottom-20 md:bottom-8 left-0 md:left-14 w-24 md:w-44"
+        className="absolute bottom-28 md:bottom-8 left-0 md:left-14 w-24 md:w-44"
       />
     </div>
   );

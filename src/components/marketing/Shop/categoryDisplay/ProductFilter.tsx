@@ -63,7 +63,6 @@ const ProductFilter: React.FC<filterProps> = ({
     setValues([1000, 500000]);
 
     setWillFilter(Date.now());
-    setIsFilterModalOpen(false);
   };
 
   const handleApplyFilter = () => {
