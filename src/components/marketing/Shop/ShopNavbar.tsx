@@ -46,7 +46,7 @@ const ShopNavbar: React.FC<ShopNavbarProps> = ({ setIsModalOpen }) => {
   return (
     <>
       <div
-        className={`fixed w-full top-[75px] z-40 md:px-5 py-3 transition-all duration-300 ${
+        className={`fixed w-full top-[63px] z-40 md:px-5 py-3 transition-all duration-300 ${
           isScrolled ? "bg-white shadow-md" : "bg-transparent"
         }`}
       >
