@@ -2,6 +2,8 @@ import MarketPlacePage from "./MarketPlace";
 import CategoryPage from "./Category";
 import CategoryDisplayPage from "./CategoryDisplay";
 import ViewProductPage from "./ViewProduct";
+import CartPage from "./Cart";
+import WishlistPage from "./Wishlist";
 
 export type ProductProps = {
   id: string;
@@ -27,4 +29,11 @@ type ReviewProps = {
   author: string;
   date: string;
 };
-export { MarketPlacePage, CategoryPage, CategoryDisplayPage, ViewProductPage };
+export {
+  MarketPlacePage,
+  CategoryPage,
+  CategoryDisplayPage,
+  ViewProductPage,
+  CartPage,
+  WishlistPage,
+};

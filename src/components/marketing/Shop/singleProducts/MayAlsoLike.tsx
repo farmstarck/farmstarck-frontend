@@ -1,13 +1,19 @@
-import { useState } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
 import jsonProducts from "../../../../../data/products.json";
 import ScrollProductThumbnail from "./ScrollProductThumbnail";
 import { Link } from "react-router-dom";
 
 type MayAlsoLikeProps = {
   tag: string;
+  setUpdateCart: Dispatch<SetStateAction<any>>;
+  setUpdateWishList: Dispatch<SetStateAction<any>>;
 };
 
-const MayAlsoLike: React.FC<MayAlsoLikeProps> = ({ tag }) => {
+const MayAlsoLike: React.FC<MayAlsoLikeProps> = ({
+  tag,
+  setUpdateCart,
+  setUpdateWishList,
+}) => {
   const [products] = useState(jsonProducts);
 
   return (
@@ -24,7 +30,12 @@ const MayAlsoLike: React.FC<MayAlsoLikeProps> = ({ tag }) => {
       <div className="overflow-x-auto no-scrollbar w-full">
         <div className="flex gap-x-3 md:gap-x-16 items-stretch">
           {products?.map((product) => (
-            <ScrollProductThumbnail key={product.id} {...product} />
+            <ScrollProductThumbnail
+              key={product.id}
+              {...product}
+              setUpdateCart={setUpdateCart}
+              setUpdateWishList={setUpdateWishList}
+            />
           ))}
         </div>
       </div>

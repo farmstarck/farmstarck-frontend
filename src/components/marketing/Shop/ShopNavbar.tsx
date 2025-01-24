@@ -5,15 +5,24 @@ import WishListImg from "../../../assets/svg/wishlist.svg";
 import CartImg from "../../../assets/svg/cart.svg";
 import SearchImg from "../../../assets/svg/magnifier.svg";
 import ShopSearch from "./ShopSearch";
+import { Link } from "react-router-dom";
 
 type ShopNavbarProps = {
   setIsModalOpen: (query: boolean) => void;
+  updateCart: any;
+  updateWishlist: any;
 };
 
-const ShopNavbar: React.FC<ShopNavbarProps> = ({ setIsModalOpen }) => {
+const ShopNavbar: React.FC<ShopNavbarProps> = ({
+  setIsModalOpen,
+  updateCart,
+  updateWishlist,
+}) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [isFocused, setIsFocused] = useState(false);
+  const [cartLength, setCartLength] = useState(0);
+  const [wishlistLength, setWishlistLength] = useState(0);
   const [products] = useState(jsonProducts);
 
   const handleFocus = () => setIsFocused(true);
@@ -25,6 +34,22 @@ const ShopNavbar: React.FC<ShopNavbarProps> = ({ setIsModalOpen }) => {
       : products.filter((product) =>
           product.name.toLowerCase().includes(searchQuery.toLowerCase())
         );
+
+  useEffect(() => {
+    // retrive cart items
+    const cart = localStorage.getItem("cart");
+    const parsedCart = cart ? JSON.parse(cart) : [];
+
+    setCartLength(parsedCart.length);
+  }, [updateCart]);
+
+  useEffect(() => {
+    // retrive wishlist items
+    const wishlist = localStorage.getItem("wishlist");
+    const parsedWishlist = wishlist ? JSON.parse(wishlist) : [];
+
+    setWishlistLength(parsedWishlist.length);
+  }, [updateWishlist]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -46,7 +71,7 @@ const ShopNavbar: React.FC<ShopNavbarProps> = ({ setIsModalOpen }) => {
   return (
     <>
       <div
-        className={`fixed w-full top-[63px] z-40 md:px-5 py-3 transition-all duration-300 ${
+        className={`fixed w-full top-[65px] md:top-[66px] z-40 md:px-5 py-3 transition-all duration-300 ${
           isScrolled ? "bg-white shadow-md" : "bg-transparent"
         }`}
       >
@@ -83,13 +108,13 @@ const ShopNavbar: React.FC<ShopNavbarProps> = ({ setIsModalOpen }) => {
               className="z-10 absolute top-3 w-3 md:top-4 left-4 md:w-5"
             />
           </div>
-          <div className="cursor-pointer relative">
+          <Link to="/marketplace/cart" className="cursor-pointer relative">
             <img src={CartImg} alt="" loading="lazy" className="w-6 md:w-7" />
             <span className="absolute -top-2 -right-2 w-4 h-4 rounded-full bg-red-500 flex items-center justify-center text-white text-btn-txt">
-              1
+              {cartLength}
             </span>
-          </div>
-          <div className="cursor-pointer relative">
+          </Link>
+          <Link to="/marketplace/wishlist" className="cursor-pointer relative">
             <img
               src={WishListImg}
               alt=""
@@ -97,9 +122,9 @@ const ShopNavbar: React.FC<ShopNavbarProps> = ({ setIsModalOpen }) => {
               className="w-6 md:w-7"
             />
             <span className="absolute -top-2 -right-2 w-4 h-4 rounded-full bg-red-500 flex items-center justify-center text-white text-btn-txt">
-              1
+              {wishlistLength}
             </span>
-          </div>
+          </Link>
         </div>
         <div className="absoulte top-0 left-0 max-w-6xl m-auto px-5 w-full h-full z-50 bg-white hidden md:block">
           {/* Display Results mobile*/}

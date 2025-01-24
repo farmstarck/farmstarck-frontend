@@ -26,8 +26,8 @@ const ServiceSection: React.FC<ServiceSectionProps> = ({
       className={`flex flex-col-reverse item-center justify-center w-full  ${sectionClass} gap-3 md:justify-between md:space-x-5 md:gap-0`}
     >
       <div className="w-full flex flex-col space-y-3 items-center md:w-2/4 md:items-start">
-        <h5 className="text-xs uppercase">{section}</h5>
-        <h2 className="uppercase text-base text-center leading-tight md:leading-relaxed sm:text-2xl md:text-3xl md:text-start">
+        <h5 className="text-sm uppercase">{section}</h5>
+        <h2 className="uppercase text-base text-center leading-tight sm:text-2xl md:text-3xl md:text-start">
           {header}
         </h2>
         <Link
@@ -36,7 +36,7 @@ const ServiceSection: React.FC<ServiceSectionProps> = ({
         >
           <CustomButton color="white" text={btn} />
         </Link>
-        <p className="text-xs text-center pt-3 md:text-sm md:text-start">
+        <p className="text-sm text-center pt-3 text-gray-700 md:text-start">
           {paragraph}
         </p>
       </div>

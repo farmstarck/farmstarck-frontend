@@ -1,15 +1,17 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import ShopNavbar from "../../../components/marketing/Shop/ShopNavbar";
 import Request from "../../../components/marketing/Shop/landing/Request";
 import { BackDrop } from "../../../components/common/BackDrop";
 import RequestProductForm from "../../../components/marketing/Shop/landing/RequestProductForm";
 import ProductListing from "../../../components/marketing/Shop/categoryDisplay/ProductListing";
 import LightPagination from "../../../components/common/LightPagination";
 import ProductFilter from "../../../components/marketing/Shop/categoryDisplay/ProductFilter";
+import { useShopContext } from "../../../context/ShopContext";
 
 const CategoryDisplay = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const { setUpdateCart, setUpdateWishList } = useShopContext();
+
   const [isFilterModalOpen, setIsFilterModalOpen] = useState(false);
   const [bySort, setBySort] = useState("");
   const [byCategory, setByCategory] = useState("");
@@ -38,8 +40,11 @@ const CategoryDisplay = () => {
 
   return (
     <div>
-      <ShopNavbar setIsModalOpen={setIsModalOpen} />
-      <ProductListing setIsFilterModalOpen={setIsFilterModalOpen} />
+      <ProductListing
+        setIsFilterModalOpen={setIsFilterModalOpen}
+        setUpdateCart={setUpdateCart}
+        setUpdateWishList={setUpdateWishList}
+      />
       <LightPagination
         // page={1}
         pages={10}

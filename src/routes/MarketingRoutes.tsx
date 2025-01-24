@@ -1,11 +1,14 @@
 import { Suspense, lazy } from "react";
 import { RouteObject } from "react-router-dom";
 import MarketingLayout from "../layouts/MarketingLayout";
+import ShopLayout from "../layouts/ShopLayout";
 import {
   MarketPlacePage,
   CategoryPage,
   CategoryDisplayPage,
   ViewProductPage,
+  CartPage,
+  WishlistPage,
 } from "../pages/marketing/marketplace";
 
 // Lazy load pages
@@ -31,7 +34,7 @@ const BecomeAMerchantPage = lazy(
   () => import("../pages/marketing/BecomeAMerchant")
 );
 const CareerPage = lazy(() => import("../pages/marketing/Career"));
-const UnderCOnstructionPage = lazy(
+const UnderConstructionPage = lazy(
   () => import("../pages/marketing/UnderConstruction")
 );
 
@@ -141,42 +144,65 @@ const MarketingRoutes: RouteObject[] = [
         path: "underconstruction",
         element: (
           <Suspense fallback={<div>Loading...</div>}>
-            <UnderCOnstructionPage />
+            <UnderConstructionPage />
           </Suspense>
         ),
       },
       // Marketplace routes
+      // Shop routes under ShopLayout
       {
         path: "marketplace",
-        element: (
-          <Suspense fallback={<div>Loading...</div>}>
-            <MarketPlacePage />
-          </Suspense>
-        ),
-      },
-      {
-        path: "marketplace/categories",
-        element: (
-          <Suspense fallback={<div>Loading...</div>}>
-            <CategoryPage />
-          </Suspense>
-        ),
-      },
-      {
-        path: "/marketplace/categories/:name",
-        element: (
-          <Suspense fallback={<div>Loading...</div>}>
-            <CategoryDisplayPage />
-          </Suspense>
-        ),
-      },
-      {
-        path: "/marketplace/product/:slug/:id",
-        element: (
-          <Suspense fallback={<div>Loading...</div>}>
-            <ViewProductPage />
-          </Suspense>
-        ),
+        element: <ShopLayout />, // Wrapping shop-related routes with ShopLayout
+        children: [
+          {
+            path: "",
+            element: (
+              <Suspense fallback={<div>Loading...</div>}>
+                <MarketPlacePage />
+              </Suspense>
+            ),
+          },
+          {
+            path: "categories",
+            element: (
+              <Suspense fallback={<div>Loading...</div>}>
+                <CategoryPage />
+              </Suspense>
+            ),
+          },
+          {
+            path: "categories/:name",
+            element: (
+              <Suspense fallback={<div>Loading...</div>}>
+                <CategoryDisplayPage />
+              </Suspense>
+            ),
+          },
+          {
+            path: "product/:slug/:id",
+            element: (
+              <Suspense fallback={<div>Loading...</div>}>
+                <ViewProductPage />
+              </Suspense>
+            ),
+          },
+          {
+            path: "cart",
+            element: (
+              <Suspense fallback={<div>Loading...</div>}>
+                <CartPage />
+              </Suspense>
+            ),
+          },
+          {
+            path: "wishlist",
+            element: (
+              <Suspense fallback={<div>Loading...</div>}>
+                <WishlistPage />
+              </Suspense>
+            ),
+          },
+        ],
       },
     ],
   },

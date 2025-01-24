@@ -45,7 +45,8 @@ const Navbar = () => {
   useEffect(() => {
     const productPath = location.pathname.split("/");
 
-    if (productPath[2] === "categories" && productPath[3]) {
+    // if (productPath[1] === "product" && productPath[3]) {
+    if (productPath[1] === "marketplace") {
       setProductsRoute(true);
     } else {
       setProductsRoute(false);
@@ -69,7 +70,7 @@ const Navbar = () => {
             <Link to="/">
               <img
                 src={LogoLightImg}
-                className="w-32 md:w-40"
+                className="w-32 md:w-48"
                 alt="farmstarck logo"
               />
             </Link>
@@ -77,7 +78,7 @@ const Navbar = () => {
             <Link to="/">
               <img
                 src={LogoDarkImg}
-                className="w-32 md:w-40"
+                className="w-32 md:w-48"
                 alt="farmstarck logo"
               />
             </Link>

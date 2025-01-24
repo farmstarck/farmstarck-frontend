@@ -142,7 +142,7 @@ const Footer = () => {
             <img
               src={LogoLightImg}
               alt="farmstarck-logo"
-              className="w-32 md:w-40"
+              className="w-32 md:w-52"
             />
           </Link>
           <div className="flex items-center gap-3">
@@ -164,56 +164,56 @@ const Footer = () => {
         </div>
         <div className="hidden md:flex flex-col items-center gap-8 md:flex-row md:justify-end ">
           <div className=" flex flex-col justify-start items-start gap-4 w-full  md:w-1/4">
-            <h2 className="text-xs text-white uppercase font-semibold">
+            <h2 className="text-sm md:text-base  text-white uppercase font-semibold">
               QUICK NAVIGATION
             </h2>
             <ul className="flex flex-col gap-2 font-thin text-sm">
               <Link
                 to="/about"
-                className="text-white transition ease-out duration-100 hover:text-opacity-80"
+                className="text-white text-base md:text-lg  transition ease-out duration-100 hover:text-opacity-80"
               >
                 <li>About</li>
               </Link>
               <Link
                 to="/services"
-                className="text-white transition ease-out duration-100 hover:text-opacity-80"
+                className="text-white text-base md:text-lg  transition ease-out duration-100 hover:text-opacity-80"
               >
                 <li>Our Services</li>
               </Link>
               <Link
                 to="/underconstruction"
-                className="text-white transition ease-out duration-100 hover:text-opacity-80"
+                className="text-white text-base md:text-lg  transition ease-out duration-100 hover:text-opacity-80"
               >
                 <li>Starck AI</li>
               </Link>
               <Link
                 to="/marketplace"
-                className="text-white transition ease-out duration-100 hover:text-opacity-80"
+                className="text-white text-base md:text-lg  transition ease-out duration-100 hover:text-opacity-80"
               >
                 <li>Marketplace</li>
               </Link>
               <Link
                 to="contact"
-                className="text-white transition ease-out duration-100 hover:text-opacity-80"
+                className="text-white text-base md:text-lg  transition ease-out duration-100 hover:text-opacity-80"
               >
                 <li>Contact Us</li>
               </Link>
             </ul>
           </div>
           <div className=" flex flex-col justify-start items-start gap-4 w-full  md:w-1/4">
-            <h2 className="text-xs text-white uppercase font-semibold">
+            <h2 className="text-sm md:text-base  text-white uppercase font-semibold">
               OTHERS
             </h2>
             <ul className="flex flex-col gap-2 font-thin text-sm">
               <Link
                 to="/become-a-farmer"
-                className="text-white transition ease-out duration-100 hover:text-opacity-80"
+                className="text-white text-base md:text-lg  transition ease-out duration-100 hover:text-opacity-80"
               >
                 <li>Farmers</li>
               </Link>
               <Link
                 to="/investment-opportunity"
-                className="text-white transition ease-out duration-100 hover:text-opacity-80"
+                className="text-white text-base md:text-lg  transition ease-out duration-100 hover:text-opacity-80"
               >
                 <li>Investment</li>
               </Link>
@@ -225,30 +225,30 @@ const Footer = () => {
               </Link>
               <Link
                 to="/community"
-                className="text-white transition ease-out duration-100 hover:text-opacity-80"
+                className="text-white text-base md:text-lg  transition ease-out duration-100 hover:text-opacity-80"
               >
                 <li>Community</li>
               </Link>
               <Link
                 to="/career"
-                className="text-white transition ease-out duration-100 hover:text-opacity-80"
+                className="text-white text-base md:text-lg transition ease-out duration-100 hover:text-opacity-80"
               >
                 <li>Career</li>
               </Link>
             </ul>
           </div>
           <div className=" flex flex-col justify-start items-start gap-4 w-full  md:w-1/4">
-            <h2 className="text-xs text-white uppercase font-semibold">
+            <h2 className=" text-sm md:text-base  text-white uppercase font-semibold">
               CONTACT INFORMATION
             </h2>
             <ul className="flex flex-col gap-2 font-thin text-sm">
-              <li className="text-white transition ease-out duration-100 hover:text-opacity-80">
+              <li className="text-white text-base md:text-lg  transition ease-out duration-100 hover:text-opacity-80">
                 +234 813 039 5444
               </li>
-              <li className="text-white transition ease-out duration-100 hover:text-opacity-80">
+              <li className="text-white text-base md:text-lg  transition ease-out duration-100 hover:text-opacity-80">
                 info@farmstarck.com
               </li>
-              <li className="text-white transition ease-out duration-100 hover:text-opacity-80">
+              <li className="text-white text-base md:text-lg  transition ease-out duration-100 hover:text-opacity-80">
                 Lorem ispum do not know the current address of farstack company
               </li>
             </ul>

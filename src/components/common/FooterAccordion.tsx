@@ -75,7 +75,7 @@ const FooterAccordion: React.FC<AccordionProps> = ({ items }) => {
           onClick={() => toggleAccordion(2)}
           className="w-full flex justify-between items-center p-3 bg-transparent text-left focus:outline-none"
         >
-          <span className="uppercase text-white text-xs">
+          <span className="uppercase text-white text-sm">
             CONTACT INFORMATION
           </span>
           <span

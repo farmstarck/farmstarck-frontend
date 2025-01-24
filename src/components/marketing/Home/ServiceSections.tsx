@@ -60,7 +60,7 @@ const ServiceSections = () => {
   ];
   return (
     <div className="p-5">
-      <div className="max-w-6xl m-auto space-y-20">
+      <div className="max-w-5xl m-auto space-y-20">
         {sectionData.map((section, index) => (
           <ServiceSection
             key={index}
