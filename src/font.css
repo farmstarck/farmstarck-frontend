@@ -2,7 +2,7 @@
 
 @font-face {
   font-family: "campton";
-  src: url("./assets/fonts/CamptonBook.otf") format("truetype");
+  src: url("src/assets/fonts/CamptonBook.otf") format("truetype");
   font-weight: lighter;
   font-style: normal;
 }

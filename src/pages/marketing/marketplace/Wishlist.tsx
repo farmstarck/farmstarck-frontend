@@ -4,7 +4,7 @@ import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
 import AddToCartImg from "../../../assets/svg/add-cart-white.svg";
 import DeleteImg from "../../../assets/svg/delete-bin.svg";
-import DefaultImg from "../../../assets/svg/cart-default.svg";
+import DefaultImg from "../../../assets/svg/wishlist-default.svg";
 import { ProductProps } from ".";
 
 const wishlistHeaders = [

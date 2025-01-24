@@ -3,7 +3,7 @@ import { useShopContext } from "../../../context/ShopContext";
 import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
 import DeleteImg from "../../../assets/svg/delete-bin.svg";
-import DefaultImg from "../../../assets/svg/wishlist-default.svg";
+import DefaultImg from "../../../assets/svg/cart-default.svg";
 
 const cartHeaders = [
   { key: 1, item: "product" },
