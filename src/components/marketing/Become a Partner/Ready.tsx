@@ -1,6 +1,17 @@
+import { useState } from "react";
+
 import CustomButton from "../../common/CustomButton";
+import PartnerForm from "./PartnerForm";
+import { BackDrop } from "../../common/BackDrop";
 
 const Ready = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  // Handle closing modal
+  const handleModalClose = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <div className="bg-secondary-light mt-10 md:mt-20 w-full px-5 py-10 md:py-20">
       <div className="relative w-full max-w-3xl m-auto mx-auto">
@@ -16,11 +27,18 @@ const Ready = () => {
             </p>
 
             <div className=" border border-solid border-secondary-dark rounded-full">
-              <CustomButton color="green" text="become a partner" />
+              <CustomButton
+                color="green"
+                text="become a partner"
+                onClick={() => setIsModalOpen(true)}
+              />
             </div>
           </div>
         </div>
       </div>
+      <BackDrop isOpen={isModalOpen} handleClose={handleModalClose}>
+        <PartnerForm setIsModalOpen={setIsModalOpen} />
+      </BackDrop>
     </div>
   );
 };

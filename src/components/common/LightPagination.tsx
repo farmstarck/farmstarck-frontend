@@ -20,7 +20,7 @@ const LightPagination: React.FC<PaginationPropsType> = ({
         onClick={() => setPage(i + 1)}
         disabled={page === i + 1}
         className=" w-8 h-8 border border-[#022f1a] text-[#022f1a] rounded-md 
-        text-sm font-bold flex items-center justify-center cursor-pointer 
+        text-sm font-subHeading flex items-center justify-center cursor-pointer 
         disabled:cursor-not-allowed disabled:bg-[#022f1a] disabled:text-white"
       >
         {i + 1}
@@ -38,7 +38,7 @@ const LightPagination: React.FC<PaginationPropsType> = ({
               disabled={page === startValue + i + 1}
               onClick={() => setPage(startValue + i + 1)}
               className=" w-8 h-8 border border-[#022f1a] text-[#022f1a] rounded-md 
-              text-sm font-bold flex items-center justify-center cursor-pointer 
+              text-sm font-subHeading flex items-center justify-center cursor-pointer 
               disabled:cursor-not-allowed disabled:bg-[#022f1a] disabled:text-white"
               style={
                 startValue + i + 1 > pages ? { display: "none" } : undefined
@@ -58,7 +58,7 @@ const LightPagination: React.FC<PaginationPropsType> = ({
               disabled={page === startValue + i + 1}
               onClick={() => setPage(startValue + i + 1)}
               className=" w-8 h-8 border border-[#022f1a] text-[#022f1a] rounded-md 
-              text-sm font-bold flex items-center justify-center cursor-pointer 
+              text-sm font-subHeading flex items-center justify-center cursor-pointer 
               disabled:cursor-not-allowed disabled:bg-[#022f1a] disabled:text-white"
             >
               {startValue + i + 1}
@@ -66,14 +66,14 @@ const LightPagination: React.FC<PaginationPropsType> = ({
           ))}
           <button
             className=" w-8 h-8 border border-[#022f1a] text-[#022f1a] rounded-md 
-            text-sm font-bold flex items-center justify-center cursor-pointer 
+            text-sm font-subHeading flex items-center justify-center cursor-pointer 
             disabled:cursor-not-allowed disabled:bg-[#022f1a] disabled:text-white"
           >
             ...
           </button>
           <button
             className=" w-8 h-8 border border-[#022f1a] text-[#022f1a] rounded-md 
-            text-sm font-bold flex items-center justify-center cursor-pointer 
+            text-sm font-subHeading flex items-center justify-center cursor-pointer 
             disabled:cursor-not-allowed disabled:bg-[#022f1a] disabled:text-white"
             onClick={() => setPage(pages)}
             disabled={page === pages}
@@ -94,7 +94,7 @@ const LightPagination: React.FC<PaginationPropsType> = ({
         <div className="flex items-center gap-x-3">
           <button
             className=" w-8 h-8 border border-[#022f1a] text-[#022f1a] rounded-md 
-            text-sm font-bold flex items-center justify-center cursor-pointer 
+            text-sm font-subHeading flex items-center justify-center cursor-pointer 
             disabled:cursor-not-allowed disabled:bg-[#022f1a] disabled:text-white"
             onClick={() => setPage((prev) => prev - 1)}
             disabled={page === 1}
@@ -116,7 +116,7 @@ const LightPagination: React.FC<PaginationPropsType> = ({
           {middlePagination}
           <button
             className=" w-8 h-8 border border-[#022f1a] text-[#022f1a] rounded-md 
-            text-sm font-bold flex items-center justify-center cursor-pointer 
+            text-sm font-subHeading flex items-center justify-center cursor-pointer 
             disabled:cursor-not-allowed disabled:bg-[#022f1a] disabled:text-white"
             onClick={() => setPage((prev) => prev + 1)}
             disabled={page === pages}

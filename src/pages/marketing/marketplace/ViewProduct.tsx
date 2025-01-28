@@ -205,7 +205,7 @@ const ViewProduct = () => {
             <div className="flex flex-col gap-3 w-full md:w-1/2">
               {/* details header */}
               <div className="flex flex-col gap-2 w-full md:w-5/6">
-                <h2 className="text-xl md:text-3xl lg:text-4xl leading-none font-bold capitalize mb-3 md:mb-0">
+                <h2 className="text-xl md:text-3xl lg:text-4xl leading-none font-subHeading capitalize mb-3 md:mb-0">
                   {product?.name}{" "}
                   <span className="py-1 px-2 rounded bg-secondary-dark text-white text-[0.5rem] md:text-btn-txt uppercase font-normal">
                     {product?.category}
@@ -228,7 +228,7 @@ const ViewProduct = () => {
                 <div className="flex flex-col gap-2 w-1/2 sm:w-full">
                   <label className="text-gray-700 text-xs ">Price</label>
                   <div className="bg-secondary-light sm:w-48 h-10 rounded flex gap-5 items-center justify-center ">
-                    <p className="font-bold text-gray-600 text-base md:text-lg">
+                    <p className="font-subHeading text-gray-600 text-base md:text-lg">
                       N{" "}
                       {product.discountPerUnit > 1
                         ? product.discountPerUnit.toLocaleString()
@@ -243,7 +243,7 @@ const ViewProduct = () => {
                   (product?.quantity == undefined || product?.quantity < 1) && (
                     <button
                       onClick={() => handleAddToCart(product)}
-                      className=" px-2 py-2 flex justify-center items-center gap-2 bg-transparent text-secondary-dark capitalize font-medium text-btn-txt md:text-sm rounded-md border border-secondary-dark  w-[100%] sm:w-52 sm:py-2"
+                      className=" px-2 py-2 flex justify-center items-center gap-2 bg-transparent text-secondary-dark capitalize font-subHeading2 text-btn-txt md:text-sm rounded-md border border-secondary-dark  w-[100%] sm:w-52 sm:py-2"
                     >
                       <img src={AddToCartImg} alt="" className="w-4 md:w-30" />
                       Add to Cart
@@ -272,7 +272,7 @@ const ViewProduct = () => {
 
                 <button
                   onClick={() => handleToggleWishlist(product)}
-                  className="px-2 py-2 bg-secondary-cart text-white uppercase font-medium text-sm rounded-md md:px-3    sm:py-3"
+                  className="px-2 py-2 bg-secondary-cart text-white uppercase font-subHeading2 text-sm rounded-md md:px-3    sm:py-3"
                 >
                   <img src={AddToWishlistImg} alt="" className="w-4" />
                 </button>

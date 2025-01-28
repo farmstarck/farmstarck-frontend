@@ -4,6 +4,7 @@ import CategoryDisplayPage from "./CategoryDisplay";
 import ViewProductPage from "./ViewProduct";
 import CartPage from "./Cart";
 import WishlistPage from "./Wishlist";
+import CheckoutPage from "./Checkout";
 
 export type ProductProps = {
   id: string;
@@ -36,4 +37,5 @@ export {
   ViewProductPage,
   CartPage,
   WishlistPage,
+  CheckoutPage,
 };

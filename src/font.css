@@ -2,28 +2,28 @@
 
 @font-face {
   font-family: "campton";
-  src: url("src/assets/fonts/CamptonBook.otf") format("truetype");
+  src: url("/farmstarck-frontend/src/assets/fonts/CamptonBook.otf") format("truetype");
   font-weight: lighter;
   font-style: normal;
 }
 
 @font-face {
   font-family: "camptonBold";
-  src: url("./assets/fonts/camptonBold.otf") format("truetype");
+  src: url("/farmstarck-frontend/src/assets/fonts/camptonBold.otf") format("truetype");
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
   font-family: "camptonExtraBold";
-  src: url("./assets/fonts/CamptonBlack.otf") format("truetype");
+  src: url("/farmstarck-frontend/src/assets/fonts/CamptonBlack.otf") format("truetype");
   font-weight: bolder;
   font-style: normal;
 }
 
 @font-face {
   font-family: "camptonMedium";
-  src: url("./assets/fonts/CamptonMedium.otf") format("truetype");
+  src: url("/farmstarck-frontend/src/assets/fonts/CamptonMedium.otf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }

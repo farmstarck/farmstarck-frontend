@@ -58,7 +58,7 @@ const Resources = () => {
           <p
             className={`text-btn-txt md:text-xs  font-light cursor-pointer pb-2 uppercase ${
               activeMap === 1 &&
-              "font-medium border-b-2 border-solid border-secondary-dark"
+              "font-subHeading2 border-b-2 border-solid border-secondary-dark"
             }`}
             onClick={() => setActiveMap(1)}
           >
@@ -67,7 +67,7 @@ const Resources = () => {
           <p
             className={`text-btn-txt md:text-xs  font-light cursor-pointer pb-2 uppercase ${
               activeMap === 2 &&
-              "font-medium border-b-2 border-solid border-secondary-dark"
+              "font-subHeading2 border-b-2 border-solid border-secondary-dark"
             }`}
             onClick={() => setActiveMap(2)}
           >
@@ -76,7 +76,7 @@ const Resources = () => {
           <p
             className={`text-btn-txt md:text-xs   font-light cursor-pointer pb-2 uppercase ${
               activeMap === 3 &&
-              "font-medium border-b-2 border-solid border-secondary-dark"
+              "font-subHeading2 border-b-2 border-solid border-secondary-dark"
             }`}
             onClick={() => setActiveMap(3)}
           >

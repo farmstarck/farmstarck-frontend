@@ -7,7 +7,7 @@ const RequestProductForm = () => {
   return (
     <div>
       <div className="py-3 flex flex-col gap-2 items-center  md:items-start md:py-5">
-        <h2 className="font-medium text-gray-600 text-center md:text-start">
+        <h2 className="font-subHeading2 text-gray-600 text-center md:text-start">
           Looking for a product that is not listed here?
         </h2>
         <p className="text-xs text-gray-500 font-thin text-center md:text-start">
@@ -17,7 +17,7 @@ const RequestProductForm = () => {
       </div>
       <form className="flex flex-col gap-8 w-full py-5" onSubmit={handleSubmit}>
         <div className="flex flex-col gap-3">
-          <label className="font-medium text-xs md:text-sm text-gray-500">
+          <label className="font-subHeading2 text-xs md:text-sm text-gray-500">
             Product Name
             <span className="font-light text-xs text-gray-400 pl-2">
               (Local names are helpful)
@@ -31,7 +31,7 @@ const RequestProductForm = () => {
           />
         </div>
         <div className="flex flex-col gap-3">
-          <label className="font-medium text-xs md:text-sm text-gray-500">
+          <label className="font-subHeading2 text-xs md:text-sm text-gray-500">
             Category
           </label>
           <select
@@ -47,7 +47,7 @@ const RequestProductForm = () => {
           </select>
         </div>
         <div className="flex flex-col gap-3">
-          <label className="font-medium text-xs md:text-sm text-gray-500">
+          <label className="font-subHeading2 text-xs md:text-sm text-gray-500">
             Message
             <span className="font-light text-xs text-gray-400 pl-2">
               (Optional)

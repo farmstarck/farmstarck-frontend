@@ -23,8 +23,8 @@ const OurPartner = () => {
         </h2>
 
         <div className="grid grid-cols-2 w-full  gap-y-10  gap-x-10 md:gap-x-16 md:grid-cols-3 justify-between items-stretch sm:grid-cols-2">
-          {stats?.map((data) => (
-            <div className="flex justify-center md:justify-start">
+          {stats?.map((data, i) => (
+            <div key={i} className="flex justify-center md:justify-start">
               <img
                 src={data.value}
                 alt=""

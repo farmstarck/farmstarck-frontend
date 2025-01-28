@@ -18,7 +18,7 @@ const UnderConstruction = () => {
     <div className="relative flex flex-col gap-4 items-center justify-center h-screen p-5">
       <div className="max-w-md w-full m-auto flex flex-col gap-4 items-center justify-center">
         <img src={LogoImg} alt="Logo" className="w-32 md:w-40 mb-4" />
-        <h1 className="text-2xl md:text-4xl font-bold text-center">
+        <h1 className="text-2xl md:text-4xl font-subHeading text-center">
           <span className="text-secondary-dark">Hello!</span> We are cooking up
         </h1>
         <div className="tracking-wider">
@@ -42,7 +42,7 @@ const UnderConstruction = () => {
             onChange={(e) => setEmail(e.target.value)}
             required
           />
-          <button className="w-full  text-sm uppercase font-bold text-white bg-secondary-dark hover:bg-secondary-dark-hover rounded-md p-3 md:p-0 md:w-[20%]">
+          <button className="w-full  text-sm uppercase font-subHeading text-white bg-secondary-dark hover:bg-secondary-dark-hover rounded-md p-3 md:p-0 md:w-[20%]">
             Join
           </button>
         </form>

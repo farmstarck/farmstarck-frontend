@@ -72,7 +72,7 @@ const Accordion: React.FC<AccordionProps> = ({ items }) => {
               <div className="space-y-2 flex flex-col gap-8">
                 {item.content.map((listItem, i) => (
                   <div key={i} className="flex flex-col gap-4">
-                    <h3 className=" capitalize text-xs font-medium md:text-start md:text-sm">
+                    <h3 className=" capitalize text-xs font-subHeading2 md:text-start md:text-sm">
                       {listItem.header}
                     </h3>
                     <p className="text-xs text-gray-700 md:text-start md:text-sm">

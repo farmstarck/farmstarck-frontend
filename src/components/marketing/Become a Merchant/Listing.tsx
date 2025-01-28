@@ -7,7 +7,7 @@ const Listing = () => {
             Product listing and order management
           </h2>
           <div className="flex flex-col gap-4 w-full md:w-2/3">
-            <h3 className="text-center text-xs md:text-sm font-medium md:text-start">
+            <h3 className="text-center text-xs md:text-sm font-subHeading2 md:text-start">
               Product Listing
             </h3>
             <p className="text-center text-xs md:text-sm text-gray-700 md:text-start">
@@ -18,7 +18,7 @@ const Listing = () => {
             <div className="bg-secondary-light w-full min-h-60 md:min-h-64"></div>
           </div>
           <div className="flex flex-col gap-4 w-full md:w-2/3">
-            <h3 className="text-center text-xs md:text-sm font-medium md:text-start">
+            <h3 className="text-center text-xs md:text-sm font-subHeading2 md:text-start">
               Order Management
             </h3>
             <p className="text-center text-xs md:text-sm text-gray-700 md:text-start">

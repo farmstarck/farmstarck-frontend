@@ -20,11 +20,11 @@ export const BackDrop: React.FC<ModalProps> = ({
       onClick={handleClose}
     >
       <div
-        className="max-w-2xl w-full bg-white p-5 rounded-2xl shadow-md z-10 h-[450px] overflow-y-auto"
+        className="max-w-2xl w-full bg-white p-5 rounded-2xl shadow-md z-10 h-[450px] no-scrollbar overflow-y-auto"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex justify-between items-center mb-3">
-          <p className="text-sm font-medium capitalize">{title}</p>
+          <p className="text-sm font-subHeading2 capitalize">{title}</p>
           <img
             src={closeSvg}
             alt=""

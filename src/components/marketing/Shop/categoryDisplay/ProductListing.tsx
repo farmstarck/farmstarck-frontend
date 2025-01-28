@@ -45,7 +45,9 @@ const ProductListing: React.FC<ProductListingProps> = ({
           onClick={handleOpenFilter}
         >
           <img src={FilterIcon} alt="" className="w-4" />
-          <p className="font-bold text-gray-700 text-xs md:text-sm">Filter</p>
+          <p className="font-subHeading text-gray-700 text-xs md:text-sm">
+            Filter
+          </p>
         </div>
         <div className="grid grid-cols-2 w-full gap-y-5  md:gap-y-10 gap-x-3 md:gap-x-16 lg:grid-cols-3 justify-center items-stretch">
           {products?.map((product) => (

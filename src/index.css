@@ -99,3 +99,10 @@ td {
 td:first-child, th:first-child {
   padding-left:  0
 }
+
+.PhoneInputInput {
+  border: none;
+}
+.PhoneInputInput:focus {
+  outline: none;
+}

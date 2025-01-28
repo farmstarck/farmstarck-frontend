@@ -48,13 +48,13 @@ const StepByStep = () => {
                     <span className="text-btn-txt text-white  text-center font-thin">
                       Step
                     </span>
-                    <p className="text-sm text-white font-bold text-center">
+                    <p className="text-sm text-white font-subHeading text-center">
                       {data.title}
                     </p>
                   </div>
                 </div>
                 <div className="flex flex-col gap-4">
-                  <p className="text-center font-medium text-xs capitalize md:text-start">
+                  <p className="text-center font-subHeading2 text-xs capitalize md:text-start">
                     {data.header}
                   </p>
                   <p className="text-center text-xs text-gray-700 md:text-start">

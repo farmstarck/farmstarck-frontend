@@ -85,7 +85,7 @@ const Network = () => {
             key={index}
           >
             <div className="w-20 flex justify-center">{data.icons}</div>
-            <p className="text-xs font-medium"> {data.title}</p>
+            <p className="text-xs font-subHeading2"> {data.title}</p>
           </div>
         ))}
       </div>

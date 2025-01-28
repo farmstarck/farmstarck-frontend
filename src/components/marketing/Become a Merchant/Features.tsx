@@ -40,7 +40,7 @@ const Features = () => {
                   <img src={data.img} alt="" loading="lazy" className="w-4" />
                 </div>
                 <div className="flex flex-col gap-4">
-                  <h3 className="text-center text-xs font-medium md:text-start">
+                  <h3 className="text-center text-xs font-subHeading2 md:text-start">
                     {data.title}
                   </h3>
                   <p className="text-center text-xs text-gray-700 md:text-start">

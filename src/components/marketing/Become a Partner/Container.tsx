@@ -42,7 +42,7 @@ const Container: React.FC<ContainerProps> = ({
         <h2 className="uppercase text-center text-xl w-full sm:text-2xl md:text-4xl md:text-start">
           {headerThree}
         </h2>
-        <h5 className="capitalize font-bold text-center text-xs w-full  md:text-sm md:text-start">
+        <h5 className="capitalize font-subHeading text-center text-xs w-full  md:text-sm md:text-start">
           {subHeaderThree}
         </h5>
         <p className="text-center text-xs text-gray-700 md:text-start md:text-sm">

@@ -70,7 +70,7 @@ const Pricing = () => {
                 "md:border-l md:border-r md:border-t-0 md:border-b-0 border-solid md:border-gray-300 md:rounded-none"
               }`}
             >
-              <h3 className="text-lg md:text-2xl font-medium capitalize text-gray-600">
+              <h3 className="text-lg md:text-2xl font-subHeading2 capitalize text-gray-600">
                 {plan.name}
               </h3>
               <div className="flex flex-col gap-3">
@@ -87,7 +87,7 @@ const Pricing = () => {
                 ))}
                 <Link
                   to="/underconstruction"
-                  className={`px-4 py-2 mt-4 text-sm transition ease-out duration-200 font-medium ${
+                  className={`px-4 py-2 mt-4 text-sm transition ease-out duration-200 font-subHeading2 ${
                     index === 0 && "uppercase"
                   } w-full text-center sm:w-fit border border-solid border-secondary-dark  rounded shadow-xl text-secondary-dark bg-white hover:bg-secondary-dark hover:text-white`}
                 >

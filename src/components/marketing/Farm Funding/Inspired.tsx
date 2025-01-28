@@ -14,7 +14,7 @@ const Inspired = () => {
             </div>
           </div>
           <div className="flex flex-col gap-4 w-full md:w-2/3">
-            <h3 className="text-center text-xs md:text-sm font-medium md:text-start">
+            <h3 className="text-center text-xs md:text-sm font-subHeading2 md:text-start">
               Mary’s Journey to Expansion
             </h3>
             <p className="text-center text-xs md:text-sm text-gray-700 md:text-start">
@@ -23,7 +23,7 @@ const Inspired = () => {
             </p>
           </div>
           <div className="flex flex-col gap-4 w-full md:w-2/3">
-            <h3 className="text-center text-xs md:text-sm font-medium md:text-start">
+            <h3 className="text-center text-xs md:text-sm font-subHeading2 md:text-start">
               Outcome
             </h3>
             <p className="text-center text-xs md:text-sm text-gray-700 md:text-start">
@@ -48,7 +48,7 @@ const Inspired = () => {
             </div>
           </div>
           <div className="flex flex-col gap-4 w-full md:w-2/3">
-            <h3 className="text-center text-xs md:text-sm font-medium md:text-start">
+            <h3 className="text-center text-xs md:text-sm font-subHeading2 md:text-start">
               Joseph’s Livestock Revolution
             </h3>
             <p className="text-center text-xs md:text-sm text-gray-700 md:text-start">
@@ -57,7 +57,7 @@ const Inspired = () => {
             </p>
           </div>
           <div className="flex flex-col gap-4 w-full md:w-2/3">
-            <h3 className="text-center text-xs md:text-sm font-medium md:text-start">
+            <h3 className="text-center text-xs md:text-sm font-subHeading2 md:text-start">
               Outcome 
             </h3>
             <p className="text-center text-xs md:text-sm text-gray-700 md:text-start">

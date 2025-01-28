@@ -20,7 +20,7 @@ const Statistics: React.FC<StatisticsProps> = ({ insight }) => {
         <h5
           className={` uppercase ${
             insight
-              ? "mx-auto max-w-3xl  text-center text-xs font-medium md:text-start md:text-sm"
+              ? "mx-auto max-w-3xl  text-center text-xs font-subHeading2 md:text-start md:text-sm"
               : "text-center text-xs"
           } mb-10`}
         >

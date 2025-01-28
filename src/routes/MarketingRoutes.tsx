@@ -9,6 +9,7 @@ import {
   ViewProductPage,
   CartPage,
   WishlistPage,
+  CheckoutPage,
 } from "../pages/marketing/marketplace";
 
 // Lazy load pages
@@ -199,6 +200,14 @@ const MarketingRoutes: RouteObject[] = [
             element: (
               <Suspense fallback={<div>Loading...</div>}>
                 <WishlistPage />
+              </Suspense>
+            ),
+          },
+          {
+            path: "checkout",
+            element: (
+              <Suspense fallback={<div>Loading...</div>}>
+                <CheckoutPage />
               </Suspense>
             ),
           },

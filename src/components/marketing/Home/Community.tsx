@@ -21,7 +21,9 @@ const Community = () => {
             />
             <div className="flex flex-col  items-center space-y-4 md:items-start">
               <p className="font-thin text-xs">December 2024</p>
-              <h3 className="font-medium text-sm uppercase">industry report</h3>
+              <h3 className="font-subHeading2 text-sm uppercase">
+                industry report
+              </h3>
               <p className="text-xs text-center md:text-start">
                 Lorem ipsum dolor sit amet consectetur. Amet ligula sem
                 adipiscing velit congue purus ullamcorper at eget. Amet tortor

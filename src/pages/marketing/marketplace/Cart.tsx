@@ -16,18 +16,7 @@ const cartHeaders = [
 const Cart = () => {
   const { setUpdateCart } = useShopContext();
   const [cartItems, setCartItems] = useState([]);
-  const [deliveryMode, setDeliveryMode] = useState("free");
   const [totalAmount, setTotalAmount] = useState(0);
-  const [deliveryFee, setDeliveryFee] = useState(0);
-
-  const handleDeliveryToggle = (mode: string) => {
-    if (deliveryMode === mode) {
-      setDeliveryMode("");
-    } else {
-      setDeliveryMode(mode);
-    }
-    setDeliveryFee(mode === "door" ? 5000 : 0);
-  };
 
   // Increment quantity
   const handleIncrementUnit = (productId: string) => {
@@ -78,7 +67,7 @@ const Cart = () => {
     toast.success("Cart cleared successfully");
   };
 
-  // Fetch single product and check if item is in cart
+  // Fetch products in cart
   useEffect(() => {
     // retrive cart items
     const cart = localStorage.getItem("cart");
@@ -103,7 +92,7 @@ const Cart = () => {
         {cartItems?.length > 0 && (
           <>
             <header className="w-full flex items-center justify-between">
-              <h2 className="font-bold text-xl text-gray-700">
+              <h2 className="font-subHeading2 text-xl text-gray-700">
                 My Cart{" "}
                 <span className="text-gray-400 text-base font-light pl-1">
                   ({cartItems?.length})
@@ -155,7 +144,7 @@ const Cart = () => {
                             </div>
                           </div>
                         </td>
-                        <td className="font-bold text-sm text-gray-600">
+                        <td className="font-subHeading text-sm text-gray-600">
                           N {price.toLocaleString()}
                         </td>
                         <td className="">
@@ -179,7 +168,7 @@ const Cart = () => {
                             </span>
                           </div>
                         </td>
-                        <td className="font-bold text-sm text-gray-600 ">
+                        <td className="font-subHeading text-sm text-gray-600 ">
                           N {total.toLocaleString()}
                         </td>
                         <td>
@@ -199,11 +188,14 @@ const Cart = () => {
 
             {/* Mobile View */}
             <div className="flex flex-col gap-10 w-full mt-10 sm:hidden">
-              {cartItems?.map((item: any) => {
+              {cartItems?.map((item: any, i) => {
                 const price = item?.discountPerUnit || item?.pricePerUnit;
                 const total = item?.quantity * price;
                 return (
-                  <div className="flex flex-col gap-3 shadow-md p-5 rounded-md">
+                  <div
+                    key={i}
+                    className="flex flex-col gap-3 shadow-md p-5 rounded-md"
+                  >
                     <div className="flex gap-4">
                       <img
                         src={item?.imageUrl}
@@ -220,7 +212,7 @@ const Cart = () => {
                             <p className="text-btn-txt uppercase text-gray-500">
                               Unit:
                             </p>
-                            <p className="capitalize text-sm text-gray-700 font-medium">
+                            <p className="capitalize text-sm text-gray-700 font-subHeading2">
                               N {price.toLocaleString()}
                             </p>
                           </div>
@@ -228,7 +220,7 @@ const Cart = () => {
                             <p className="text-btn-txt uppercase text-gray-500">
                               item total:
                             </p>
-                            <p className="capitalize text-sm text-gray-700 font-medium">
+                            <p className="capitalize text-sm text-gray-700 font-subHeading2">
                               N {total.toLocaleString()}
                             </p>
                           </div>
@@ -268,68 +260,18 @@ const Cart = () => {
             </div>
 
             {/* Subtoal and total view */}
-            <div className="flex flex-col justify-between gap-10 bg-secondary-light rounded-md p-7 md:p-12  mt-14 md:flex-row md:gap-y-5">
-              {/* shipping select */}
-              <div className="flex flex-col gap-4">
-                <h3>Choose shipping mode:</h3>
-                {/* shipping options */}
-                <div
-                  className="flex items-center gap-3"
-                  onClick={() => handleDeliveryToggle("free")}
-                >
-                  <div
-                    className={`w-3 h-3 rounded-full border border-secondary-dark ${
-                      deliveryMode === "free" && "bg-secondary-dark"
-                    } cursor-pointer`}
-                  ></div>
-                  <p className="text-sm text-gray-600">
-                    Store Pickup (in 20mins) -{" "}
-                    <span className="text-gray-700 font-bold block md:inline-block">
-                      FREE
-                    </span>
-                  </p>
-                </div>
-                <div
-                  className="flex items-center gap-3"
-                  onClick={() => handleDeliveryToggle("door")}
-                >
-                  <div
-                    className={`w-3 h-3 rounded-full border border-secondary-dark ${
-                      deliveryMode === "door" && "bg-secondary-dark"
-                    } cursor-pointer`}
-                  ></div>
-                  <p className="text-sm text-gray-600">
-                    Doorstep Delivery (2-3 days) -
-                    <span className="text-gray-700 font-bold block md:inline-block">
-                      N,5000
-                    </span>
-                  </p>
-                </div>
-              </div>
+            <div className="flex flex-col justify-end gap-10 bg-secondary-light rounded-md p-7 md:p-12  mt-14 md:flex-row md:gap-y-5">
               {/* Total view */}
-              <div className="flex flex-col gap-2 w-full sm:w-1/2 md:w-1/3">
-                <div className="flex justify-between gap-3">
-                  <p className="uppercase text-xs text-gray-700">Subtoal</p>
-                  <p className="text-sm text-gray-700 font-bold ">
-                    N {totalAmount?.toLocaleString()}
-                  </p>
-                </div>
-                <div className="flex justify-between gap-3">
-                  <p className="uppercase text-xs text-gray-700">shipping</p>
-                  <p className="text-sm text-gray-700 font-bold ">
-                    N{" "}
-                    {deliveryMode === "door" ? deliveryFee.toLocaleString() : 0}
-                  </p>
-                </div>
+              <div className="flex flex-col gap-2 w-full sm:w-1/2 ">
                 <div className="flex justify-between gap-3">
                   <p className="uppercase text-xs text-gray-700">total</p>
-                  <p className="text-sm text-gray-700 font-bold ">
-                    N {(totalAmount + deliveryFee).toLocaleString()}
+                  <p className="text-sm text-gray-700 font-subHeading ">
+                    N {totalAmount.toLocaleString()}
                   </p>
                 </div>
                 <Link
-                  to="/marketplace"
-                  className="bg-secondary-dark py-2 mt-2 w-full flex justify-center items-center sm:py-2 text-white text-sm sm:text-sm rounded-md cursor-pointer font-medium"
+                  to="/marketplace/checkout"
+                  className="bg-secondary-dark py-2 mt-2 w-full flex justify-center items-center sm:py-2 text-white text-sm sm:text-sm rounded-md cursor-pointer font-subHeading2"
                 >
                   Proceed to Checkout
                 </Link>
@@ -349,7 +291,7 @@ const Cart = () => {
             </p>
             <Link
               to="/marketplace"
-              className="bg-secondary-dark py-2 px-14 sm:px-20 sm:py-2 text-white text-sm sm:text-base rounded-md cursor-pointer font-medium"
+              className="bg-secondary-dark py-2 px-14 sm:px-20 sm:py-2 text-white text-sm sm:text-base rounded-md cursor-pointer font-subHeading2"
             >
               Start Shopping
             </Link>

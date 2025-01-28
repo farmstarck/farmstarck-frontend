@@ -82,7 +82,7 @@ const Wishlist = () => {
         {wishlistItems?.length > 0 && (
           <>
             <header className="w-full flex items-center justify-between">
-              <h2 className="font-bold text-xl text-gray-700">
+              <h2 className="font-subHeading2 text-xl text-gray-700">
                 My Wishlist{" "}
                 <span className="text-gray-400 text-base font-light pl-1">
                   ({wishlistItems?.length})
@@ -133,13 +133,13 @@ const Wishlist = () => {
                             </div>
                           </div>
                         </td>
-                        <td className="font-bold text-sm text-gray-600">
+                        <td className="font-subHeading text-sm text-gray-600">
                           N {price.toLocaleString()}
                         </td>
                         <td className="">
                           <button
                             onClick={() => handleAddToCart(item)}
-                            className=" px-2 py-2 flex justify-center items-center gap-2  text-white capitalize font-medium text-sm rounded-md  bg-secondary-dark w-44 sm:py-2"
+                            className=" px-2 py-2 flex justify-center items-center gap-2  text-white capitalize font-subHeading2 text-sm rounded-md  bg-secondary-dark w-44 sm:py-2"
                           >
                             <img
                               src={AddToCartImg}
@@ -186,7 +186,7 @@ const Wishlist = () => {
                             <p className="text-btn-txt uppercase text-gray-500">
                               Unit:
                             </p>
-                            <p className="capitalize text-sm text-gray-700 font-medium">
+                            <p className="capitalize text-sm text-gray-700 font-subHeading2">
                               N {price.toLocaleString()}
                             </p>
                           </div>
@@ -202,7 +202,7 @@ const Wishlist = () => {
                       />
                       <button
                         onClick={() => handleAddToCart(item)}
-                        className=" px-2 py-2 flex justify-center items-center gap-2  text-white capitalize font-medium  text-sm rounded-md border bg-secondary-dark w-32 sm:w-44 sm:py-2"
+                        className=" px-2 py-2 flex justify-center items-center gap-2  text-white capitalize font-subHeading2  text-sm rounded-md border bg-secondary-dark w-32 sm:w-44 sm:py-2"
                       >
                         <img
                           src={AddToCartImg}
@@ -231,7 +231,7 @@ const Wishlist = () => {
             </p>
             <Link
               to="/marketplace"
-              className="bg-secondary-dark py-2 px-14 sm:px-20 sm:py-2 text-white text-sm sm:text-base rounded-md cursor-pointer font-medium"
+              className="bg-secondary-dark py-2 px-14 sm:px-20 sm:py-2 text-white text-sm sm:text-base rounded-md cursor-pointer font-subHeading2"
             >
               Start Shopping
             </Link>

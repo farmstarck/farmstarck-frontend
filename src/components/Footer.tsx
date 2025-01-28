@@ -259,7 +259,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="max-w-3xl m-auto flex flex-col gap-6 justify-center items-center">
-        <h2 className="font-bold text-white text-sm md:text-base">
+        <h2 className="font-subHeading text-white text-sm md:text-base">
           STAY CONNNECTED
         </h2>
         <div className="flex space-x-6 items-end justify-end">

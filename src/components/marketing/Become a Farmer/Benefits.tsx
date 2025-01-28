@@ -52,7 +52,7 @@ const Benefits = () => {
               >
                 <img src={data.img} alt="" loading="lazy" className="w-6" />
                 <div>
-                  <h3 className="text-sm md:text-base font-medium">
+                  <h3 className="text-sm md:text-base font-subHeading2">
                     {data.title}
                   </h3>
                   <p className="text-xs md:text-sm">{data.description}</p>

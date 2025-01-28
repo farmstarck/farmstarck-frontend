@@ -81,7 +81,7 @@ const CustomTestimonial: React.FC<TestimonialProps> = ({
             {testimonials[current].text}
           </p>
           <div>
-            <h4 className="mt-4 font-bold text-primary text-sm md:text-base">
+            <h4 className="mt-4 font-subHeading text-primary text-sm md:text-base">
               {testimonials[current].author}
             </h4>
             <p className="text-xs  text-gray-400 md:text-sm">

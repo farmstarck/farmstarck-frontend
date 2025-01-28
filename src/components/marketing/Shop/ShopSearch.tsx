@@ -93,7 +93,7 @@ const ShopSearch: React.FC<ShopSearchProps> = ({
                 loading="lazy"
                 className="w-7 pb-5"
               />
-              <p className="font-medium text-xs">Not Found</p>
+              <p className="font-subHeading2 text-xs">Not Found</p>
               <p className="text-center text-xs font-light">
                 Sorry, the keyword you entered cannot be found. Please check
                 again or search with another keyword.

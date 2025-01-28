@@ -8,7 +8,7 @@ const Roadmap = () => {
         <p
           className={`text-xs  font-light cursor-pointer pb-2 ${
             activeMap === 1 &&
-            "font-medium border-b-2 border-solid border-secondary-dark"
+            "font-subHeading2 border-b-2 border-solid border-secondary-dark"
           }`}
           onClick={() => setActiveMap(1)}
         >
@@ -17,7 +17,7 @@ const Roadmap = () => {
         <p
           className={`text-xs  font-light cursor-pointer pb-2 ${
             activeMap === 2 &&
-            "font-medium border-b-2 border-solid border-secondary-dark"
+            "font-subHeading2 border-b-2 border-solid border-secondary-dark"
           }`}
           onClick={() => setActiveMap(2)}
         >
@@ -26,7 +26,7 @@ const Roadmap = () => {
         <p
           className={`text-xs  font-light cursor-pointer pb-2 ${
             activeMap === 3 &&
-            "font-medium border-b-2 border-solid border-secondary-dark"
+            "font-subHeading2 border-b-2 border-solid border-secondary-dark"
           }`}
           onClick={() => setActiveMap(3)}
         >

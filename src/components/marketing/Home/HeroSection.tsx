@@ -8,10 +8,10 @@ const HeroSection = () => {
       style={{ backgroundImage: `url(${mobileHeroBg})` }}
     >
       <div className="flex flex-col justify-end md:justify-center items-center max-w-2xl m-auto min-h-96 md:min-h-screen space-y-5 md:space-y-7">
-        <h1 className="uppercase font-medium text-white text-lg text-center sm:leading-relaxed sm:text-2xl md:text-4xl">
+        <h1 className="uppercase font-subHeading2 text-white text-lg text-center sm:leading-relaxed sm:text-2xl md:text-4xl">
           JOIN US IN ACHIEVING AGRICULTURAL EXCELLENCE
         </h1>
-        <p className="text-xs font-normal md:font-medium text-center text-white md:text-sm">
+        <p className="text-xs font-normal md:font-subHeading2 text-center text-white md:text-sm">
           Welcome to Farmstark! We're here to support your farming journey every
           step of the way. By joining us, you'll become part of a community
           committed to improving food security and strengthening the

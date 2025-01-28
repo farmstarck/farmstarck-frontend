@@ -127,14 +127,14 @@ const ScrollProductThumbnail: React.FC<ProductThumbnailProps> = ({
               </span>
             </div>
             <div>
-              <h3 className="text-xs md:text-sm font-medium uppercase text-gray-800 line-clamp-2">
+              <h3 className="text-xs md:text-sm font-subHeading2 uppercase text-gray-800 line-clamp-2">
                 {name}
               </h3>
               <Ratings initialRating={rating} readonly={true} />
             </div>
             <div className="border-t border-gray-300 py-1 flex flex-col ">
               <div className="flex gap-2 items-center">
-                <p className=" text-xs md:text-sm font-medium  md:font-extrabold">
+                <p className=" text-xs md:text-sm font-subHeading2  md:font-extrabold">
                   N
                   {discountPerUnit > 0
                     ? discountPerUnit.toLocaleString()
@@ -165,21 +165,21 @@ const ScrollProductThumbnail: React.FC<ProductThumbnailProps> = ({
         <div className="flex flex-col items-start gap-4 sm:flex-row md:items-center">
           <button
             onClick={() => handleAddToCart(productItems)}
-            className="w-full px-2 py-2 flex justify-center items-center gap-2 bg-transparent text-secondary-dark capitalize font-medium text-btn-txt md:text-sm rounded-md border border-secondary-dark md:px-8 md:w-auto sm:py-1"
+            className="w-full px-2 py-2 flex justify-center items-center gap-2 bg-transparent text-secondary-dark capitalize font-subHeading2 text-btn-txt md:text-sm rounded-md border border-secondary-dark md:px-8 md:w-auto sm:py-1"
           >
             <img src={AddToCartImg} alt="" className="w-4 md:w-30" />
             Add to Cart
           </button>
           <button
             onClick={() => handleToggleWishlist(productItems)}
-            className="px-2 py-2 bg-secondary-cart text-white uppercase font-medium text-sm rounded-md md:px-3 hidden sm:block"
+            className="px-2 py-2 bg-secondary-cart text-white uppercase font-subHeading2 text-sm rounded-md md:px-3 hidden sm:block"
           >
             <img src={AddToWishlistImg} alt="" className="w-4" />
           </button>
         </div>
         <button
           onClick={() => handleToggleWishlist(productItems)}
-          className="absolute top-1 right-1 px-2 py-2 bg-secondary-cart text-white uppercase font-medium text-sm rounded-full  block sm:hidden"
+          className="absolute top-1 right-1 px-2 py-2 bg-secondary-cart text-white uppercase font-subHeading2 text-sm rounded-full  block sm:hidden"
         >
           <img src={AddToWishlistImg} alt="" className="w-3" />
         </button>

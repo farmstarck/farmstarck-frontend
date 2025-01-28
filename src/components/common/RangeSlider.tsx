@@ -19,10 +19,10 @@ const RangeSlider: React.FC<RangeSliderProps> = ({
     <div className="flex flex-col items-center space-y-6 p-4">
       <div className="w-full max-w-md">
         <div className="flex justify-between w-full mb-4">
-          <p className=" text-xs font-medium text-gray-700">
+          <p className=" text-xs font-subHeading2 text-gray-700">
             N{values[0].toLocaleString()}
           </p>
-          <p className=" text-xs font-medium text-gray-700">
+          <p className=" text-xs font-subHeading2 text-gray-700">
             N{values[1].toLocaleString()}
           </p>
         </div>
