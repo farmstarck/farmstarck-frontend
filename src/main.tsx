@@ -6,9 +6,13 @@ import { BrowserRouter } from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById("root")!);
 
+// Dynamically set basename based on the environment
+const basename =
+  import.meta.env.MODE === "production" ? "/farmstarck-frontend" : "/";
+
 root.render(
   <React.StrictMode>
-    <BrowserRouter basename="/farmstarck-frontend">
+    <BrowserRouter basename={basename}>
       <App />
     </BrowserRouter>
   </React.StrictMode>

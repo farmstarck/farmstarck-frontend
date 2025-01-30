@@ -63,7 +63,10 @@ const PaymentMethodForm: React.FC<PaymentMethodFormProps> = ({
       onSubmit={handleSubmit}
       className="flex flex-col gap-8 w-full py-5 pt-12"
     >
-      <div className="w-full relative border border-gray-400 rounded-md flex justify-between items-center gap-3 p-2 sm:p-4">
+      <label
+        htmlFor="custom-checkbox1"
+        className="w-full relative border border-gray-400 rounded-md flex justify-between items-center gap-3 p-2 sm:p-4"
+      >
         <div className="flex items-center flex-1 gap-3">
           <div className="flex items-center justify-center p-2 rounded-full border border-gray-300">
             <img src={WalletImg} alt="" className="w-4" />
@@ -72,7 +75,7 @@ const PaymentMethodForm: React.FC<PaymentMethodFormProps> = ({
             <p className="inline-block text-sm text-gray-600 font-light">
               Pay with Wallet
             </p>
-            <span className="absolute right-1 top-0 py-[0.1rem] px-[0.3rem] text-[0.4rem] bg-secondary-light text-gray-900 rounded sm:relative sm:right-0 sm:ml-2">
+            <span className="absolute right-1 top-0 py-[0.1rem] px-[0.3rem] text-[0.7rem] bg-secondary-light text-gray-900 rounded sm:relative sm:right-0 sm:ml-2">
               Coming soon
             </span>
             <p className="font-subHeading2 text-xs md:text-sm">
@@ -112,8 +115,11 @@ const PaymentMethodForm: React.FC<PaymentMethodFormProps> = ({
             </svg>
           </label>
         </div>
-      </div>
-      <div className="w-full relative border border-gray-400 rounded-md flex justify-between items-center gap-3 p-2 sm:p-4">
+      </label>
+      <label
+        htmlFor="custom-checkbox2"
+        className="w-full relative border border-gray-400 cursor-pointer rounded-md flex justify-between items-center gap-3 p-2 sm:p-4"
+      >
         <div className="flex items-center flex-1 gap-3">
           <div className="flex items-center justify-center p-2 rounded-full border border-gray-300">
             <img src={PaystackImg} alt="" className="w-4" />
@@ -155,8 +161,11 @@ const PaymentMethodForm: React.FC<PaymentMethodFormProps> = ({
             </svg>
           </label>
         </div>
-      </div>
-      <div className="w-full relative border border-gray-400 rounded-md flex justify-between items-center gap-3 p-2 sm:p-4">
+      </label>
+      <label
+        htmlFor="custom-checkbox3"
+        className="w-full relative border border-gray-400 cursor-pointer rounded-md flex justify-between items-center gap-3 p-2 sm:p-4"
+      >
         <div className="flex items-center flex-1 gap-3">
           <div className="flex items-center justify-center p-2 rounded-full border border-gray-300">
             <img src={CryptoImg} alt="" className="w-4" />
@@ -198,7 +207,7 @@ const PaymentMethodForm: React.FC<PaymentMethodFormProps> = ({
             </svg>
           </label>
         </div>
-      </div>
+      </label>
 
       <button className="bg-secondary-dark py-2 rounded-md cursor-pointer border border-secondary-dark text-white hover:bg-white hover:text-secondary-dark">
         Continue

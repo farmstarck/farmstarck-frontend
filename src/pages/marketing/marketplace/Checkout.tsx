@@ -119,7 +119,7 @@ const Checkout = () => {
         {/* Checkout details display */}
         <div className="flex flex-col gap-y-12">
           {/* Delivery details */}
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-4">
             <label className="text-sm capitalize font-light text-gray-500">
               Delivery Details
             </label>
@@ -149,19 +149,22 @@ const Checkout = () => {
                   />
                   <label
                     htmlFor="custom-checkbox4"
-                    className={`w-3 h-3  flex items-center justify-center rounded-full ${
+                    className={`w-4 h-4  flex items-center justify-center rounded-full ${
                       !isAddressDefault && "border border-gray-400"
                     } peer-checked:bg-secondary-dark peer-checked:border-secondary-dark cursor-pointer transition-all`}
                   ></label>
-                  <span className="text-xs text-gray-600">
+                  <label
+                    htmlFor="custom-checkbox4"
+                    className="text-sm text-gray-600 cursor-pointer"
+                  >
                     Save shipping address as default
-                  </span>
+                  </label>
                 </div>
               </div>
             )}
           </div>
           {/* Delivery method */}
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-4">
             <label className="text-sm capitalize font-light text-gray-500">
               Delivery Method
             </label>
@@ -178,7 +181,7 @@ const Checkout = () => {
               <img src={AngleRightImg} alt="" className="w-[0.4rem]" />
             </div>
             {deliveryMethod && (
-              <div className="flex flex-col gap-2">
+              <div className="flex flex-col gap-3">
                 <div className="flex items-center space-x-2">
                   <input
                     type="checkbox"
@@ -191,14 +194,17 @@ const Checkout = () => {
                   />
                   <label
                     htmlFor="custom-checkbox5"
-                    className={`w-3 h-3  flex items-center justify-center rounded-full ${
+                    className={`w-4 h-4  flex items-center justify-center rounded-full ${
                       !isStandandardDelivery && "border border-gray-400"
                     } peer-checked:bg-secondary-dark peer-checked:border-secondary-dark cursor-pointer transition-all`}
                   ></label>
-                  <span className="text-xs text-gray-600 font-subHeading2">
+                  <label
+                    htmlFor="custom-checkbox5"
+                    className="text-sm cursor-pointer text-gray-600"
+                  >
                     Standard Delivery{" "}
                     <span className="font-light">2-3 days shipping</span>
-                  </span>
+                  </label>
                 </div>
                 <div className="flex items-center space-x-2">
                   <input
@@ -213,15 +219,15 @@ const Checkout = () => {
                   />
                   <label
                     htmlFor="custom-checkbox6"
-                    className={`w-3 h-3  flex items-center justify-center rounded-full ${
+                    className={`w-4 h-4  flex items-center justify-center rounded-full ${
                       !isExpressDelivery && "border border-gray-400"
                     } peer-checked:bg-secondary-dark peer-checked:border-secondary-dark cursor-auto transition-all`}
                   ></label>
-                  <span className="text-xs text-gray-600 font-subHeading2">
-                    Exporess Delivery{" "}
+                  <label className="text-sm cursor-pointer text-gray-600 ">
+                    Express Delivery{" "}
                     <span className="font-light">Within 24 hours</span>
-                  </span>
-                  <span className="py-[0.1rem] px-[0.3rem] text-[0.4rem] text-center bg-secondary-light text-gray-900 rounded sm:relative sm:right-0 sm:ml-2">
+                  </label>
+                  <span className="py-[0.1rem] px-[0.3rem] text-[0.7rem] text-center bg-secondary-light text-gray-900 rounded sm:relative sm:right-0 sm:ml-2">
                     Coming soon
                   </span>
                 </div>
