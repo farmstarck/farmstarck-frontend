@@ -141,7 +141,7 @@ const Navbar = () => {
             ></span>
           </button>
         </div>
-        <Link to="/underconstruction" onClick={closeMenu}>
+        <Link to="/auth/login" onClick={closeMenu}>
           <div className="py-3 px-9 bg-secondary-dark rounded cursor-pointer text-white text-sm">
             SIGN IN
           </div>

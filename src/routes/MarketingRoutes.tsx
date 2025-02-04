@@ -2,6 +2,7 @@ import { Suspense, lazy } from "react";
 import { RouteObject } from "react-router-dom";
 import MarketingLayout from "../layouts/MarketingLayout";
 import ShopLayout from "../layouts/ShopLayout";
+import { SigninPage, SignupPage } from "../pages/marketing/auth";
 import {
   MarketPlacePage,
   CategoryPage,
@@ -42,6 +43,29 @@ const UnderConstructionPage = lazy(
 
 // Define the marketing routes and their corresponding components
 const MarketingRoutes: RouteObject[] = [
+  // auth routes
+  {
+    path: "auth",
+    children: [
+      {
+        path: "login",
+        element: (
+          <Suspense fallback={<div>Loading...</div>}>
+            <SigninPage />
+          </Suspense>
+        ),
+      },
+      {
+        path: "signup",
+        element: (
+          <Suspense fallback={<div>Loading...</div>}>
+            <SignupPage />
+          </Suspense>
+        ),
+      },
+    ],
+  },
+  // web pages routes
   {
     path: "/",
     element: <MarketingLayout />,
@@ -188,7 +212,6 @@ const MarketingRoutes: RouteObject[] = [
               </Suspense>
             ),
           },
-
           {
             path: "product/:slug/:id",
             element: (
