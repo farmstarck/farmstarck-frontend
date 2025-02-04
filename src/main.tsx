@@ -7,8 +7,7 @@ import { BrowserRouter } from "react-router-dom";
 const root = ReactDOM.createRoot(document.getElementById("root")!);
 
 // Dynamically set basename based on the environment
-const basename =
-  import.meta.env.MODE === "production" ? "/farmstarck-frontend" : "/";
+const basename = import.meta.env.MODE === "production" ? "/" : "/";
 
 root.render(
   <React.StrictMode>

@@ -13,7 +13,7 @@ const Category = () => {
   );
 
   return (
-    <div className=" relative w-full flex flex-col mt-20 gap-8 max-w-6xl m-auto px-5 md:px-0 py-5">
+    <div className=" relative w-full flex flex-col mt-36 gap-8 max-w-6xl m-auto px-5 md:px-0 py-5">
       <div className="flex flex-col item-center justify-center w-full bg-gradient-to-b p-3 md:p-10 from-secondary-dark via-secondary-dark to-secondary-veryDark mix-blend-plus-lighter rounded-lg md:flex-row gap-3 md:justify-between  md:gap-0">
         <div className="w-full flex flex-col space-y-2 sm:space-y-8 items-center justify-center">
           <h2 className="md:text-4xl uppercase text-white">Categories</h2>

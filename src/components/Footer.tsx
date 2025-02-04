@@ -63,7 +63,7 @@ const Footer = () => {
     //   content: [
     //     "+234 000 0000 000",
     //     "info@farmstarck.com",
-    //     "Lorem ispum do not know the current address of farstack company",
+    //     "298, herbert macaulay way, sabo yaba, lagos state, nigeria.",
     //   ],
     // },
   ];
@@ -248,8 +248,8 @@ const Footer = () => {
               <li className="text-white text-base md:text-lg  transition ease-out duration-100 hover:text-opacity-80">
                 info@farmstarck.com
               </li>
-              <li className="text-white text-base md:text-lg  transition ease-out duration-100 hover:text-opacity-80">
-                Lorem ispum do not know the current address of farstack company
+              <li className="text-white text-base md:text-lg capitalize  transition ease-out duration-100 hover:text-opacity-80">
+                298, herbert macaulay way, sabo yaba, lagos state, nigeria.
               </li>
             </ul>
           </div>

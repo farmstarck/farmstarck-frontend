@@ -10,6 +10,7 @@ import {
   CartPage,
   WishlistPage,
   CheckoutPage,
+  AllProductDisplayPage,
 } from "../pages/marketing/marketplace";
 
 // Lazy load pages
@@ -172,6 +173,14 @@ const MarketingRoutes: RouteObject[] = [
             ),
           },
           {
+            path: "products/:name",
+            element: (
+              <Suspense fallback={<div>Loading...</div>}>
+                <AllProductDisplayPage />
+              </Suspense>
+            ),
+          },
+          {
             path: "categories/:name",
             element: (
               <Suspense fallback={<div>Loading...</div>}>
@@ -179,6 +188,7 @@ const MarketingRoutes: RouteObject[] = [
               </Suspense>
             ),
           },
+
           {
             path: "product/:slug/:id",
             element: (

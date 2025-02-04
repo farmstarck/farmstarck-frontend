@@ -2,6 +2,7 @@ import { Dispatch, SetStateAction, useState } from "react";
 import jsonProducts from "../../../../../data/products.json";
 import ScrollProductThumbnail from "./ScrollProductThumbnail";
 import { Link } from "react-router-dom";
+import { convertProductNameToSlugs } from "../../../../utils/slugifyProductName";
 
 type MayAlsoLikeProps = {
   tag: string;
@@ -21,7 +22,7 @@ const MayAlsoLike: React.FC<MayAlsoLikeProps> = ({
       <div className="flex justify-between items-center">
         <h5 className="capitalize text-gray-600 text-sm md:text-base">{tag}</h5>
         <Link
-          to={tag}
+          to={`../products/${convertProductNameToSlugs(tag)}`}
           className="text-gray-500 text-sm transition ease-out duration-200 hover:text-secondary-dark"
         >
           View All
