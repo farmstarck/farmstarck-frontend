@@ -1,7 +1,6 @@
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import jsonProducts from "../../../../data/products.json";
-import toast from "react-hot-toast";
 import Ratings from "../../../components/common/Ratings";
 import AddToCartImg from "../../../assets/svg/add-cart.svg";
 import AddToWishlistImg from "../../../assets/svg/add-wishlist.svg";
@@ -16,16 +15,20 @@ import { useShopContext } from "../../../context/ShopContext";
 
 const ViewProduct = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const { setUpdateCart, setUpdateWishList } = useShopContext();
+  const {
+    cartItems,
+    handleAddToCart,
+    handleDecrementUnit,
+    handleIncrementUnit,
+    handleToggleWishlist,
+  } = useShopContext();
 
-  const { id } = useParams();
+  const { id }: any = useParams();
   const [product, setProduct] = useState<any>();
   const [selectedImage, setSelectedImage] = useState<string | "">();
-  const [unit, setUnit] = useState(1);
   const [isDetailsOpen, setIsDetailsOpen] = useState(true);
   const [isDeliveryOpen, setIsDeliveryOpen] = useState(true);
   const [isRaingsOpen, setIsRaingsOpen] = useState(true);
-  const [cartItems, setCartItems] = useState([]);
 
   //Set main product image
   useEffect(() => {
@@ -43,105 +46,6 @@ const ViewProduct = () => {
     setter: Dispatch<SetStateAction<boolean>>
   ) => {
     setter(value);
-  };
-
-  //---------- CART METHODS--------//
-
-  // Increment quantity
-  const handleIncrementUnit = () => {
-    setUnit(unit + 1);
-
-    //handle logic
-    const updatedCart: any = cartItems?.map((item: any) =>
-      item.id === product?.id ? { ...item, quantity: item.quantity + 1 } : item
-    );
-
-    setCartItems(updatedCart);
-    localStorage.setItem("cart", JSON.stringify(updatedCart));
-  };
-
-  //Decrement quantity
-  const handleDecrementUnit = () => {
-    if (unit > 1) {
-      setUnit(unit - 1);
-      //handle logic
-      const updatedCart: any = cartItems?.map((item: any) =>
-        item.id === product?.id
-          ? { ...item, quantity: item.quantity - 1 }
-          : item
-      );
-
-      setCartItems(updatedCart);
-      localStorage.setItem("cart", JSON.stringify(updatedCart));
-    } else {
-      removeFromCart(product.id);
-    }
-  };
-
-  // Add product to cart
-  const handleAddToCart = (product: any) => {
-    const tempCart = localStorage.getItem("cart");
-    const cart = tempCart ? JSON.parse(tempCart) : [];
-
-    // Check if the product already exists in the cart
-    const existingProductIndex = cart.findIndex(
-      (item: ProductProps) => item.id === product.id
-    );
-
-    if (existingProductIndex !== -1) {
-      // Increase quantity of the existing product
-      cart[existingProductIndex].quantity += 1;
-      toast.success("Product already in cart");
-    } else {
-      // Add new product with an initial quantity of 1
-      cart.push({ ...product, quantity: 1 });
-      toast.success("Product added to cart");
-    }
-
-    setCartItems(cart);
-
-    // Update localStorage
-    localStorage.setItem("cart", JSON.stringify(cart));
-
-    setUpdateCart(Date.now());
-  };
-
-  // Remove product from cart
-  const removeFromCart = (productId: string) => {
-    const tempCart = localStorage.getItem("cart");
-    const cart = tempCart ? JSON.parse(tempCart) : [];
-
-    const updatedCart = cart.filter((item: any) => item.id !== productId);
-    toast.success("Product removed cart");
-
-    setCartItems(updatedCart);
-    localStorage.setItem("cart", JSON.stringify(updatedCart));
-    setUpdateCart(Date.now());
-  };
-
-  // toggle (add / remove)  wishlist
-  const handleToggleWishlist = (product: any) => {
-    const tempWishlist = localStorage.getItem("wishlist");
-    let wishlist = tempWishlist ? JSON.parse(tempWishlist) : [];
-
-    // Check if the product already exists in the wishlist
-    const existingProductIndex = wishlist.findIndex(
-      (item: ProductProps) => item.id === product.id
-    );
-
-    if (existingProductIndex !== -1) {
-      wishlist = wishlist.filter((item: any) => item.id !== product.id);
-      toast.success("Product removed from wishlist");
-    } else {
-      // Add new product with an initial quantity of 1
-      wishlist.push({ ...product, quantity: 1 });
-      toast.success("Product added to wishlist successfully!");
-    }
-
-    // Update localStorage
-    localStorage.setItem("wishlist", JSON.stringify(wishlist));
-
-    setUpdateWishList(Date.now());
   };
 
   // Fetch single product and check if item is in cart
@@ -239,29 +143,30 @@ const ViewProduct = () => {
               </div>
               {/* details add to cart */}
               <div className="flex  items-start gap-4 mt-3 md:mt-10  md:items-center">
+                {/* when item is not in cart */}
                 {product &&
                   (product?.quantity == undefined || product?.quantity < 1) && (
                     <button
-                      onClick={() => handleAddToCart(product)}
+                      onClick={() => handleAddToCart(id)}
                       className=" px-2 py-2 flex justify-center items-center gap-2 bg-transparent text-secondary-dark capitalize font-subHeading2 text-btn-txt md:text-sm rounded-md border border-secondary-dark  w-[100%] sm:w-52 sm:py-2"
                     >
                       <img src={AddToCartImg} alt="" className="w-4 md:w-30" />
                       Add to Cart
                     </button>
                   )}
-
+                {/* When item is in cart */}
                 {product && product?.quantity > 0 && (
                   <div className="flex flex-col gap-2 py-2 w-[100%] sm:w-fit sm:py-2">
                     <div className="border border-secondary-light p-2 rounded flex gap-5 items-center justify-between w-[100%] sm:w-52 sm:py-2 ">
                       <span
-                        onClick={handleDecrementUnit}
+                        onClick={() => handleDecrementUnit(id)}
                         className="cursor-pointer w-5 h-5 bg-gray-500 text-white text-base rounded flex items-center justify-center"
                       >
                         -
                       </span>
                       <span className="text-sm">{product?.quantity}</span>
                       <span
-                        onClick={handleIncrementUnit}
+                        onClick={() => handleIncrementUnit(id)}
                         className="cursor-pointer w-5 h-5 bg-secondary-dark text-white text-base rounded flex items-center justify-center"
                       >
                         +
@@ -271,7 +176,7 @@ const ViewProduct = () => {
                 )}
 
                 <button
-                  onClick={() => handleToggleWishlist(product)}
+                  onClick={() => handleToggleWishlist(id)}
                   className="px-2 py-2 bg-secondary-cart text-white uppercase font-subHeading2 text-sm rounded-md md:px-3    sm:py-3"
                 >
                   <img src={AddToWishlistImg} alt="" className="w-4" />
@@ -471,11 +376,7 @@ const ViewProduct = () => {
             </div>
           </div>
           {/* May also like */}
-          <MayAlsoLike
-            tag="You may also like "
-            setUpdateCart={setUpdateCart}
-            setUpdateWishList={setUpdateWishList}
-          />
+          <MayAlsoLike tag="You may also like " />
         </div>
       </div>
 

@@ -5,11 +5,9 @@ import ProductSection from "../../../components/marketing/Shop/landing/ProductSe
 import Request from "../../../components/marketing/Shop/landing/Request";
 import { BackDrop } from "../../../components/common/BackDrop";
 import RequestProductForm from "../../../components/marketing/Shop/landing/RequestProductForm";
-import { useShopContext } from "../../../context/ShopContext";
 
 const MarketPlacePage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const { setUpdateCart, setUpdateWishList } = useShopContext();
   const handleModalClose = () => {
     setIsModalOpen(false);
   };
@@ -19,16 +17,8 @@ const MarketPlacePage = () => {
       <div className=" relative w-full flex flex-col mt-20 gap-8 max-w-6xl m-auto px-5 md:px-0 py-20">
         <HeroSection />
         <CategorySection />
-        <ProductSection
-          tag="popular products"
-          setUpdateCart={setUpdateCart}
-          setUpdateWishList={setUpdateWishList}
-        />
-        <ProductSection
-          tag="best rated"
-          setUpdateCart={setUpdateCart}
-          setUpdateWishList={setUpdateWishList}
-        />
+        <ProductSection tag="popular products" />
+        <ProductSection tag="best rated" />
       </div>
       <Request setIsModalOpen={setIsModalOpen} />
 

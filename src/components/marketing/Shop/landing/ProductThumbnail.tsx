@@ -1,11 +1,12 @@
-import { Dispatch, SetStateAction, useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ProductProps } from "../../../../pages/marketing/marketplace";
-import toast from "react-hot-toast";
+import jsonProducts from "../../../../../data/products.json";
 import Ratings from "../../../common/Ratings";
 import AddToCartImg from "../../../../assets/svg/add-cart.svg";
 import AddToWishlistImg from "../../../../assets/svg/add-wishlist.svg";
 import { convertProductNameToSlugs } from "../../../../utils/slugifyProductName";
+import { useShopContext } from "../../../../context/ShopContext";
 
 type ProductThumbnailProps = {
   id: string;
@@ -17,8 +18,6 @@ type ProductThumbnailProps = {
   rating: number;
   stockQuantity: number;
   imageUrl: string;
-  setUpdateCart: Dispatch<SetStateAction<any>>;
-  setUpdateWishList: Dispatch<SetStateAction<any>>;
 };
 
 const ProductThumbnail: React.FC<ProductThumbnailProps> = ({
@@ -31,76 +30,42 @@ const ProductThumbnail: React.FC<ProductThumbnailProps> = ({
   rating,
   stockQuantity,
   imageUrl,
-  setUpdateCart,
-  setUpdateWishList,
 }) => {
   const navigate = useNavigate();
-  const [productItems] = useState({
-    id,
-    name,
-    category,
-    pricePerUnit,
-    discountPerUnit,
-    type,
-    rating,
-    stockQuantity,
-    imageUrl,
-  });
-
-  const handleAddToCart = (product: any) => {
-    const tempCart = localStorage.getItem("cart");
-    const cart = tempCart ? JSON.parse(tempCart) : [];
-
-    // Check if the product already exists in the cart
-    const existingProductIndex = cart.findIndex(
-      (item: ProductProps) => item.id === product.id
-    );
-
-    if (existingProductIndex !== -1) {
-      // Increase quantity of the existing product
-      cart[existingProductIndex].quantity += 1;
-      toast.success("Product already in cart");
-    } else {
-      // Add new product with an initial quantity of 1
-      cart.push({ ...product, quantity: 1 });
-      toast.success("Product added to cart successfully!");
-    }
-
-    // Update localStorage
-    localStorage.setItem("cart", JSON.stringify(cart));
-
-    setUpdateCart(Date.now());
-  };
-
-  // toggle (add / remove)  wishlist
-  const handleToggleWishlist = (product: any) => {
-    const tempWishlist = localStorage.getItem("wishlist");
-    let wishlist = tempWishlist ? JSON.parse(tempWishlist) : [];
-
-    // Check if the product already exists in the wishlist
-    const existingProductIndex = wishlist.findIndex(
-      (item: ProductProps) => item.id === product.id
-    );
-
-    if (existingProductIndex !== -1) {
-      wishlist = wishlist.filter((item: any) => item.id !== product.id);
-      toast.success("Product removed from wishlist");
-    } else {
-      // Add new product with an initial quantity of 1
-      wishlist.push({ ...product, quantity: 1 });
-      toast.success("Product added to wishlist successfully!");
-    }
-
-    // Update localStorage
-    localStorage.setItem("wishlist", JSON.stringify(wishlist));
-
-    setUpdateWishList(Date.now());
-  };
+  const {
+    cartItems,
+    handleAddToCart,
+    handleDecrementUnit,
+    handleIncrementUnit,
+    handleToggleWishlist,
+  } = useShopContext();
+  const [product, setProduct] = useState<any>();
 
   const navigateToRoute = () => {
     const productSlug = convertProductNameToSlugs(name);
     navigate(`/marketplace/product/${productSlug}/${id}`);
   };
+
+  // Fetch single product and check if item is in cart
+  useEffect(() => {
+    const tempProduct = jsonProducts.find((p: ProductProps) => p.id === id);
+
+    // retrive cart items
+    const cart = localStorage.getItem("cart");
+    const parsedCart = cart ? JSON.parse(cart) : [];
+
+    const filteredProduct = parsedCart.find(
+      (p: any) => p.id === tempProduct?.id
+    );
+
+    if (filteredProduct) {
+      setProduct(filteredProduct);
+    } else {
+      setProduct(tempProduct);
+    }
+
+    // setCartItems(parsedCart);
+  }, [id, cartItems]);
   return (
     <div>
       <div className="relative w-full overflow-hidden flex flex-col gap-2 md:gap-5 p-3  rounded-lg bg-secondary-light md:p-6">
@@ -162,26 +127,52 @@ const ProductThumbnail: React.FC<ProductThumbnailProps> = ({
             </div>
           </div>
         </div>
-        <div className="flex flex-col items-start gap-4 sm:flex-row md:items-center">
+
+        {/* details add to cart */}
+        <div className="flex  items-start gap-4 mt-3 md:mt-10  md:items-center">
+          {/* when item is not in cart */}
+          {product &&
+            (product?.quantity == undefined || product?.quantity < 1) && (
+              <button
+                onClick={() => handleAddToCart(id)}
+                className=" px-2 py-2 flex justify-center items-center gap-2 bg-transparent text-secondary-dark capitalize font-subHeading2 text-btn-txt md:text-sm rounded-md border border-secondary-dark  w-[100%] sm:w-52 sm:py-2"
+              >
+                <img src={AddToCartImg} alt="" className="w-4 md:w-30" />
+                Add to Cart
+              </button>
+            )}
+          {/* When item is in cart */}
+          {product && product?.quantity > 0 && (
+            <div className="flex flex-col gap-2 py-2 w-[100%] sm:w-fit sm:py-2">
+              <div className="border border-secondary-dark p-2 rounded flex gap-5 items-center justify-between w-[100%] sm:w-52 sm:py-2 ">
+                <span
+                  onClick={() => handleDecrementUnit(id)}
+                  className="cursor-pointer w-5 h-5 bg-gray-500 text-white text-base rounded flex items-center justify-center"
+                >
+                  -
+                </span>
+                <span className="text-sm">{product?.quantity}</span>
+                <span
+                  onClick={() => handleIncrementUnit(id)}
+                  className="cursor-pointer w-5 h-5 bg-secondary-dark text-white text-base rounded flex items-center justify-center"
+                >
+                  +
+                </span>
+              </div>
+            </div>
+          )}
           <button
-            onClick={() => handleAddToCart(productItems)}
-            className="w-full px-2 py-2 flex justify-center items-center gap-2 bg-transparent text-secondary-dark capitalize font-subHeading2 text-btn-txt md:text-sm rounded-md border border-secondary-dark md:px-8 md:w-auto sm:py-1"
-          >
-            <img src={AddToCartImg} alt="" className="w-4 md:w-30" />
-            Add to Cart
-          </button>
-          <button
-            onClick={() => handleToggleWishlist(productItems)}
+            onClick={() => handleToggleWishlist(id)}
             className="px-2 py-2 bg-secondary-cart text-white uppercase font-subHeading2 text-sm rounded-md md:px-3 hidden sm:block"
           >
             <img src={AddToWishlistImg} alt="" className="w-4" />
           </button>
         </div>
         <button
-          onClick={() => handleToggleWishlist(productItems)}
+          onClick={() => handleToggleWishlist(id)}
           className="absolute top-1 right-1 px-2 py-2 bg-secondary-cart text-white uppercase font-subHeading2 text-sm rounded-full  block sm:hidden"
         >
-          <img src={AddToWishlistImg} alt="" className="w-3" />
+          <img src={AddToWishlistImg} alt="" className="w-4" />
         </button>
       </div>
     </div>

@@ -2,7 +2,13 @@ import { Suspense, lazy } from "react";
 import { RouteObject } from "react-router-dom";
 import MarketingLayout from "../layouts/MarketingLayout";
 import ShopLayout from "../layouts/ShopLayout";
-import { SigninPage, SignupPage } from "../pages/marketing/auth";
+import {
+  SigninPage,
+  SignupPage,
+  VerifyEmailPage,
+  CreatePasswordPage,
+  ForgotPasswordPage,
+} from "../pages/marketing/auth";
 import {
   MarketPlacePage,
   CategoryPage,
@@ -60,6 +66,30 @@ const MarketingRoutes: RouteObject[] = [
         element: (
           <Suspense fallback={<div>Loading...</div>}>
             <SignupPage />
+          </Suspense>
+        ),
+      },
+      {
+        path: "verify-email",
+        element: (
+          <Suspense fallback={<div>Loading...</div>}>
+            <VerifyEmailPage />
+          </Suspense>
+        ),
+      },
+      {
+        path: "forgot-password",
+        element: (
+          <Suspense fallback={<div>Loading...</div>}>
+            <ForgotPasswordPage />
+          </Suspense>
+        ),
+      },
+      {
+        path: "create-password",
+        element: (
+          <Suspense fallback={<div>Loading...</div>}>
+            <CreatePasswordPage />
           </Suspense>
         ),
       },

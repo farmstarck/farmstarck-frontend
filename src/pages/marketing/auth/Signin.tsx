@@ -1,24 +1,51 @@
 import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import LogoImg from "../../../assets/svg/auth-midlogo.svg";
 import GoogleIcon from "../../../assets/svg/google-icon.svg";
 import FacebookIcon from "../../../assets/svg/facebook-auth-icon.svg";
 import EmailIcon from "../../../assets/svg/mail-icon.svg";
 import OpenEyeIcon from "../../../assets/svg/eye-open.svg";
 import CloseEyeIcon from "../../../assets/svg/eye-close.svg";
-import { Link } from "react-router-dom";
+import toast from "react-hot-toast";
 
 const Signin = () => {
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isRemeberMe, setIsRemeberMe] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
 
+  const handleSubmit = (e: any) => {
+    e.preventDefault();
+
+    const regex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+    if (!regex.test(email)) {
+      toast.error("Invalid email address.");
+      setEmail("");
+      return;
+    }
+
+    if (email === "" || password === "") {
+      toast.error("Please fill all required fields.");
+      return;
+    }
+    setEmail("");
+    setPassword("");
+
+    toast.success("OTP sent to email address");
+
+    navigate("/auth/verify-email");
+  };
+
   return (
     <div className="flex w-full  h-screen">
       <div className="w-1/2 h-screen  bg-cover bg-[url('../src/assets/svg/auth-bg.svg')]  bg-no-repeat hidden md:flex justify-center items-center">
-        <div className="relative auth_img w-20 h-20 bg-white rounded-full flex justify-center items-center">
+        <Link
+          to="/"
+          className="relative auth_img w-20 h-20 bg-white rounded-full flex justify-center items-center"
+        >
           <img src={LogoImg} alt="logo" className="w-7" />
-        </div>
+        </Link>
       </div>
       <div className="w-full md:w-1/2 bg-white flex items-center justify-center px-5 sm:px-20">
         <div className="w-full sm:w-5/6  flex flex-col justify-center items-center gap-5 ">
@@ -43,7 +70,10 @@ const Signin = () => {
           <div className="py-1">
             <p className="text-gray-600 text-sm">OR</p>
           </div>
-          <form className="w-full flex flex-col gap-5 py-2">
+          <form
+            className="w-full flex flex-col gap-5 py-2"
+            onSubmit={handleSubmit}
+          >
             <div className="flex flex-col gap-1">
               <label className="font-subHeading2 text-xs md:text-sm text-gray-500">
                 Email
@@ -128,12 +158,15 @@ const Signin = () => {
                   </span>
                 </div>
               </div>
-              <Link to="/underconstruction" className="text-sm text-gray-500">
-                Forget password
+              <Link
+                to="/auth/forgot-password"
+                className="text-sm text-gray-500"
+              >
+                Forget password?
               </Link>
             </div>
             <button className="bg-secondary-dark py-2 rounded-md cursor-pointer border border-secondary-dark text-white hover:bg-white hover:text-secondary-dark">
-              Sigin In
+              Sign In
             </button>
             <p className="text-sm text-center">
               Don't have an account?{" "}

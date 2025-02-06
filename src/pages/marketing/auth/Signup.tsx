@@ -7,9 +7,11 @@ import FacebookIcon from "../../../assets/svg/facebook-auth-icon.svg";
 import EmailIcon from "../../../assets/svg/mail-icon.svg";
 import OpenEyeIcon from "../../../assets/svg/eye-open.svg";
 import CloseEyeIcon from "../../../assets/svg/eye-close.svg";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 
 const Signup = () => {
+  const navigate = useNavigate();
   const [phoneError, setPhoneError] = useState(false);
   const [isValid, setIsValid] = useState(true);
   const [value, setValue] = useState("");
@@ -30,12 +32,49 @@ const Signup = () => {
     }
   };
 
+  const handleSubmit = (e: any) => {
+    e.preventDefault();
+
+    if (value === undefined || value === null || value === "") {
+      setPhoneError(true);
+      return;
+    }
+    if (phoneError || !isValid) return;
+    if (fullname === "" || email === "" || password === "") {
+      toast.error("Please fill all required fields.");
+      return;
+    }
+
+    const regex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+    if (!regex.test(email)) {
+      toast.error("Invalid email address.");
+      setEmail("");
+      return;
+    }
+
+    if (email === "" || password === "") {
+      toast.error("Please fill all required fields.");
+      return;
+    }
+    setFullname("");
+    setEmail("");
+    setPassword("");
+    setValue("");
+
+    toast.success("OTP sent to email address");
+
+    navigate("/auth/verify-email");
+  };
+
   return (
     <div className="flex w-full py-12  overflow-y-auto no-scrollbar sm:h-screen sm:py-0">
       <div className="w-1/2 h-screen  bg-cover bg-[url('../src/assets/svg/auth-bg.svg')]  bg-no-repeat hidden md:flex justify-center items-center">
-        <div className="relative auth_img w-20 h-20 bg-white rounded-full flex justify-center items-center">
+        <Link
+          to="/"
+          className="relative auth_img w-20 h-20 bg-white rounded-full flex justify-center items-center"
+        >
           <img src={LogoImg} alt="logo" className="w-7" />
-        </div>
+        </Link>
       </div>
       <div className="w-full md:w-1/2 bg-white flex items-center justify-center  px-5 sm:px-20">
         <div className="w-full sm:w-[90%] flex flex-col justify-center items-center gap-5 sm:gap-2">
@@ -58,7 +97,10 @@ const Signup = () => {
           <div className="py-2 sm:py-1">
             <p className="text-gray-600 text-xs">OR</p>
           </div>
-          <form className="w-full flex flex-col gap-5 sm:gap-3 py-2">
+          <form
+            className="w-full flex flex-col gap-5 sm:gap-3 py-2"
+            onSubmit={handleSubmit}
+          >
             <div className="flex flex-col gap-1">
               <label className="font-subHeading2 text-xs md:text-sm text-gray-500">
                 Email
@@ -150,7 +192,7 @@ const Signup = () => {
               </div>
             </div>
             <button className="bg-secondary-dark mt-2 py-2 rounded-md cursor-pointer border border-secondary-dark text-white hover:bg-white hover:text-secondary-dark">
-              Sigin Up
+              Sign Up
             </button>
             <p className="text-sm text-center">
               Don't have an account?{" "}

@@ -1,11 +1,9 @@
 import { useEffect, useState } from "react";
 import { useShopContext } from "../../../context/ShopContext";
-import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
 import AddToCartImg from "../../../assets/svg/add-cart-white.svg";
 import DeleteImg from "../../../assets/svg/delete-bin.svg";
 import DefaultImg from "../../../assets/svg/wishlist-default.svg";
-import { ProductProps } from ".";
 
 const wishlistHeaders = [
   { key: 1, item: "product" },
@@ -15,66 +13,18 @@ const wishlistHeaders = [
 ];
 
 const Wishlist = () => {
-  const { setUpdateWishList, setUpdateCart } = useShopContext();
+  const { handleAddToCart, clearWishlist, removeFromWishlist, updateWishlist } =
+    useShopContext();
   const [wishlistItems, setWishlistItems] = useState([]);
 
-  // Add product to cart
-  const handleAddToCart = (product: any) => {
-    const tempCart = localStorage.getItem("cart");
-    const cart = tempCart ? JSON.parse(tempCart) : [];
-
-    // Check if the product already exists in the cart
-    const existingProductIndex = cart.findIndex(
-      (item: ProductProps) => item.id === product.id
-    );
-
-    if (existingProductIndex !== -1) {
-      // Increase quantity of the existing product
-      cart[existingProductIndex].quantity += 1;
-      toast.success("Product already in cart");
-    } else {
-      // Add new product with an initial quantity of 1
-      cart.push({ ...product, quantity: 1 });
-      toast.success("Product added to cart");
-    }
-
-    // Update localStorage
-    localStorage.setItem("cart", JSON.stringify(cart));
-
-    setUpdateCart(Date.now());
-  };
-
-  // Remove product from wishlist
-  const removeFromWishlist = (productId: string) => {
-    const tempWishlist = localStorage.getItem("wishlist");
-    const wishlist = tempWishlist ? JSON.parse(tempWishlist) : [];
-
-    const updatedWishlist = wishlist.filter(
-      (item: any) => item.id !== productId
-    );
-    toast.success("Product removed wishlist");
-
-    setWishlistItems(updatedWishlist);
-    localStorage.setItem("wishlist", JSON.stringify(updatedWishlist));
-    setUpdateWishList(Date.now());
-  };
-
-  //Clear wishlist
-  const clearWishlist = () => {
-    localStorage.removeItem("wishlist");
-    setWishlistItems([]);
-    setUpdateWishList(Date.now());
-    toast.success("Wishlist cleared successfully");
-  };
-
-  // Fetch single product and check if item is in cart
+  // Fetch products in wishlist
   useEffect(() => {
-    // retrive cart items
+    // retrive wishlist items
     const wishlist = localStorage.getItem("wishlist");
     const parsedWishlist = wishlist ? JSON.parse(wishlist) : [];
 
     setWishlistItems(parsedWishlist);
-  }, []);
+  }, [updateWishlist]);
 
   return (
     <div className="w-full  pt-36 px-5 md:pt-48">
@@ -166,10 +116,13 @@ const Wishlist = () => {
 
             {/* Mobile View */}
             <div className="flex flex-col gap-10 w-full mt-10 sm:hidden">
-              {wishlistItems?.map((item: any) => {
+              {wishlistItems?.map((item: any, i: number) => {
                 const price = item?.discountPerUnit || item?.pricePerUnit;
                 return (
-                  <div className="flex flex-col gap-3 shadow-md p-5 rounded-md">
+                  <div
+                    key={i}
+                    className="flex flex-col gap-3 shadow-md p-5 rounded-md"
+                  >
                     <div className="flex gap-4">
                       <img
                         src={item?.imageUrl}
@@ -201,7 +154,7 @@ const Wishlist = () => {
                         onClick={() => removeFromWishlist(item?.id)}
                       />
                       <button
-                        onClick={() => handleAddToCart(item)}
+                        onClick={() => handleAddToCart(item?.id)}
                         className=" px-2 py-2 flex justify-center items-center gap-2  text-white capitalize font-subHeading2  text-sm rounded-md border bg-secondary-dark w-32 sm:w-44 sm:py-2"
                       >
                         <img

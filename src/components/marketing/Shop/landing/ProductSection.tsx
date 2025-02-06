@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction, useState } from "react";
+import { useState } from "react";
 import jsonProducts from "../../../../../data/products.json";
 import ProductThumbnail from "./ProductThumbnail";
 import { Link } from "react-router-dom";
@@ -6,15 +6,9 @@ import { convertProductNameToSlugs } from "../../../../utils/slugifyProductName"
 
 type ProductSectionProps = {
   tag: string;
-  setUpdateCart: Dispatch<SetStateAction<any>>;
-  setUpdateWishList: Dispatch<SetStateAction<any>>;
 };
 
-const ProductSection: React.FC<ProductSectionProps> = ({
-  tag,
-  setUpdateCart,
-  setUpdateWishList,
-}) => {
+const ProductSection: React.FC<ProductSectionProps> = ({ tag }) => {
   const [products] = useState(jsonProducts);
 
   return (
@@ -30,12 +24,7 @@ const ProductSection: React.FC<ProductSectionProps> = ({
       </div>
       <div className="grid grid-cols-2 w-full gap-y-5  md:gap-y-10 gap-x-3 md:gap-x-16 lg:grid-cols-3 justify-center items-stretch">
         {products?.map((product) => (
-          <ProductThumbnail
-            key={product.id}
-            {...product}
-            setUpdateCart={setUpdateCart}
-            setUpdateWishList={setUpdateWishList}
-          />
+          <ProductThumbnail key={product.id} {...product} />
         ))}
       </div>
     </div>

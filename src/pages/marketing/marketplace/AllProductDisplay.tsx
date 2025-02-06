@@ -6,11 +6,9 @@ import RequestProductForm from "../../../components/marketing/Shop/landing/Reque
 import AllProductListing from "../../../components/marketing/Shop/allProductsDisplay/AllProductLisiting";
 import LightPagination from "../../../components/common/LightPagination";
 import ProductFilter from "../../../components/marketing/Shop/categoryDisplay/ProductFilter";
-import { useShopContext } from "../../../context/ShopContext";
 
 const AllProductDisplay = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const { setUpdateCart, setUpdateWishList } = useShopContext();
 
   const [isFilterModalOpen, setIsFilterModalOpen] = useState(false);
   const [bySort, setBySort] = useState("");
@@ -40,11 +38,7 @@ const AllProductDisplay = () => {
 
   return (
     <div>
-      <AllProductListing
-        setIsFilterModalOpen={setIsFilterModalOpen}
-        setUpdateCart={setUpdateCart}
-        setUpdateWishList={setUpdateWishList}
-      />
+      <AllProductListing setIsFilterModalOpen={setIsFilterModalOpen} />
       <LightPagination
         // page={1}
         pages={10}

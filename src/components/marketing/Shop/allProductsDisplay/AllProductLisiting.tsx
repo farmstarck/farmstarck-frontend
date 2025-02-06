@@ -5,13 +5,9 @@ import FilterIcon from "../../../../assets/svg/filter-icon.svg";
 
 type ProductListingProps = {
   setIsFilterModalOpen?: Dispatch<SetStateAction<boolean>>;
-  setUpdateCart: Dispatch<SetStateAction<any>>;
-  setUpdateWishList: Dispatch<SetStateAction<any>>;
 };
 const AllProductListing: React.FC<ProductListingProps> = ({
   setIsFilterModalOpen,
-  setUpdateCart,
-  setUpdateWishList,
 }) => {
   const [products] = useState(jsonProducts);
 
@@ -33,28 +29,13 @@ const AllProductListing: React.FC<ProductListingProps> = ({
         </div>
         <div className="grid grid-cols-2 w-full gap-y-5  md:gap-y-10 gap-x-3 md:gap-x-16 lg:grid-cols-3 justify-center items-stretch">
           {products?.map((product) => (
-            <ProductThumbnail
-              key={product.id}
-              {...product}
-              setUpdateCart={setUpdateCart}
-              setUpdateWishList={setUpdateWishList}
-            />
+            <ProductThumbnail key={product.id} {...product} />
           ))}
           {products?.map((product) => (
-            <ProductThumbnail
-              key={product.id}
-              {...product}
-              setUpdateCart={setUpdateCart}
-              setUpdateWishList={setUpdateWishList}
-            />
+            <ProductThumbnail key={product.id} {...product} />
           ))}
           {products?.map((product) => (
-            <ProductThumbnail
-              key={product.id}
-              {...product}
-              setUpdateCart={setUpdateCart}
-              setUpdateWishList={setUpdateWishList}
-            />
+            <ProductThumbnail key={product.id} {...product} />
           ))}
         </div>
       </div>
