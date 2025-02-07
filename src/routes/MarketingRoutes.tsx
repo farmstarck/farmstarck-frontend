@@ -1,5 +1,6 @@
 import { Suspense, lazy } from "react";
 import { RouteObject } from "react-router-dom";
+import BaseLoader from "../components/loaders/BaseLoader";
 import MarketingLayout from "../layouts/MarketingLayout";
 import ShopLayout from "../layouts/ShopLayout";
 import {
@@ -56,7 +57,7 @@ const MarketingRoutes: RouteObject[] = [
       {
         path: "login",
         element: (
-          <Suspense fallback={<div>Loading...</div>}>
+          <Suspense fallback={<BaseLoader />}>
             <SigninPage />
           </Suspense>
         ),
@@ -64,7 +65,7 @@ const MarketingRoutes: RouteObject[] = [
       {
         path: "signup",
         element: (
-          <Suspense fallback={<div>Loading...</div>}>
+          <Suspense fallback={<BaseLoader />}>
             <SignupPage />
           </Suspense>
         ),
@@ -72,7 +73,7 @@ const MarketingRoutes: RouteObject[] = [
       {
         path: "verify-email",
         element: (
-          <Suspense fallback={<div>Loading...</div>}>
+          <Suspense fallback={<BaseLoader />}>
             <VerifyEmailPage />
           </Suspense>
         ),
@@ -80,7 +81,7 @@ const MarketingRoutes: RouteObject[] = [
       {
         path: "forgot-password",
         element: (
-          <Suspense fallback={<div>Loading...</div>}>
+          <Suspense fallback={<BaseLoader />}>
             <ForgotPasswordPage />
           </Suspense>
         ),
@@ -88,7 +89,7 @@ const MarketingRoutes: RouteObject[] = [
       {
         path: "create-password",
         element: (
-          <Suspense fallback={<div>Loading...</div>}>
+          <Suspense fallback={<BaseLoader />}>
             <CreatePasswordPage />
           </Suspense>
         ),
@@ -103,7 +104,7 @@ const MarketingRoutes: RouteObject[] = [
       {
         path: "",
         element: (
-          <Suspense fallback={<div>Loading...</div>}>
+          <Suspense fallback={<BaseLoader />}>
             <HomePage />
           </Suspense>
         ),
@@ -111,7 +112,7 @@ const MarketingRoutes: RouteObject[] = [
       {
         path: "about",
         element: (
-          <Suspense fallback={<div>Loading...</div>}>
+          <Suspense fallback={<BaseLoader />}>
             <AboutPage />
           </Suspense>
         ),
@@ -119,7 +120,7 @@ const MarketingRoutes: RouteObject[] = [
       {
         path: "contact",
         element: (
-          <Suspense fallback={<div>Loading...</div>}>
+          <Suspense fallback={<BaseLoader />}>
             <ContactPage />
           </Suspense>
         ),
@@ -127,7 +128,7 @@ const MarketingRoutes: RouteObject[] = [
       {
         path: "community",
         element: (
-          <Suspense fallback={<div>Loading...</div>}>
+          <Suspense fallback={<BaseLoader />}>
             <CommunityPage />
           </Suspense>
         ),
@@ -135,7 +136,7 @@ const MarketingRoutes: RouteObject[] = [
       {
         path: "services",
         element: (
-          <Suspense fallback={<div>Loading...</div>}>
+          <Suspense fallback={<BaseLoader />}>
             <ServicesPage />
           </Suspense>
         ),
@@ -143,7 +144,7 @@ const MarketingRoutes: RouteObject[] = [
       {
         path: "inventory-management",
         element: (
-          <Suspense fallback={<div>Loading...</div>}>
+          <Suspense fallback={<BaseLoader />}>
             <InventoryManagementPage />
           </Suspense>
         ),
@@ -151,7 +152,7 @@ const MarketingRoutes: RouteObject[] = [
       {
         path: "become-a-farmer",
         element: (
-          <Suspense fallback={<div>Loading...</div>}>
+          <Suspense fallback={<BaseLoader />}>
             <BecomeAFarmerPage />
           </Suspense>
         ),
@@ -159,7 +160,7 @@ const MarketingRoutes: RouteObject[] = [
       {
         path: "farm-funding",
         element: (
-          <Suspense fallback={<div>Loading...</div>}>
+          <Suspense fallback={<BaseLoader />}>
             <FarmFundingPage />
           </Suspense>
         ),
@@ -167,7 +168,7 @@ const MarketingRoutes: RouteObject[] = [
       {
         path: "investment-opportunity",
         element: (
-          <Suspense fallback={<div>Loading...</div>}>
+          <Suspense fallback={<BaseLoader />}>
             <InvestmentOpportunityPage />
           </Suspense>
         ),
@@ -175,7 +176,7 @@ const MarketingRoutes: RouteObject[] = [
       {
         path: "become-partner",
         element: (
-          <Suspense fallback={<div>Loading...</div>}>
+          <Suspense fallback={<BaseLoader />}>
             <BecomeAPartnerPage />
           </Suspense>
         ),
@@ -183,7 +184,7 @@ const MarketingRoutes: RouteObject[] = [
       {
         path: "become-merchant",
         element: (
-          <Suspense fallback={<div>Loading...</div>}>
+          <Suspense fallback={<BaseLoader />}>
             <BecomeAMerchantPage />
           </Suspense>
         ),
@@ -191,7 +192,7 @@ const MarketingRoutes: RouteObject[] = [
       {
         path: "career",
         element: (
-          <Suspense fallback={<div>Loading...</div>}>
+          <Suspense fallback={<BaseLoader />}>
             <CareerPage />
           </Suspense>
         ),
@@ -199,7 +200,7 @@ const MarketingRoutes: RouteObject[] = [
       {
         path: "underconstruction",
         element: (
-          <Suspense fallback={<div>Loading...</div>}>
+          <Suspense fallback={<BaseLoader />}>
             <UnderConstructionPage />
           </Suspense>
         ),
@@ -213,7 +214,7 @@ const MarketingRoutes: RouteObject[] = [
           {
             path: "",
             element: (
-              <Suspense fallback={<div>Loading...</div>}>
+              <Suspense fallback={<BaseLoader />}>
                 <MarketPlacePage />
               </Suspense>
             ),
@@ -221,7 +222,7 @@ const MarketingRoutes: RouteObject[] = [
           {
             path: "categories",
             element: (
-              <Suspense fallback={<div>Loading...</div>}>
+              <Suspense fallback={<BaseLoader />}>
                 <CategoryPage />
               </Suspense>
             ),
@@ -229,7 +230,7 @@ const MarketingRoutes: RouteObject[] = [
           {
             path: "products/:name",
             element: (
-              <Suspense fallback={<div>Loading...</div>}>
+              <Suspense fallback={<BaseLoader />}>
                 <AllProductDisplayPage />
               </Suspense>
             ),
@@ -237,7 +238,7 @@ const MarketingRoutes: RouteObject[] = [
           {
             path: "categories/:name",
             element: (
-              <Suspense fallback={<div>Loading...</div>}>
+              <Suspense fallback={<BaseLoader />}>
                 <CategoryDisplayPage />
               </Suspense>
             ),
@@ -245,7 +246,7 @@ const MarketingRoutes: RouteObject[] = [
           {
             path: "product/:slug/:id",
             element: (
-              <Suspense fallback={<div>Loading...</div>}>
+              <Suspense fallback={<BaseLoader />}>
                 <ViewProductPage />
               </Suspense>
             ),
@@ -253,7 +254,7 @@ const MarketingRoutes: RouteObject[] = [
           {
             path: "cart",
             element: (
-              <Suspense fallback={<div>Loading...</div>}>
+              <Suspense fallback={<BaseLoader />}>
                 <CartPage />
               </Suspense>
             ),
@@ -261,7 +262,7 @@ const MarketingRoutes: RouteObject[] = [
           {
             path: "wishlist",
             element: (
-              <Suspense fallback={<div>Loading...</div>}>
+              <Suspense fallback={<BaseLoader />}>
                 <WishlistPage />
               </Suspense>
             ),
@@ -269,7 +270,7 @@ const MarketingRoutes: RouteObject[] = [
           {
             path: "checkout",
             element: (
-              <Suspense fallback={<div>Loading...</div>}>
+              <Suspense fallback={<BaseLoader />}>
                 <CheckoutPage />
               </Suspense>
             ),

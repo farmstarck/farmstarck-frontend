@@ -139,6 +139,38 @@ td:first-child, th:first-child {
   z-index: 1;
 }
 
+.loader_img:before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  display: block;
+  width: 150px;
+  height: 150px;
+  background: rgba(0, 199, 0, 0.2);
+  border-radius: 50%;
+  animation: pulse-border 1000ms ease-out infinite;
+  z-index: 1;
+}
+
+.loader_img:after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  display: block;
+  width: 200px;
+  height: 200px;
+  background: rgba(0, 199, 0, 0.2);
+  border-radius: 50%;
+  animation: pulse-border 1000ms ease-out infinite;
+  z-index: 1;
+}
+
 @keyframes pulse-border {
   0% {
     transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1);
