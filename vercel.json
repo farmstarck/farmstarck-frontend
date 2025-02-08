@@ -1,17 +1,25 @@
 {
-    "rewrites": [
-      { "source": "/api/:path*", "destination": "https://your-backend-url.com/api/:path*" }
-    ],
-    "redirects": [
-      { "source": "/old-route", "destination": "/new-route", "permanent": true }
-    ],
-    "headers": [
-      {
-        "source": "/(.*)",
-        "headers": [
-          { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
-        ]
-      }
-    ]
-  }
-  
+  "rewrites": [
+    { "source": "/api/:path*", "destination": "https://your-backend-url.com/api/:path*" }
+  ],
+  "redirects": [
+    {
+      "source": "https://farmstarck.com/:path*",
+      "destination": "https://www.farmstarck.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/old-route",
+      "destination": "/new-route",
+      "permanent": true
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    }
+  ]
+}
