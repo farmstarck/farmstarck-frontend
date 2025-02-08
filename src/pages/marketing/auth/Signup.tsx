@@ -68,7 +68,7 @@ const Signup = () => {
 
   return (
     <div className="flex w-full py-12  overflow-y-auto no-scrollbar sm:h-screen sm:py-0">
-      <div className="w-1/2 h-screen  bg-cover bg-[url('../src/assets/svg/auth-bg.svg')]  bg-no-repeat hidden md:flex justify-center items-center">
+      <div className="w-1/2 h-screen  bg-cover bg-[url('../src/assets/images/auth-bg.png')]  bg-no-repeat hidden md:flex justify-center items-center">
         <Link
           to="/"
           className="relative auth_img w-20 h-20 bg-white rounded-full flex justify-center items-center"

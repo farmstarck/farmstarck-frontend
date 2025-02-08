@@ -3,7 +3,7 @@ import CustomButton from "./common/CustomButton";
 import LogoLightImg from "../assets/svg/logo-light.svg";
 import AppStoreImg from "../assets/svg/applestore.svg";
 import GooglePlayImg from "../assets/svg/googleplay.svg";
-import footerBg from "../assets/svg/footer-bg.svg";
+import footerBg from "../assets/images/footer-bg.png";
 import FootAccordion from "./common/FooterAccordion";
 
 const Footer = () => {

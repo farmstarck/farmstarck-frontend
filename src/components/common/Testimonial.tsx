@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import TestimonialImg from "../../assets/svg/testimonial-img1.svg";
+import TestimonialImg from "../../assets/images/testimonial-img1.png";
 import QuoteImg from "../../assets/svg/quote.svg";
 
 type TestimonialProps = {

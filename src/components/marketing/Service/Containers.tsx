@@ -1,11 +1,11 @@
 import Container from "./Container";
-import Img1 from "../../../assets/svg/section-img1.svg";
-import Img2 from "../../../assets/svg/section-img2.svg";
-import Img3 from "../../../assets/svg/section-img3.svg";
-import Img4 from "../../../assets/svg/section-img4.svg";
-import Img5 from "../../../assets/svg/section-img5.svg";
-import Img6 from "../../../assets/svg/section-img6.svg";
-import Img7 from "../../../assets/svg/section-img7.svg";
+import Img1 from "../../../assets/images/section-img1.png";
+import Img2 from "../../../assets/images/section-img2.png";
+import Img3 from "../../../assets/images/section-img3.png";
+import Img4 from "../../../assets/images/section-img4.png";
+import Img5 from "../../../assets/images/section-img5.png";
+import Img6 from "../../../assets/images/section-img6.png";
+import Img7 from "../../../assets/images/section-img7.png";
 
 const Containers = () => {
   const sectionData = [

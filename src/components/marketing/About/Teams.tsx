@@ -1,8 +1,8 @@
 import Team from "./Team";
-import Img1 from "../../../assets/svg/CHIDERA.svg";
-import Img2 from "../../../assets/svg/JOSH.svg";
-import Img3 from "../../../assets/svg/IKENNA.svg";
-import Img4 from "../../../assets/svg/LOVINA.svg";
+import Img1 from "../../../assets/images/CHIDERA.png";
+import Img2 from "../../../assets/images/JOSH.png";
+import Img3 from "../../../assets/images/IKENNA.png";
+import Img4 from "../../../assets/images/LOVINA.png";
 
 const Teams = () => {
   const sectionData = [

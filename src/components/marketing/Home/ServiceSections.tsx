@@ -1,9 +1,9 @@
 import ServiceSection from "./ServiceSection";
-import Img1 from "../../../assets/svg/home-secs1.svg";
-import Img2 from "../../../assets/svg/home-secs2.svg";
-import Img3 from "../../../assets/svg/home-secs3.svg";
-import Img4 from "../../../assets/svg/home-secs4.svg";
-import Img5 from "../../../assets/svg/home-secs5.svg";
+import Img1 from "../../../assets/images/home-secs1.png";
+import Img2 from "../../../assets/images/home-secs2.png";
+import Img3 from "../../../assets/images/home-secs3.png";
+import Img4 from "../../../assets/images/home-secs4.png";
+import Img5 from "../../../assets/images/home-secs5.png";
 
 const ServiceSections = () => {
   const sectionData = [

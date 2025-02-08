@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import DepotImg from "../../../assets/svg/community-depot.svg";
+import DepotImg from "../../../assets/images/community-depot.png";
 import CustomButton from "../../common/CustomButton";
 const Community = () => {
   return (

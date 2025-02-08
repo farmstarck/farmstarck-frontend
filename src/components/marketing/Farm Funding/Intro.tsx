@@ -1,4 +1,4 @@
-import Img2 from "../../../assets/svg/section-img3.svg";
+import Img2 from "../../../assets/images/section-img3.png";
 
 const Intro = () => {
   return (

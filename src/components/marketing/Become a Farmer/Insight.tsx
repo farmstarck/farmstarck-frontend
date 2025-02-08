@@ -1,4 +1,4 @@
-import Img1 from "../../../assets/svg/community-media-1.svg";
+import Img1 from "../../../assets/images/community-media-1.png";
 const Insight = () => {
   return (
     <div>

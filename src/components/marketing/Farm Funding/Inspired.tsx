@@ -1,4 +1,4 @@
-import InsightImg from "../../../assets/svg/funding-insight.svg";
+import InsightImg from "../../../assets/images/funding-insight.png";
 const Inspired = () => {
   return (
     <div className="bg-secondary-light w-full px-5 py-10">

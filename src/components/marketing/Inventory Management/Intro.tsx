@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import Img2 from "../../../assets/svg/section-img2.svg";
+import Img2 from "../../../assets/images/section-img2.png";
 import CustomButton from "../../common/CustomButton";
 
 const Intro = () => {

@@ -1,4 +1,4 @@
-import Img1 from "../../../assets/svg/section-img4.svg";
+import Img1 from "../../../assets/images/section-img4.png";
 
 const workData = [
   {
