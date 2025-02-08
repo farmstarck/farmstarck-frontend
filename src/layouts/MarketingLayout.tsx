@@ -9,7 +9,7 @@ const MarketingLayout = () => {
     async function fetchData() {
       try {
         const { data } = await AuthService.test();
-        console.log("////kjssksks", data);
+        console.log("////::::::", data);
       } catch (error) {
         console.log(error);
       }
