@@ -9,6 +9,6 @@ export default defineConfig(() => ({
     port: 4000,
   },
   build: {
-    outDir: "build",
+    outDir: "dist",
   },
 }));
