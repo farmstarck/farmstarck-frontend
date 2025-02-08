@@ -6,12 +6,10 @@
   "homepage": "https://farmstarck.github.io/farmstarck-frontend/",
   "scripts": {
     "dev": "vite",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
-  },
+  },  
   "dependencies": {
     "axios": "^1.7.7",
     "date-fns": "^4.1.0",
