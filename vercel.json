@@ -1,11 +1,4 @@
 {
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/static-build",
-      "config": { "distDir": "dist" }
-    }
-  ],
   "rewrites": [
     {
       "source": "/api/:path*",
@@ -16,6 +9,11 @@
     {
       "source": "/:path*",
       "destination": "https://www.farmstarck.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/old-route",
+      "destination": "/new-route",
       "permanent": true
     }
   ],
