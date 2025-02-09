@@ -1,10 +1,13 @@
 {
   "rewrites": [
-    { "source": "/api/:path*", "destination": "https://farmstarck-backend.onrender.com/api/:path*" }
+    {
+      "source": "/api/:path*",
+      "destination": "https://farmstarck-backend.onrender.com/api/:path*"
+    }
   ],
   "redirects": [
     {
-      "source": "https://farmstarck.com/:path*",
+      "source": "/:path*",
       "destination": "https://www.farmstarck.com/:path*",
       "permanent": true
     },
