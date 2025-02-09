@@ -4,8 +4,8 @@
   ],
   "redirects": [
     {
-      "source": "/old-route",
-      "destination": "/new-route",
+      "source": "https://farmstarck.com/:path*",
+      "destination": "https://www.farmstarck.com/:path*",
       "permanent": true
     }
   ],
