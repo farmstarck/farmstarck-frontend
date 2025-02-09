@@ -4,7 +4,8 @@
   ],
   "redirects": [
     {
-      "source": "https://farmstarck.com/:path*",
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "farmstarck.com" }],
       "destination": "https://www.farmstarck.com/:path*",
       "permanent": true
     }
