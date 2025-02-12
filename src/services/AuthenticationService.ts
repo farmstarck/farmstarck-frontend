@@ -22,11 +22,6 @@ type verifyOtpType = {
   otp: string;
 };
 
-// type ForgotPasswordType = {
-//   token: string | undefined;
-//   newPassword: string;
-// };
-
 const Services = {
   test() {
     return Api().get("/");
