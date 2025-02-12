@@ -1,13 +1,18 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../../context/AuthContext";
+import toast from "react-hot-toast";
 import VerifyImg from "../../../assets/svg/auth-verify.svg";
 import CountdownTimer from "../../../components/common/CountdownTimer";
 import CodeInput from "../../../components/marketing/auth/CodeInput";
-import toast from "react-hot-toast";
 
 const VerifyEmail = () => {
+  const { verifyEmail, state } = useAuth();
+  const navigate = useNavigate();
   const [isDisabled, setIsDisabled] = useState(true);
   const [isCountingdown, setIsCountingdown] = useState(true);
-  const [_, setCode] = useState("");
+  const [code, setCode] = useState("");
+  const [email, setEmail] = useState("");
 
   const handleComplete = (code: string) => {
     setCode(code);
@@ -23,6 +28,33 @@ const VerifyEmail = () => {
     toast.success("Code sent to your email address");
   };
 
+  const handleSubmit = async (e: any) => {
+    e.preventDefault();
+
+    if (code === "") {
+      toast.error("Please enter the verification code");
+      return;
+    }
+
+    const formData = {
+      email,
+      otp: code,
+    };
+
+    const response: any = await verifyEmail(formData);
+    if (response?.user) {
+      setCode("");
+      setIsDisabled(true);
+      navigate("/");
+    }
+  };
+
+  useEffect(() => {
+    if (state.user?.email) {
+      setEmail(state.user?.email);
+    }
+  }, [state]);
+
   return (
     <div className="w-full h-screen flex justify-center items-center p-5">
       <div className="max-w-4xl mx-auto w-full flex flex-col gap-7">
@@ -31,7 +63,10 @@ const VerifyEmail = () => {
           <h1 className="font-subHeading2 text-2xl">Email Verification</h1>
           <p>Please check your email for an OTP Verification code</p>
         </div>
-        <form className="flex flex-col items-center justify-center gap-4 text-center">
+        <form
+          className="flex flex-col items-center justify-center gap-4 text-center"
+          onSubmit={handleSubmit}
+        >
           <p className="text-sm">
             Expires in 60 seconds{" "}
             <span>
@@ -45,7 +80,7 @@ const VerifyEmail = () => {
             </span>
           </p>
           <CodeInput
-            length={6}
+            length={5}
             onComplete={handleComplete}
             setIsDisabled={setIsDisabled}
           />

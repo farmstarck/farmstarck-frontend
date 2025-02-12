@@ -1,21 +1,23 @@
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import toast from "react-hot-toast";
+import { useAuth } from "../../../context/AuthContext";
 import LogoImg from "../../../assets/svg/auth-midlogo.svg";
 import GoogleIcon from "../../../assets/svg/google-icon.svg";
 import FacebookIcon from "../../../assets/svg/facebook-auth-icon.svg";
 import EmailIcon from "../../../assets/svg/mail-icon.svg";
 import OpenEyeIcon from "../../../assets/svg/eye-open.svg";
 import CloseEyeIcon from "../../../assets/svg/eye-close.svg";
-import toast from "react-hot-toast";
 
 const Signin = () => {
-  const navigate = useNavigate();
+  const { signIn } = useAuth();
+  // const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isRemeberMe, setIsRemeberMe] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = async (e: any) => {
     e.preventDefault();
 
     const regex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
@@ -29,12 +31,21 @@ const Signin = () => {
       toast.error("Please fill all required fields.");
       return;
     }
-    setEmail("");
-    setPassword("");
 
-    toast.success("OTP sent to email address");
+    const formData = {
+      email,
+      password,
+      // rememberMe: isRemeberMe,
+    };
+    const response: any = await signIn(formData);
+    if (response?.user) {
+      // navigate to Dashboard
+      setEmail("");
+      setPassword("");
+      setIsRemeberMe(false);
 
-    navigate("/auth/verify-email");
+      // navigate("/auth/verify-email");
+    }
   };
 
   return (
