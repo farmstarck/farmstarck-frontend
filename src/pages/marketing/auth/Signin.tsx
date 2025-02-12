@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import toast from "react-hot-toast";
 import { useAuth } from "../../../context/AuthContext";
 import LogoImg from "../../../assets/svg/auth-midlogo.svg";
@@ -11,7 +11,7 @@ import CloseEyeIcon from "../../../assets/svg/eye-close.svg";
 
 const Signin = () => {
   const { signIn } = useAuth();
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isRemeberMe, setIsRemeberMe] = useState(false);
