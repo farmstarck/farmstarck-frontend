@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import { useAuth } from "../../../context/AuthContext";
 import PhoneInput, { isValidPhoneNumber } from "react-phone-number-input";
 import "react-phone-number-input/style.css";
-import BaseLoader from "../../../components/loaders/BaseLoader";
+import FormSpinner from "../../../components/loaders/FormLaoder";
 import LogoImg from "../../../assets/svg/auth-midlogo.svg";
 import GoogleIcon from "../../../assets/svg/google-icon.svg";
 import FacebookIcon from "../../../assets/svg/facebook-auth-icon.svg";
@@ -68,7 +68,6 @@ const Signup = () => {
     };
 
     const response: any = await signUp(formData);
-    console.log(":::::::", response);
     if (response?.user) {
       // navigate to OTP
       setFullname("");
@@ -80,10 +79,6 @@ const Signup = () => {
     }
   };
 
-  useEffect(() => {
-    console.log(":::STAAAAATE", state.loading);
-  }, [state]);
-
   return (
     <div className="flex w-full py-12  overflow-y-auto no-scrollbar sm:h-screen sm:py-0">
       <div className="w-1/2 h-screen  bg-cover bg-[url('../src/assets/images/auth-bg.png')]  bg-no-repeat hidden md:flex justify-center items-center">
@@ -94,10 +89,10 @@ const Signup = () => {
           <img src={LogoImg} alt="logo" className="w-7" />
         </Link>
       </div>
-      {state?.loading ? (
-        <BaseLoader />
-      ) : (
-        <div className="w-full md:w-1/2 bg-white flex items-center justify-center  px-5 sm:px-20">
+      <div className="w-full md:w-1/2 bg-white flex items-center justify-center  px-5 sm:px-20">
+        {state?.loading ? (
+          <FormSpinner />
+        ) : (
           <div className="w-full sm:w-[90%] flex flex-col justify-center items-center gap-5 sm:gap-2">
             <div className="w-full text-center sm:text-start">
               <h2 className="font-subHeading2 text-xl sm:text-2xl">Sign Up</h2>
@@ -226,8 +221,8 @@ const Signup = () => {
               </p>
             </form>
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </div>
   );
 };

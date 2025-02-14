@@ -11,32 +11,48 @@ type SignUpCredentialType = {
   password: string;
 };
 
-type ChangePasswordType = {
-  oldPassword: string;
-  newPassword: string;
-  adminId: string;
-};
-
-type verifyOtpType = {
+type VerifyOtpType = {
   email: string;
   otp: string;
 };
 
+type VerifyTokenType = {
+  token: string;
+};
+
+type ForgetPasswordType = {
+  email: string;
+};
+
+type ResendyOtpType = {
+  email: string;
+};
+
+type ChangePasswordType = {
+  newPassword: string;
+  token: any;
+};
 const Services = {
-  test() {
-    return Api().get("/");
-  },
   login(credential: LoginCredentialType) {
-    return Api().post("auth/local/login", credential);
+    return Api().post("auth/local/signin", credential);
   },
   signUp(credential: SignUpCredentialType) {
     return Api().post("auth/local/signup", credential);
   },
-  verifyOTP(credential: verifyOtpType) {
+  resendOTP(credential: ResendyOtpType) {
+    return Api().post("auth/resend-otp", credential);
+  },
+  verifyOTP(credential: VerifyOtpType) {
     return Api().post("auth/verify-otp", credential);
   },
-  getUser() {
-    return Api().get("auth/admin/verifytoken");
+  verifyToken(credential: VerifyTokenType) {
+    return Api().post("auth/verify-token", credential);
+  },
+  sendChangePasswordLink(credential: ForgetPasswordType) {
+    return Api().post("auth/forgetPassword", credential);
+  },
+  changePassword(credential: ChangePasswordType) {
+    return Api().post("auth/changePassword", credential);
   },
   updateProfile(firstName: string, lastName: string) {
     var data = {
@@ -44,23 +60,6 @@ const Services = {
       lastName,
     };
     return Api().patch("auth/admin/profile", data);
-  },
-  sendChangePasswordLink(email: string) {
-    var data = {
-      email,
-    };
-    return Api().post("auth/admin/password/sendLink", data);
-  },
-  verifyToken(token: string, type: string) {
-    var data = {
-      token,
-      type,
-    };
-    console.log(data);
-    return Api().post("auth/admin/verifyPasswordChangeToken", data);
-  },
-  changePassword(body: ChangePasswordType) {
-    return Api().patch("auth/admin/changePassword", body);
   },
   completeSignup(adminId: string, password: string) {
     return Api().patch("auth/admin/completeSignupProcess", {

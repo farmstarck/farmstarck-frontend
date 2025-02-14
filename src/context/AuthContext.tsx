@@ -55,6 +55,7 @@ type ActionType =
   | { type: "USER_LOADING" }
   | { type: "SET_USER"; payload: AuthUser }
   | { type: "LOGIN_SUCCESS"; payload: { token: string; user: AuthUser } }
+  | { type: "USER_LOADED" }
   | { type: "LOGIN_ERROR"; payload: string }
   | { type: "LOGOUT" }
   | { type: "RESET" }
@@ -115,6 +116,8 @@ const reducer = (state: StateType, action: ActionType): StateType => {
         isAuthenticated: false,
         errorMessage: "",
       };
+    case "USER_LOADED":
+      return { ...state, loading: false };
     case "DATA_LOADING":
       return { ...state, isLoading: true };
     case "DATA_LOADED":
@@ -176,13 +179,16 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
       dispatch({ type: "LOGIN_ERROR", payload: message });
 
       return null;
+    } finally {
+      dispatch({ type: "USER_LOADED" });
     }
   };
 
   const signIn = async (credentials: SignInPayload) => {
-    dispatch({ type: "USER_LOADING" });
+    dispatch({ type: "RESET" });
 
     try {
+      dispatch({ type: "USER_LOADING" });
       const {
         status,
         data: { data },
@@ -198,6 +204,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
         payload: { token: data.token, user: data.user },
       });
 
+      toast.success("Logged in successfully!");
       return data;
     } catch (error: any) {
       const message = errorMessageRetreiver(error);
@@ -206,6 +213,8 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
       dispatch({ type: "LOGIN_ERROR", payload: message });
 
       return null;
+    } finally {
+      dispatch({ type: "USER_LOADED" });
     }
   };
 
@@ -240,6 +249,8 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
       dispatch({ type: "LOGIN_ERROR", payload: message });
 
       return null;
+    } finally {
+      dispatch({ type: "USER_LOADED" });
     }
   };
 
