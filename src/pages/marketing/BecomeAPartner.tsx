@@ -1,6 +1,6 @@
 import GenericHero from "../../components/common/GenericHero";
 import Containers from "../../components/marketing/Become a Partner/Containers";
-import OurPartner from "../../components/marketing/Become a Partner/OurPartner";
+// import OurPartner from "../../components/marketing/Become a Partner/OurPartner";
 import Ready from "../../components/marketing/Become a Partner/Ready";
 
 const BecomeAPartner = () => {
@@ -21,7 +21,7 @@ const BecomeAPartner = () => {
           </p>
         </div>
         <Containers />
-        <OurPartner />
+        {/* <OurPartner /> */}
         <Ready />
       </div>
     </div>

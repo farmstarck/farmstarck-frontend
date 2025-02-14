@@ -1,6 +1,6 @@
 import CustomTestimonial from "../../common/Testimonial";
 import Statistics from "../../common/Statistics";
-import Partners from "./Partners";
+// import Partners from "./Partners";
 
 const Testimonial: React.FC = () => {
   return (
@@ -12,7 +12,7 @@ const Testimonial: React.FC = () => {
         />
       </div>
       <Statistics />
-      <Partners />
+      {/* <Partners /> */}
     </div>
   );
 };

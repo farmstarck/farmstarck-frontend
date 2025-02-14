@@ -87,7 +87,7 @@ const MarketingRoutes: RouteObject[] = [
         ),
       },
       {
-        path: "create-password",
+        path: "create-password/:token",
         element: (
           <Suspense fallback={<BaseLoader />}>
             <CreatePasswordPage />
