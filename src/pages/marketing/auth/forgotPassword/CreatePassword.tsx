@@ -80,7 +80,7 @@ const CreatePassword = () => {
     }
 
     verifyToken();
-  }, [dispatch, token]);
+  }, [dispatch, navigate, token]);
 
   return (
     <div className="w-full h-screen flex justify-center items-center p-5">
