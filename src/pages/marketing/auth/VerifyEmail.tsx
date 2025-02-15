@@ -99,7 +99,7 @@ const VerifyEmail = () => {
                 <span>
                   {isCountingdown && (
                     <CountdownTimer
-                      initialMinutes={1}
+                      initialMinutes={5}
                       initialSeconds={0}
                       setIsCountingdown={setIsCountingdown}
                     />
