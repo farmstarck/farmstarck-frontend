@@ -83,7 +83,7 @@ const Signin = () => {
                 Login into your account to continue your journey
               </p>
             </div>
-            <div className="w-full flex flex-col gap-5 items-center justify-center sm:flex-row sm:justify-start">
+            <div className="w-full flex flex-col gap-5 items-center justify-center sm:flex-row sm:justify-center">
               <button
                 className="py-2 px-2 w-52 flex items-center gap-2 justify-center border border-gray-300 rounded-lg cursor-pointer sm:w-auto"
                 onClick={handleGoogleLogin}
@@ -91,13 +91,13 @@ const Signin = () => {
                 <img src={GoogleIcon} alt="google" className="w-5" />
                 <span className="text-sm">Sign in with Google</span>
               </button>
-              <button
+              {/* <button
                 className="py-2 px-2 w-52 flex items-center gap-2 justify-center border border-gray-300 rounded-lg cursor-pointer sm:w-auto"
                 onClick={handleFacebookLogin}
               >
                 <img src={FacebookIcon} alt="facebook" className="w-5" />
                 <span className="text-sm">Sign in with Facebook</span>
-              </button>
+              </button> */}
             </div>
             <div className="py-1">
               <p className="text-gray-600 text-sm">OR</p>
