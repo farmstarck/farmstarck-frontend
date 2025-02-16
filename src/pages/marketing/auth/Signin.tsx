@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import { useAuth } from "../../../context/AuthContext";
+import config from "../../../config.json";
 import LogoImg from "../../../assets/svg/auth-midlogo.svg";
 import GoogleIcon from "../../../assets/svg/google-icon.svg";
 import FacebookIcon from "../../../assets/svg/facebook-auth-icon.svg";
@@ -45,8 +46,18 @@ const Signin = () => {
       setPassword("");
       setIsRemeberMe(false);
 
-      navigate("/");
+      navigate("/marketplace");
     }
+  };
+
+  const handleGoogleLogin = () => {
+    const baseurl = config.REACT_APP_FARMSTARCK_SERVICE;
+    window.location.href = `${baseurl}/auth/google/login`;
+  };
+
+  const handleFacebookLogin = () => {
+    const baseurl = config.REACT_APP_FARMSTARCK_SERVICE;
+    window.location.href = `${baseurl}/auth/facebook/login`;
   };
 
   return (
@@ -73,11 +84,17 @@ const Signin = () => {
               </p>
             </div>
             <div className="w-full flex flex-col gap-5 items-center justify-center sm:flex-row sm:justify-start">
-              <button className="py-2 px-2 w-52 flex items-center gap-2 justify-center border border-gray-300 rounded-lg cursor-pointer sm:w-auto">
+              <button
+                className="py-2 px-2 w-52 flex items-center gap-2 justify-center border border-gray-300 rounded-lg cursor-pointer sm:w-auto"
+                onClick={handleGoogleLogin}
+              >
                 <img src={GoogleIcon} alt="google" className="w-5" />
                 <span className="text-sm">Sign in with Google</span>
               </button>
-              <button className="py-2 px-2 w-52 flex items-center gap-2 justify-center border border-gray-300 rounded-lg cursor-pointer sm:w-auto">
+              <button
+                className="py-2 px-2 w-52 flex items-center gap-2 justify-center border border-gray-300 rounded-lg cursor-pointer sm:w-auto"
+                onClick={handleFacebookLogin}
+              >
                 <img src={FacebookIcon} alt="facebook" className="w-5" />
                 <span className="text-sm">Sign in with Facebook</span>
               </button>

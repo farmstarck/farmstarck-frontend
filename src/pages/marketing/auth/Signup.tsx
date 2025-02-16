@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import { useAuth } from "../../../context/AuthContext";
 import PhoneInput, { isValidPhoneNumber } from "react-phone-number-input";
+import config from "../../../config.json";
 import "react-phone-number-input/style.css";
 import FormSpinner from "../../../components/loaders/FormLaoder";
 import LogoImg from "../../../assets/svg/auth-midlogo.svg";
@@ -79,6 +80,16 @@ const Signup = () => {
     }
   };
 
+  const handleGoogleLogin = () => {
+    const baseurl = config.REACT_APP_LOCAL;
+    window.location.href = `${baseurl}/auth/google/login`;
+  };
+
+  const handleFacebookLogin = () => {
+    const baseurl = config.REACT_APP_LOCAL;
+    window.location.href = `${baseurl}/auth/facebook/login`;
+  };
+
   return (
     <div className="flex w-full py-12  overflow-y-auto no-scrollbar sm:h-screen sm:py-0">
       <div className="w-1/2 h-screen  bg-cover bg-[url('../src/assets/images/auth-bg.png')]  bg-no-repeat hidden md:flex justify-center items-center">
@@ -101,11 +112,17 @@ const Signup = () => {
               </p>
             </div>
             <div className="w-full flex flex-col gap-5 items-center justify-center sm:flex-row sm:justify-start">
-              <button className="py-2 px-2 w-52 flex items-center gap-2 justify-center border border-gray-300 rounded-lg cursor-pointer sm:w-auto">
+              <button
+                className="py-2 px-2 w-52 flex items-center gap-2 justify-center border border-gray-300 rounded-lg cursor-pointer sm:w-auto"
+                onClick={handleGoogleLogin}
+              >
                 <img src={GoogleIcon} alt="google" className="w-5" />
                 <span className="text-sm">Sign up with Google</span>
               </button>
-              <button className="py-2 px-2 w-52 flex items-center gap-2 justify-center border border-gray-300 rounded-lg cursor-pointer sm:w-auto">
+              <button
+                className="py-2 px-2 w-52 flex items-center gap-2 justify-center border border-gray-300 rounded-lg cursor-pointer sm:w-auto"
+                onClick={handleFacebookLogin}
+              >
                 <img src={FacebookIcon} alt="facebook" className="w-5" />
                 <span className="text-sm">Sign up with Facebook</span>
               </button>
