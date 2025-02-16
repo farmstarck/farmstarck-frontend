@@ -81,12 +81,12 @@ const Signup = () => {
   };
 
   const handleGoogleLogin = () => {
-    const baseurl = config.REACT_APP_LOCAL;
+    const baseurl = config.REACT_APP_FARMSTARCK_SERVICE;
     window.location.href = `${baseurl}/auth/google/login`;
   };
 
   const handleFacebookLogin = () => {
-    const baseurl = config.REACT_APP_LOCAL;
+    const baseurl = config.REACT_APP_FARMSTARCK_SERVICE;
     window.location.href = `${baseurl}/auth/facebook/login`;
   };
 
