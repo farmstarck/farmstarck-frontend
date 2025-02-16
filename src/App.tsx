@@ -54,9 +54,6 @@ const App = () => {
       }
 
       verifyToken();
-    } else {
-      //Navigate to login page if no token found
-      navigate("/auth/login");
     }
   }, []);
 
