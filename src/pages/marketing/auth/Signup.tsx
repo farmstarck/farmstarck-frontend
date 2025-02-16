@@ -8,7 +8,7 @@ import "react-phone-number-input/style.css";
 import FormSpinner from "../../../components/loaders/FormLaoder";
 import LogoImg from "../../../assets/svg/auth-midlogo.svg";
 import GoogleIcon from "../../../assets/svg/google-icon.svg";
-import FacebookIcon from "../../../assets/svg/facebook-auth-icon.svg";
+// import FacebookIcon from "../../../assets/svg/facebook-auth-icon.svg";
 import EmailIcon from "../../../assets/svg/mail-icon.svg";
 import OpenEyeIcon from "../../../assets/svg/eye-open.svg";
 import CloseEyeIcon from "../../../assets/svg/eye-close.svg";
@@ -85,10 +85,10 @@ const Signup = () => {
     window.location.href = `${baseurl}/auth/google/login`;
   };
 
-  const handleFacebookLogin = () => {
-    const baseurl = config.REACT_APP_FARMSTARCK_SERVICE;
-    window.location.href = `${baseurl}/auth/facebook/login`;
-  };
+  // const handleFacebookLogin = () => {
+  //   const baseurl = config.REACT_APP_FARMSTARCK_SERVICE;
+  //   window.location.href = `${baseurl}/auth/facebook/login`;
+  // };
 
   return (
     <div className="flex w-full py-12  overflow-y-auto no-scrollbar sm:h-screen sm:py-0">
