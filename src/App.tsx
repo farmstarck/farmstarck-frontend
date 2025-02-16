@@ -41,6 +41,7 @@ const App = () => {
             payload: { token: data.token, user: data.user },
           });
           localStorage.setItem("token", token);
+          localStorage.setItem("user", JSON.stringify(data.user));
           //Redirect to dashboard
           navigate("/marketplace");
         } catch (error) {

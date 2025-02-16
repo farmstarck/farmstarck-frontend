@@ -5,7 +5,7 @@ import { useAuth } from "../../../context/AuthContext";
 import config from "../../../config.json";
 import LogoImg from "../../../assets/svg/auth-midlogo.svg";
 import GoogleIcon from "../../../assets/svg/google-icon.svg";
-import FacebookIcon from "../../../assets/svg/facebook-auth-icon.svg";
+// import FacebookIcon from "../../../assets/svg/facebook-auth-icon.svg";
 import EmailIcon from "../../../assets/svg/mail-icon.svg";
 import OpenEyeIcon from "../../../assets/svg/eye-open.svg";
 import CloseEyeIcon from "../../../assets/svg/eye-close.svg";
@@ -55,10 +55,10 @@ const Signin = () => {
     window.location.href = `${baseurl}/auth/google/login`;
   };
 
-  const handleFacebookLogin = () => {
-    const baseurl = config.REACT_APP_FARMSTARCK_SERVICE;
-    window.location.href = `${baseurl}/auth/facebook/login`;
-  };
+  // const handleFacebookLogin = () => {
+  //   const baseurl = config.REACT_APP_FARMSTARCK_SERVICE;
+  //   window.location.href = `${baseurl}/auth/facebook/login`;
+  // };
 
   return (
     <div className="flex w-full  h-screen">
@@ -83,7 +83,7 @@ const Signin = () => {
                 Login into your account to continue your journey
               </p>
             </div>
-            <div className="w-full flex flex-col gap-5 items-center justify-center sm:flex-row sm:justify-start">
+            <div className="w-full flex flex-col gap-5 items-center justify-center sm:flex-row sm:justify-center">
               <button
                 className="py-2 px-2 w-52 flex items-center gap-2 justify-center border border-gray-300 rounded-lg cursor-pointer sm:w-auto"
                 onClick={handleGoogleLogin}
@@ -91,13 +91,13 @@ const Signin = () => {
                 <img src={GoogleIcon} alt="google" className="w-5" />
                 <span className="text-sm">Sign in with Google</span>
               </button>
-              <button
+              {/* <button
                 className="py-2 px-2 w-52 flex items-center gap-2 justify-center border border-gray-300 rounded-lg cursor-pointer sm:w-auto"
                 onClick={handleFacebookLogin}
               >
                 <img src={FacebookIcon} alt="facebook" className="w-5" />
                 <span className="text-sm">Sign in with Facebook</span>
-              </button>
+              </button> */}
             </div>
             <div className="py-1">
               <p className="text-gray-600 text-sm">OR</p>
