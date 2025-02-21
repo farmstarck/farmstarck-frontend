@@ -25,10 +25,10 @@ type CategoryByProps = {
 const sortByOptions: SortByProps[] = [
   { label: "A-Z", value: "a-z" },
   { label: "Z-A", value: "z-a" },
-  { label: "Price Low to High", value: "price_asc" },
-  { label: "Price High to Low", value: "price_desc" },
-  // { label: "Popularity", value: "popularity" },
-  // { label: "Newest", value: "newest" },
+  { label: "Price Low to High", value: "price-low-high" },
+  { label: "Price High to Low", value: "price-high-low" },
+  { label: "Popularity", value: "popularity" },
+  { label: "Newest", value: "newest" },
 ];
 
 const ProductFilter: React.FC<filterProps> = ({
