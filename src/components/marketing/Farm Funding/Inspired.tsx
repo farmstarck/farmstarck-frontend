@@ -33,7 +33,7 @@ const Inspired = () => {
           </div>
 
           <div className="w-full flex justify-center gap-2">
-            <div className="w-full md:w-3/4 flex justify-center gap-2">
+            {/* <div className="w-full md:w-3/4 flex justify-center gap-2">
               <iframe
                 width="100%"
                 //   height="400"
@@ -45,7 +45,7 @@ const Inspired = () => {
                 referrerPolicy="strict-origin-when-cross-origin"
                 allowFullScreen
               ></iframe>
-            </div>
+            </div> */}
           </div>
           <div className="flex flex-col gap-4 w-full md:w-2/3">
             <h3 className="text-center text-xs md:text-sm font-subHeading2 md:text-start">
