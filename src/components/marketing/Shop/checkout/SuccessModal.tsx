@@ -16,7 +16,7 @@ const SuccessModal: React.FC<SuccessModalProps> = ({ setIsSuccessful }) => {
     setUpdateCart(Date.now());
 
     setIsSuccessful(false);
-    navigate("/marketplace");
+    navigate("/shop");
   };
 
   return (

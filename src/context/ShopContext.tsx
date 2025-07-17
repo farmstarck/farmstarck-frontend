@@ -13,7 +13,9 @@ type ShopContextValue = {
   cartItems: any;
   removeFromWishlist: (productId: string) => void;
   clearWishlist: () => void;
+  clearCart: () => void;
   unit: number;
+  cartProducts: any;
 };
 
 export const ShopContext = createContext<ShopContextValue | null>(null);

@@ -1,32 +1,92 @@
 import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
-import LogoDarkImg from "../assets/svg/logo-dark.svg";
-import LogoLightImg from "../assets/svg/logo-light.svg";
-import XIcon from "../assets/svg/twitter.svg";
-import LinkedInIcon from "../assets/svg/linkedin.svg";
-// import DiscordIcon from "../assets/svg/discord.svg";
-import InstagramIcon from "../assets/svg/instagram.svg";
-import FacbookIcon from "../assets/svg/facebook.svg";
-// import WhatsappIcon from "../assets/svg/whatsapp.svg";
-
 import { Link } from "react-router-dom";
-const Navbar = () => {
-  const location = useLocation();
+import LogoDarkImg from "../assets/svg/logo-primary.svg";
+import ProductImg1 from "../assets/images/product-menu1.png";
+import ProductImg2 from "../assets/images/product-menu2.png";
+import ProductImg3 from "../assets/images/product-menu3.png";
+import ProductImg4 from "../assets/images/product-menu4.png";
+import JourneyImg1 from "../assets/images/journey-menu1.png";
+import JourneyImg2 from "../assets/images/journey-menu2.png";
+import JourneyImg3 from "../assets/images/journey-menu3.png";
+import JourneyImg4 from "../assets/images/journey-menu4.png";
+import { ChevronDown, ArrowRight } from "lucide-react";
 
+type SubMenuItem = {
+  img: string;
+  title: string;
+  link: string;
+  description?: string;
+  comingSoon?: boolean;
+};
+
+type MenuItem = {
+  title: string;
+  submenu?: SubMenuItem[];
+};
+
+const menuItems = [
+  {
+    title: "Our Products",
+    submenu: [
+      {
+        img: ProductImg1,
+        title: "Market Place",
+        description:
+          "Get direct from farm & agro-processed produce delivered at your doorstep",
+        link: "marketplace",
+        comingSoon: false,
+      },
+      {
+        img: ProductImg2,
+        title: "Procurement",
+        description:
+          "Streamline your agricultural supply chain with tailored procurement solutions",
+        link: "#",
+        comingSoon: false,
+      },
+      {
+        img: ProductImg3,
+        title: "Food Vault",
+        description:
+          "Our Food Vault helps you securely save for food purchases while earning exclusive benefits",
+        link: "#",
+        comingSoon: false,
+      },
+      {
+        img: ProductImg4,
+        title: "Smart Inventory",
+        description: "Manage all your agricultural assets in one place",
+        link: "#",
+        comingSoon: true,
+      },
+    ],
+  },
+  {
+    title: "Your Journey",
+    submenu: [
+      { img: JourneyImg1, title: "Farmer", link: "#" },
+      { img: JourneyImg2, title: "Merchant", link: "#" },
+      { img: JourneyImg3, title: "Business", link: "#" },
+      { img: JourneyImg4, title: "Investment", link: "#" },
+    ],
+  },
+  {
+    title: "About Us",
+  },
+];
+
+const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [route, setRoute] = useState("");
-  const [productRoute, setProductsRoute] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [openAccordion, setOpenAccordion] = useState<number | null>(null);
+
   const menuToggle = () => {
     const menu = document.getElementById("menu")!;
     const btn = document.getElementById("menu-btn")!;
 
     btn.classList.toggle("open");
     menu.classList.toggle("flex");
-    menu.classList.toggle("hidden");
-  };
-
-  const closeMenu = () => {
-    menuToggle();
+    setMobileMenuOpen(!mobileMenuOpen);
   };
 
   useEffect(() => {
@@ -42,177 +102,261 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  useEffect(() => {
-    const productPath = location.pathname.split("/");
-
-    // if (productPath[1] === "product" && productPath[3]) {
-    if (productPath[1] === "marketplace") {
-      setProductsRoute(true);
-    } else {
-      setProductsRoute(false);
-    }
-
-    setRoute(location.pathname);
-  }, [location]);
-
   return (
-    <nav
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        isScrolled ? "bg-white " : "bg-transparent"
-      } ${
-        isScrolled && route !== "/marketplace" && !productRoute && "shadow-md"
-      } 
-     `}
+    <div
+      className={`md:py-8 ${!isScrolled && "p-0 md:p-5"} bg-secondary-navBg`}
     >
-      <div className="relative p-5">
-        <div className="flex justify-between items-center max-w-6xl m-auto  md:px-0">
-          {route === "/" && !isScrolled ? (
-            <Link to="/">
-              <img
-                src={LogoLightImg}
-                className="w-32 md:w-48"
-                alt="farmstarck logo"
-              />
-            </Link>
-          ) : (
-            <Link to="/">
-              <img
-                src={LogoDarkImg}
-                className="w-32 md:w-48"
-                alt="farmstarck logo"
-              />
-            </Link>
-          )}
-
-          <button
-            id="menu-btn"
-            className="block hamburger focus:outline-none"
-            onClick={menuToggle}
-          >
-            <span
-              className="hamburger-top"
-              style={{
-                background: `${route === "/" && !isScrolled ? "white" : ""}`,
-              }}
-            ></span>
-            <span
-              className="hamburger-middle"
-              style={{
-                background: `${route === "/" && !isScrolled ? "white" : ""}`,
-              }}
-            ></span>
-            <span
-              className="hamburger-bottom"
-              style={{
-                background: `${route === "/" && !isScrolled ? "white" : ""}`,
-              }}
-            ></span>
-          </button>
-        </div>
-        <div className="relative max-w-6xl my-auto bg-slate-700"></div>
-      </div>
-      <div
-        id="menu"
-        className="w-full h-screen absolute right-0 top-0 hidden flex-col items-start self-end py-8 px-7 sm:px-14 md:w-1/3 space-y-8  bg-white sm:self drop-shadow-md "
+      <nav
+        className={`shadow-md  z-50 transition-all duration-300 bg-secondary-dark py-5 md:py-0 ${
+          isScrolled ? " fixed top-0 w-full" : "max-w-6xl m-auto md:rounded-lg"
+        }`}
       >
-        <div className="w-full flex justify-end">
-          <button
-            id="menu-btn"
-            className="open block hamburger focus:outline-none"
-            onClick={menuToggle}
-          >
-            <span
-              className="hamburger-top"
-              style={{
-                background: `${route === "/" && !isScrolled ? "#333" : ""}`,
-              }}
-            ></span>
-            <span
-              className="hamburger-middle"
-              style={{
-                background: `${route === "/" && !isScrolled ? "#333" : ""}`,
-              }}
-            ></span>
-            <span
-              className="hamburger-bottom"
-              style={{
-                background: `${route === "/" && !isScrolled ? "#333" : ""}`,
-              }}
-            ></span>
-          </button>
-        </div>
-        <Link to="/auth/login" onClick={closeMenu}>
-          <div className="py-3 px-9 bg-secondary-dark rounded cursor-pointer text-white text-sm">
-            SIGN IN
+        <div className="relative max-w-6xl mx-auto px-4 flex justify-between items-center">
+          {/* Logo */}
+          <Link to="/">
+            <img
+              src={LogoDarkImg}
+              className="w-32 md:w-48"
+              alt="farmstarck logo"
+            />
+          </Link>
+
+          {/* Desktop Menu */}
+          <div className="hidden lg:flex gap-10 items-center">
+            {menuItems.map((item: MenuItem, idx) => (
+              <div className="group relative" key={idx}>
+                <div className="flex flex-col group">
+                  {item.submenu ? (
+                    <>
+                      <span className="flex cursor-pointer extra-loose items-center gap-1 font-subHeading ease-in-out duration-75 text-white hover:text-secondary-light transition">
+                        {item.title}
+                        <ChevronDown size={16} />
+                      </span>
+                    </>
+                  ) : (
+                    <Link
+                      to="about"
+                      className="flex extra-loose items-center gap-1 font-subHeading ease-in-out duration-75 text-white hover:text-secondary-light transition"
+                    >
+                      {item.title}
+                    </Link>
+                  )}
+
+                  {item.submenu && (
+                    <div
+                      className={`absolute  ${
+                        idx === 0
+                          ? "lg:-left-[350px] w-[1200px]"
+                          : "lg:-left-[480px] w-[1100px]"
+                      } right-0 top-full hidden group-hover:flex bg-secondary-dark px-4 py-10 shadow-lg border rounded-lg z-40`}
+                    >
+                      {item.submenu[0]?.description ? (
+                        item.submenu.map((sub, sIdx) => {
+                          return (
+                            <Link
+                              to={sub.link}
+                              key={sIdx}
+                              className="flex gap-3 items-center p-2 rounded w-1/4"
+                            >
+                              <img
+                                src={sub.img}
+                                alt={sub.title}
+                                className="w-16 h-16 rounded"
+                              />
+                              <div className="flex flex-col items-start gap-2">
+                                <span className="font-subHeading2 text-white text-base">
+                                  {sub.title}
+                                </span>
+                                <span className="font-base text-white text-sm">
+                                  {sub.description}
+                                </span>
+                                {sub?.comingSoon && (
+                                  <span className=" font-btnBody font-bold uppercase bg-[#FFBB28] p-1 rounded-sm text-secondary-dark text-[0.5rem]">
+                                    coming soon
+                                  </span>
+                                )}
+                              </div>
+                            </Link>
+                          );
+                        })
+                      ) : (
+                        <div className="flex justify-between gap-3 space-y-4 flex-wrap">
+                          {item.submenu.map((sub, sIdx) => (
+                            <Link
+                              to={sub.link}
+                              key={sIdx}
+                              className="flex gap-3 flex-col items-start w-1/5"
+                            >
+                              <img
+                                src={sub.img}
+                                alt={sub.title}
+                                className="w-full h-full rounded"
+                              />
+                              <span className="font-subHeading2 text-white text-base w-full flex justify-between gap-2 items-center">
+                                {sub.title}
+                                <ArrowRight size={20} color="#00C700" />
+                              </span>
+                            </Link>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  )}
+                </div>
+              </div>
+            ))}
           </div>
-        </Link>
-        <div className="flex flex-col items-start space-y-2 text-base text-primary mt-32">
-          <Link
-            to="about"
-            className="text-lg transition ease-in-out duration-75 hover:text-secondary-dark "
-            onClick={closeMenu}
+
+          {/* Desktop Buttons */}
+          <div className="hidden lg:flex gap-4">
+            <Link
+              to=""
+              className="px-7 py-2 bg-secondary-light text-white text-base rounded-md font-btnBody transition-all duration-300 hover:bg-white hover:text-secondary-light"
+            >
+              Sign In
+            </Link>
+            <Link
+              to=""
+              className="px-7 py-2 text-secondary-light bg-white text-base rounded-md font-btnBody transition-all duration-300 hover:text-white hover:bg-secondary-light"
+            >
+              Create Account
+            </Link>
+          </div>
+
+          {/* Mobile Menu Toggle */}
+          <div
+            id="menu"
+            className="flex lg:hidden flex-col items-start sm:self"
           >
-            ABOUT
-          </Link>
-          <Link
-            to="services"
-            className="text-base md:text-lg transition ease-in-out duration-75 hover:text-secondary-dark "
-            onClick={closeMenu}
-          >
-            OUR SERVICES
-          </Link>
-          <Link
-            to="marketplace"
-            className="text-base md:text-lg  transition ease-in-out duration-75 hover:text-secondary-dark "
-            onClick={closeMenu}
-          >
-            MARKETPLACE
-          </Link>
-          <Link
-            to="community"
-            className="text-base md:text-lg  transition ease-in-out duration-75 hover:text-secondary-dark "
-            onClick={closeMenu}
-          >
-            COMMUNITY
-          </Link>
-          <Link
-            to="contact"
-            className="text-base md:text-lg  transition ease-in-out duration-75 hover:text-secondary-dark "
-            onClick={closeMenu}
-          >
-            CONTACT
-          </Link>
+            <div className="w-full flex justify-end">
+              <button
+                id="menu-btn"
+                className=" block hamburger focus:outline-none"
+                onClick={menuToggle}
+              >
+                <span
+                  className="hamburger-top"
+                  style={{
+                    background: "#fff",
+                  }}
+                ></span>
+                <span
+                  className="hamburger-middle"
+                  style={{
+                    background: "#fff",
+                  }}
+                ></span>
+                <span
+                  className="hamburger-bottom"
+                  style={{
+                    background: "#fff",
+                  }}
+                ></span>
+              </button>
+            </div>
+          </div>
         </div>
-        <div className="pt-5">
-          <p className="font-thin text-sm text-gray-500">EMAIL US @</p>
-          <h4 className="text-sm">info@farmstarck.com</h4>
-        </div>
-        <div className="pb-4">
-          <p className="font-thin text-sm text-gray-500">PHONE NUMBER</p>
-          <h4 className="text-sm">+234 813 039 5444</h4>
-        </div>
-        <div className="flex space-x-3 items-end">
-          <Link to="https://x.com/farmstarck?s=21&t=1LZ4ghO_eX6kdqKI8zG_vw">
-            <img src={XIcon} alt="x-icon" className="w-5" />
-          </Link>
-          <Link to="https://www.linkedin.com/company/farmstarck/">
-            <img src={LinkedInIcon} alt="linkendin-icon" className="w-5" />
-          </Link>
-          {/* <Link to="/underconstruction">
-            <img src={DiscordIcon} alt="discord-icon" className="w-5" />
-          </Link> */}
-          <Link to="https://www.instagram.com/farmstarck/profilecard/?igsh=MWNrbzlic3drcGU2aw==">
-            <img src={InstagramIcon} alt="instagram-icon" className="w-5" />
-          </Link>
-          <Link to="https://www.facebook.com/profile.php?id=61562747617838&mibextid=LQQJ4d">
-            <img src={FacbookIcon} alt="facebook-icon" className="w-5" />
-          </Link>
-          {/* <Link to="/underconstruction">
-            <img src={WhatsappIcon} alt="whatsapp-icon" className="w-5" />
-          </Link> */}
-        </div>
-      </div>
-    </nav>
+
+        {/* Mobile Menu */}
+        {mobileMenuOpen && (
+          <div className="lg:hidden px-4 py-6 bg-secondary-dark space-y-3">
+            {menuItems.map((item: MenuItem, idx) => (
+              <div key={idx}>
+                <button
+                  className="w-full text-left border-b border-b-secondary-cart flex justify-between items-center text-md transition font-subHeading text-white py-4"
+                  onClick={() =>
+                    setOpenAccordion(openAccordion === idx ? null : idx)
+                  }
+                >
+                  {item.submenu ? (
+                    item.title
+                  ) : (
+                    <Link to="about">{item.title}</Link>
+                  )}
+                  {item.submenu && (
+                    <ChevronDown
+                      className={`transition-transform ${
+                        openAccordion === idx ? "rotate-180" : ""
+                      }`}
+                    />
+                  )}
+                </button>
+
+                {openAccordion === idx && item.submenu && (
+                  <div className="px-4 py-4  space-y-4 bg-secondary-veryDark h-[250px] overflow-y-auto scrollbar-thin scrollbar-thumb-green-600 scrollbar-track-transparent">
+                    {item.submenu[0]?.description ? (
+                      item.submenu.map((sub, sIdx) => {
+                        return (
+                          <Link
+                            to={sub.link}
+                            key={sIdx}
+                            className="flex gap-3 items-center p-2 rounded"
+                          >
+                            <img
+                              src={sub.img}
+                              alt={sub.title}
+                              className="w-16 h-16 rounded"
+                            />
+                            <div className="flex flex-col items-start gap-2">
+                              <span className="font-subHeading2 text-white text-base">
+                                {sub.title}
+                              </span>
+                              <span className="font-base text-white text-sm">
+                                {sub.description}
+                              </span>
+                              {sub?.comingSoon && (
+                                <span className=" font-btnBody font-bold uppercase bg-[#FFBB28] p-1 rounded-sm text-secondary-dark text-[0.5rem]">
+                                  coming soon
+                                </span>
+                              )}
+                            </div>
+                          </Link>
+                        );
+                      })
+                    ) : (
+                      <div className="flex justify-between gap-3 space-y-4 flex-wrap">
+                        {item.submenu.map((sub, sIdx) => (
+                          <Link
+                            to={sub.link}
+                            key={sIdx}
+                            className="flex gap-3 flex-col w-[130px] items-center "
+                          >
+                            <img
+                              src={sub.img}
+                              alt={sub.title}
+                              className="w-full h-full rounded"
+                            />
+                            <span className="font-subHeading2 text-white text-base">
+                              {sub.title}
+                            </span>
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                )}
+              </div>
+            ))}
+
+            {/* Mobile Buttons */}
+            <div className="pt-4  mt-4 flex flex-col gap-3">
+              <Link
+                to="#"
+                className="  w-full px-4 py-3 text-center bg-secondary-light text-white text-base rounded-md font-btnBody transition-all duration-300 hover:bg-white hover:text-secondary-light"
+              >
+                Sign In
+              </Link>
+              <Link
+                to="#"
+                className="w-full px-4 py-3 text-center text-secondary-light bg-white text-base rounded-md font-btnBody transition-all duration-300 hover:text-white hover:bg-secondary-light"
+              >
+                Create Account
+              </Link>
+            </div>
+          </div>
+        )}
+      </nav>
+    </div>
   );
 };
 

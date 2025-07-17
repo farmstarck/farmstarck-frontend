@@ -44,7 +44,7 @@ const Category = () => {
           <div className="grid grid-cols-2 w-full gap-y-5  md:gap-y-10 gap-x-3 md:gap-x-16 sm:grid-cols-3  lg:grid-cols-5 py-5 md:py-10 justify-items-center items-center">
             {filteredCategories.map((category) => (
               <Link
-                to={`/marketplace/categories/${category.name}`}
+                to={`/shop/categories/${category.name}`}
                 key={category.name}
                 className="flex flex-col justify-center flex-shrink-0 snap-center  border border-secondary-light w-20 py-2 rounded-xl items-center gap-2"
               >

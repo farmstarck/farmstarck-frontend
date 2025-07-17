@@ -108,13 +108,13 @@ const ShopNavbar: React.FC<ShopNavbarProps> = ({
               className="z-10 absolute top-3 w-3 md:top-4 left-4 md:w-5"
             />
           </div>
-          <Link to="/marketplace/cart" className="cursor-pointer relative">
+          <Link to="/shop/cart" className="cursor-pointer relative">
             <img src={CartImg} alt="" loading="lazy" className="w-6 md:w-7" />
             <span className="absolute -top-2 -right-2 w-4 h-4 rounded-full bg-red-500 flex items-center justify-center text-white text-btn-txt">
               {cartLength}
             </span>
           </Link>
-          <Link to="/marketplace/wishlist" className="cursor-pointer relative">
+          <Link to="/shop/wishlist" className="cursor-pointer relative">
             <img
               src={WishListImg}
               alt=""

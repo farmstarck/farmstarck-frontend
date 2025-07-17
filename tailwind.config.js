@@ -4,12 +4,14 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#88888",
+        primary: "#333333",
         secondary: {
-          light: "rgb(214, 238, 214)",
-          dark: "#00C700",
-          veryDark: "#045904",
+          veryLight: "rgba(212, 245, 213, 1)",
+          light: "#00c700",
+          dark: "#027402",
+          veryDark: "#015401",
           cart: "rgb(112, 219, 112)",
+          navBg: "rgb(228, 249, 228)",
         },
         btn: {
           primary: "#00C700",
@@ -18,10 +20,14 @@ export default {
         backdrop: "rgba(0, 0, 0, 0.6)",
       },
       fontFamily: {
-        body: ["campton"],
-        heading: ["camptonExtraBold"],
-        subHeading: ["camptonBold"],
-        subHeading2: ["camptonMedium"],
+        body: ["carbinet"],
+        heading: ["cabinetExtraBold"],
+        subHeading: ["cabinetBold"],
+        subHeading2: ["cabinetMedium"],
+        footerHeading: ["satoshiExtraBold"],
+        footerSubHeading: ["satoshiMedium"],
+        footerBody: ["satoshi"],
+        btnBody: ["satoshiMedium"],
       },
       backgroundPosition: {
         "bottom-4": "center top",

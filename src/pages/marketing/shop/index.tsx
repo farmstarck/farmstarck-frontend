@@ -1,4 +1,4 @@
-import MarketPlacePage from "./MarketPlace";
+import ShopPage from "./Shop";
 import CategoryPage from "./Category";
 import CategoryDisplayPage from "./CategoryDisplay";
 import ViewProductPage from "./ViewProduct";
@@ -32,7 +32,7 @@ type ReviewProps = {
   date: string;
 };
 export {
-  MarketPlacePage,
+  ShopPage,
   CategoryPage,
   CategoryDisplayPage,
   ViewProductPage,

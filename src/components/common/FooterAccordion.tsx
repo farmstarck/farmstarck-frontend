@@ -31,10 +31,12 @@ const FooterAccordion: React.FC<AccordionProps> = ({ items }) => {
             onClick={() => toggleAccordion(index)}
             className="w-full flex justify-between items-center p-3 bg-transparent text-left focus:outline-none"
           >
-            <span className="uppercase text-white text-sm">{item.title}</span>
+            <span className="font-footerSubHeading text-white text-lg">
+              {item.title}
+            </span>
             <span
               className={`transform transition-transform duration-300 ${
-                activeIndex === index ? "rotate-180" : ""
+                activeIndex === index ? "" : "rotate-180"
               }`}
             >
               <svg
@@ -53,17 +55,17 @@ const FooterAccordion: React.FC<AccordionProps> = ({ items }) => {
               activeIndex === index ? "max-h-96" : "max-h-0"
             }`}
           >
-            <div className="p-4 text-white font-normal text-sm">
+            <div className="p-4 text-white font-footerBody text-base">
               {Array.isArray(item.content) ? (
                 <ul className="space-y-2">
                   {item.content.map((listItem, i) => (
                     <Link key={i} to={listItem.url}>
-                      <li className="pb-3">{listItem.name}</li>
+                      <li className="pb-3 font-footerBody">{listItem.name}</li>
                     </Link>
                   ))}
                 </ul>
               ) : (
-                <p>{item.content}</p>
+                <p className="font-footerBody">{item.content}</p>
               )}
             </div>
           </div>
@@ -72,15 +74,15 @@ const FooterAccordion: React.FC<AccordionProps> = ({ items }) => {
       <div>
         {/* Accordion Header */}
         <button
-          onClick={() => toggleAccordion(2)}
+          onClick={() => toggleAccordion(4)}
           className="w-full flex justify-between items-center p-3 bg-transparent text-left focus:outline-none"
         >
-          <span className="uppercase text-white text-sm">
-            CONTACT INFORMATION
+          <span className="font-footerSubHeading text-white text-lg">
+            Get in touch
           </span>
           <span
             className={`transform transition-transform duration-300 ${
-              activeIndex === 2 ? "rotate-180" : ""
+              activeIndex === 4 ? "" : "rotate-180"
             }`}
           >
             <svg
@@ -96,15 +98,20 @@ const FooterAccordion: React.FC<AccordionProps> = ({ items }) => {
         {/* Accordion Content */}
         <div
           className={`overflow-hidden transition-[max-height] duration-300 ${
-            activeIndex === 2 ? "max-h-96" : "max-h-0"
+            activeIndex === 4 ? "max-h-96" : "max-h-0"
           }`}
         >
           <div className="p-4 text-white font-normal text-sm">
             <ul className="space-y-2">
-              <li className="pb-3">+234 813 039 5444</li>
-              <li className="pb-3">info@farmstarck.com</li>
-              <li className="pb-3">
-                Lorem ispum do not know the current address of farstack company
+              <li className="pb-3 font-footerBody text-base"></li>
+              <li className="pb-3 font-footerBody text-base">
+                294 Herbert Macaulay Way, Yaba
+              </li>
+              <li>+234 813 039 5444</li>
+              <li>+234 705 353 9199</li>
+
+              <li className="pb-3 font-footerBody text-base">
+                info@farmstarck.com
               </li>
             </ul>
           </div>
