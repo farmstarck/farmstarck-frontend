@@ -23,7 +23,7 @@ const CategorySection = () => {
       <div className="flex  justify-between gap-5 overflow-x-scroll snap-x snap-mandatory no-scrollbar ">
         {categories?.map((category) => (
           <Link
-            to={`/marketplace/categories/${category.name}`}
+            to={`/shop/categories/${category.name}`}
             key={category.name}
             className="flex flex-col justify-center flex-shrink-0 snap-center  border border-secondary-light w-20 py-2 rounded-xl items-center gap-2"
           >

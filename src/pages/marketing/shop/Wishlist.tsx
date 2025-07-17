@@ -17,6 +17,18 @@ const Wishlist = () => {
     useShopContext();
   const [wishlistItems, setWishlistItems] = useState([]);
 
+  const handleLocalAddToCart = async (id: string) => {
+    try {
+      // setIsLoading(true);
+      await handleAddToCart(id);
+      await removeFromWishlist(id);
+    } catch (error) {
+      console.log("ERRRORRRR: ", error);
+    } finally {
+      // setIsLoading(false);
+    }
+  };
+
   // Fetch products in wishlist
   useEffect(() => {
     // retrive wishlist items
@@ -65,6 +77,8 @@ const Wishlist = () => {
                 </thead>
                 <tbody>
                   {wishlistItems.map((item: any) => {
+                    console.log("zzzzzzzzz", item);
+
                     const price = item?.discountPerUnit || item?.pricePerUnit;
                     return (
                       <tr key={item?.id}>
@@ -84,11 +98,11 @@ const Wishlist = () => {
                           </div>
                         </td>
                         <td className="font-subHeading text-sm text-gray-600">
-                          N {price.toLocaleString()}
+                          N {price?.toLocaleString()}
                         </td>
                         <td className="">
                           <button
-                            onClick={() => handleAddToCart(item)}
+                            onClick={() => handleLocalAddToCart(item?.id)}
                             className=" px-2 py-2 flex justify-center items-center gap-2  text-white capitalize font-subHeading2 text-sm rounded-md  bg-secondary-dark w-44 sm:py-2"
                           >
                             <img
@@ -140,7 +154,7 @@ const Wishlist = () => {
                               Unit:
                             </p>
                             <p className="capitalize text-sm text-gray-700 font-subHeading2">
-                              N {price.toLocaleString()}
+                              N {price?.toLocaleString()}
                             </p>
                           </div>
                         </div>
@@ -154,7 +168,7 @@ const Wishlist = () => {
                         onClick={() => removeFromWishlist(item?.id)}
                       />
                       <button
-                        onClick={() => handleAddToCart(item?.id)}
+                        onClick={() => handleLocalAddToCart(item?.id)}
                         className=" px-2 py-2 flex justify-center items-center gap-2  text-white capitalize font-subHeading2  text-sm rounded-md border bg-secondary-dark w-32 sm:w-44 sm:py-2"
                       >
                         <img
@@ -183,7 +197,7 @@ const Wishlist = () => {
               You have not added any item to your wishlist!
             </p>
             <Link
-              to="/marketplace"
+              to="/shop"
               className="bg-secondary-dark py-2 px-14 sm:px-20 sm:py-2 text-white text-sm sm:text-base rounded-md cursor-pointer font-subHeading2"
             >
               Start Shopping

@@ -27,3 +27,59 @@
   font-weight: normal;
   font-style: normal;
 }
+
+@font-face {
+  font-family: "cabinet";
+  src: url("./assets/fonts/CabinetGrotesk-Regular.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "cabinetBold";
+  src: url("./assets/fonts/CabinetGrotesk-Bold.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "cabinetExtraBold";
+  src: url("./assets/fonts/CabinetGrotesk-Black.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "cabinetMedium";
+  src: url("./assets/fonts/CabinetGrotesk-Medium.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+/* */
+@font-face {
+  font-family: "satoshi";
+  src: url("./assets/fonts/Satoshi-Regular.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "satoshiBold";
+  src: url("./assets/fonts/Satoshi-Bold.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "satoshiExtraBold";
+  src: url("./assets/fonts/Satoshi-Black.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "satoshiMedium";
+  src: url("./assets/fonts/Satoshi-Medium.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}

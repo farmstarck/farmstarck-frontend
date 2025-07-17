@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { ProductProps } from "../../../../pages/marketing/marketplace";
+import { ProductProps } from "../../../../pages/marketing/shop";
 import jsonProducts from "../../../../../data/products.json";
 import Ratings from "../../../common/Ratings";
 import AddToCartImg from "../../../../assets/svg/add-cart.svg";
@@ -7,6 +7,7 @@ import AddToWishlistImg from "../../../../assets/svg/add-wishlist.svg";
 import { convertProductNameToSlugs } from "../../../../utils/slugifyProductName";
 import { useShopContext } from "../../../../context/ShopContext";
 import { useEffect, useState } from "react";
+import ButtonSpinner from "../../../loaders/ButtonSpinner";
 
 type ProductThumbnailProps = {
   id: string;
@@ -40,6 +41,7 @@ const ScrollProductThumbnail: React.FC<ProductThumbnailProps> = ({
     handleToggleWishlist,
   } = useShopContext();
   const [product, setProduct] = useState<any>();
+  const [isLoading, setIsLoading] = useState(false);
 
   // Fetch single product and check if item is in cart
   useEffect(() => {
@@ -64,8 +66,20 @@ const ScrollProductThumbnail: React.FC<ProductThumbnailProps> = ({
 
   const navigateToRoute = () => {
     const productSlug = convertProductNameToSlugs(name);
-    navigate(`/marketplace/product/${productSlug}/${id}`);
+    navigate(`/shop/product/${productSlug}/${id}`);
   };
+
+  const handleLocalAddToCart = async (id: string) => {
+    try {
+      setIsLoading(true);
+      await handleAddToCart(id);
+    } catch (error) {
+      console.log("ERRRORRRR: ", error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return (
     <div className="">
       <div className="relative w-[180px] overflow-hidden flex flex-col gap-2 md:gap-5 p-3  rounded-lg bg-secondary-light md:p-6 md:w-[300px]">
@@ -129,21 +143,24 @@ const ScrollProductThumbnail: React.FC<ProductThumbnailProps> = ({
         </div>
         {/* details add to cart */}
         <div className="flex  items-start gap-4 mt-3 md:mt-10  md:items-center">
-          {/* when item is not in cart */}
-          {product &&
-            (product?.quantity == undefined || product?.quantity < 1) && (
-              <button
-                onClick={() => handleAddToCart(id)}
-                className=" px-2 py-2 flex justify-center items-center gap-2 bg-transparent text-secondary-dark capitalize font-subHeading2 text-btn-txt md:text-sm rounded-md border border-secondary-dark  w-[100%] sm:w-52 sm:py-2"
-              >
-                <img src={AddToCartImg} alt="" className="w-4 md:w-30" />
-                Add to Cart
-              </button>
-            )}
-          {/* When item is in cart */}
-          {product && product?.quantity > 0 && (
+          {isLoading ? (
+            // Show only spinner when loading
+            <div className="relative px-2 py-2 h-9 flex justify-center items-center gap-2 bg-transparent text-secondary-dark capitalize font-subHeading2 text-btn-txt md:text-sm rounded-md border border-secondary-dark  w-[100%] sm:w-52 sm:py-2">
+              <ButtonSpinner />
+            </div>
+          ) : product?.quantity === undefined || product?.quantity < 1 ? (
+            // Show "Add to Cart" button when not loading and product is unavailable
+            <button
+              onClick={() => handleLocalAddToCart(id)}
+              className="px-2 py-2 flex justify-center items-center gap-2 bg-transparent text-secondary-dark capitalize font-subHeading2 text-btn-txt md:text-sm rounded-md border border-secondary-dark w-[100%] sm:w-52 sm:py-2"
+            >
+              <img src={AddToCartImg} alt="" className="w-4 md:w-30" />
+              Add to Cart
+            </button>
+          ) : (
+            // Show increment/decrement buttons when product is available
             <div className="flex flex-col gap-2 py-2 w-[100%] sm:w-fit sm:py-2">
-              <div className="border border-secondary-dark p-2 rounded flex gap-5 items-center justify-between w-[100%] sm:w-52 sm:py-2 ">
+              <div className="border border-secondary-dark p-2 rounded flex gap-5 items-center justify-between w-[100%] sm:w-52 sm:py-2">
                 <span
                   onClick={() => handleDecrementUnit(id)}
                   className="cursor-pointer w-5 h-5 bg-gray-500 text-white text-base rounded flex items-center justify-center"
@@ -160,6 +177,7 @@ const ScrollProductThumbnail: React.FC<ProductThumbnailProps> = ({
               </div>
             </div>
           )}
+
           <button
             onClick={() => handleToggleWishlist(id)}
             className="px-2 py-2 bg-secondary-cart text-white uppercase font-subHeading2 text-sm rounded-md md:px-3 hidden sm:block"

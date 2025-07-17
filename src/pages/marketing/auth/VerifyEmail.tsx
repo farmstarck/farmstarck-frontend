@@ -68,7 +68,7 @@ const VerifyEmail = () => {
     if (response?.user) {
       setCode("");
       setIsDisabled(true);
-      navigate("/");
+      navigate("/shop");
     }
   };
 

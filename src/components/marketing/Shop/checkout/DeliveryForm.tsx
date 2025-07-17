@@ -5,7 +5,7 @@ import "react-phone-number-input/style.css";
 import UserIcon from "../../../../assets/svg/user-icon.svg";
 import EmailIcon from "../../../../assets/svg/mail-icon.svg";
 import LocationIcon from "../../../../assets/svg/location-light.svg";
-import { DeliveryDetailsProps } from "../../../../pages/marketing/marketplace/Checkout";
+import { DeliveryDetailsProps } from "../../../../pages/marketing/shop/Checkout";
 
 type DeliveryFormProp = {
   setDeliveryDetails: Dispatch<

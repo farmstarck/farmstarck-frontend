@@ -6,7 +6,7 @@ import Request from "../../../components/marketing/Shop/landing/Request";
 import { BackDrop } from "../../../components/common/BackDrop";
 import RequestProductForm from "../../../components/marketing/Shop/landing/RequestProductForm";
 
-const MarketPlacePage = () => {
+const ShopPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const handleModalClose = () => {
     setIsModalOpen(false);
@@ -29,4 +29,4 @@ const MarketPlacePage = () => {
   );
 };
 
-export default MarketPlacePage;
+export default ShopPage;

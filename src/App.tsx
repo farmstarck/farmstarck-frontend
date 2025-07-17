@@ -43,7 +43,7 @@ const App = () => {
           localStorage.setItem("token", token);
           localStorage.setItem("user", JSON.stringify(data.user));
           //Redirect to dashboard
-          navigate("/marketplace");
+          navigate("/shop");
         } catch (error) {
           const message = errorMessageRetreiver(error);
           dispatch({ type: "LOGIN_ERROR", payload: message });

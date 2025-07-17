@@ -46,7 +46,7 @@ const Signin = () => {
       setPassword("");
       setIsRemeberMe(false);
 
-      navigate("/marketplace");
+      navigate("/shop");
     }
   };
 

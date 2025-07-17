@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import { useShopContext } from "../../../context/ShopContext";
-import toast from "react-hot-toast";
+import ButtonSpinner from "../../../components/loaders/ButtonSpinner";
 import { Link } from "react-router-dom";
 import DeleteImg from "../../../assets/svg/delete-bin.svg";
 import DefaultImg from "../../../assets/svg/cart-default.svg";
+import { useShopContext } from "../../../context/ShopContext";
 
 const cartHeaders = [
   { key: 1, item: "product" },
@@ -14,57 +14,37 @@ const cartHeaders = [
 ];
 
 const Cart = () => {
-  const { setUpdateCart } = useShopContext();
+  const {
+    updateCart,
+    handleIncrementUnit,
+    handleDecrementUnit,
+    removeFromCart,
+    clearCart,
+  } = useShopContext();
   const [cartItems, setCartItems] = useState([]);
   const [totalAmount, setTotalAmount] = useState(0);
+  const [isLoading, setIsLoading] = useState(false);
 
-  // Increment quantity
-  const handleIncrementUnit = (productId: string) => {
-    //handle logic
-    const updatedCart: any = cartItems?.map((item: any) =>
-      item.id === productId ? { ...item, quantity: item.quantity + 1 } : item
-    );
-
-    setCartItems(updatedCart);
-    localStorage.setItem("cart", JSON.stringify(updatedCart));
+  const handleLocalIncrement = async (id: string) => {
+    try {
+      setIsLoading(true);
+      await handleIncrementUnit(id);
+    } catch (error) {
+      console.log("ERRRORRRR: ", error);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
-  //Decrement quantity
-  const handleDecrementUnit = (productId: string) => {
-    const uniqueItem: any = cartItems?.find(
-      (item: any) => item.id === productId
-    );
-
-    if (uniqueItem?.quantity === 1 && uniqueItem) return;
-
-    //handle logic
-    const updatedCart: any = cartItems?.map((item: any) =>
-      item.id === productId ? { ...item, quantity: item.quantity - 1 } : item
-    );
-
-    setCartItems(updatedCart);
-    localStorage.setItem("cart", JSON.stringify(updatedCart));
-  };
-
-  // Remove product from cart
-  const removeFromCart = (productId: string) => {
-    const tempCart = localStorage.getItem("cart");
-    const cart = tempCart ? JSON.parse(tempCart) : [];
-
-    const updatedCart = cart.filter((item: any) => item.id !== productId);
-    toast.success("Product removed cart");
-
-    setCartItems(updatedCart);
-    localStorage.setItem("cart", JSON.stringify(updatedCart));
-    setUpdateCart(Date.now());
-  };
-
-  //Clear cart
-  const clearCart = () => {
-    localStorage.removeItem("cart");
-    setCartItems([]);
-    setUpdateCart(Date.now());
-    toast.success("Cart cleared successfully");
+  const handleLocalDecrement = async (id: string) => {
+    try {
+      setIsLoading(true);
+      await handleDecrementUnit(id);
+    } catch (error) {
+      console.log("ERRRORRRR: ", error);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   // Fetch products in cart
@@ -74,7 +54,7 @@ const Cart = () => {
     const parsedCart = cart ? JSON.parse(cart) : [];
 
     setCartItems(parsedCart);
-  }, []);
+  }, [updateCart]);
 
   // Calculate total amount
   useEffect(() => {
@@ -150,7 +130,7 @@ const Cart = () => {
                         <td className="">
                           <div className=" flex gap-5 items-center justify-between ">
                             <span
-                              onClick={() => handleDecrementUnit(item?.id)}
+                              onClick={() => handleLocalDecrement(item?.id)}
                               className={` w-5 h-5 ${
                                 item?.quantity == 1
                                   ? "bg-gray-500 cursor-default"
@@ -159,9 +139,11 @@ const Cart = () => {
                             >
                               -
                             </span>
-                            <span className="text-sm">{item?.quantity}</span>
+                            <span className="text-sm  relative w-[20px] flex justify-center">
+                              {isLoading ? <ButtonSpinner /> : item?.quantity}
+                            </span>
                             <span
-                              onClick={() => handleIncrementUnit(item?.id)}
+                              onClick={() => handleLocalIncrement(item?.id)}
                               className="cursor-pointer w-5 h-5 bg-secondary-dark text-white text-base rounded flex items-center justify-center"
                             >
                               +
@@ -236,7 +218,7 @@ const Cart = () => {
                       />
                       <div className=" flex gap-5 items-center justify-between ">
                         <span
-                          onClick={() => handleDecrementUnit(item?.id)}
+                          onClick={() => handleLocalDecrement(item?.id)}
                           className={`w-6 h-6 ${
                             item?.quantity == 1
                               ? "bg-gray-500 cursor-default"
@@ -245,9 +227,11 @@ const Cart = () => {
                         >
                           -
                         </span>
-                        <span className="text-sm">{item?.quantity}</span>
+                        <span className="text-sm relative w-[20px] flex justify-center">
+                          {isLoading ? <ButtonSpinner /> : item?.quantity}
+                        </span>
                         <span
-                          onClick={() => handleIncrementUnit(item?.id)}
+                          onClick={() => handleLocalIncrement(item?.id)}
                           className="cursor-pointer w-6 h-6 bg-secondary-dark text-white text-lg rounded flex items-center justify-center"
                         >
                           +
@@ -270,7 +254,7 @@ const Cart = () => {
                   </p>
                 </div>
                 <Link
-                  to="/marketplace/checkout"
+                  to="/shop/checkout"
                   className="bg-secondary-dark py-2 mt-2 w-full flex justify-center items-center sm:py-2 text-white text-sm sm:text-sm rounded-md cursor-pointer font-subHeading2"
                 >
                   Proceed to Checkout
@@ -290,7 +274,7 @@ const Cart = () => {
               You have not added any item to your cart!
             </p>
             <Link
-              to="/marketplace"
+              to="/shop"
               className="bg-secondary-dark py-2 px-14 sm:px-20 sm:py-2 text-white text-sm sm:text-base rounded-md cursor-pointer font-subHeading2"
             >
               Start Shopping
