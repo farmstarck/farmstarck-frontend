@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import CustomButton from "../../common/CustomButton";
 
 type AccordionItem = {
   title: string;
@@ -9,7 +8,8 @@ type AccordionItem = {
 
 type AccordionContentItem = {
   header: string;
-  text: string;
+  text?: string;
+  lists?: string[];
 };
 
 type AccordionProps = {
@@ -64,7 +64,7 @@ const Accordion: React.FC<AccordionProps> = ({ items }) => {
 
           {/* Accordion Content */}
           <div
-            className={`overflow-hidden transition-[max-height] duration-300 ${
+            className={`overflow-hidden transition-[max-height] flex flex-col items-center duration-300 ${
               activeIndex === index ? "max-h-fit" : "max-h-0"
             }`}
           >
@@ -72,19 +72,29 @@ const Accordion: React.FC<AccordionProps> = ({ items }) => {
               <div className="space-y-2 flex flex-col gap-8">
                 {item.content.map((listItem, i) => (
                   <div key={i} className="flex flex-col gap-4">
-                    <h3 className=" capitalize text-xs font-subHeading2 md:text-start md:text-sm">
+                    <h3 className=" capitalize font-subHeading2 md:text-start md:text-base">
                       {listItem.header}
                     </h3>
-                    <p className="text-xs text-gray-700 md:text-start md:text-sm">
-                      {listItem.text}
-                    </p>
+                    {listItem?.text ? (
+                      <p className="text-xs text-gray-700 md:text-start md:text-sm">
+                        {listItem.text}
+                      </p>
+                    ) : (
+                      <ul className="flex flex-col gap-2 ">
+                        {listItem?.lists?.map((list, i) => (
+                          <li key={i} className="list-disc ml-5 md:ml-10">
+                            {list}
+                          </li>
+                        ))}
+                      </ul>
+                    )}
                   </div>
                 ))}
               </div>
             </div>
-            <div className="w-full sm:w-1/3 mb-3 md:ml-3 border border-solid border-secondary-dark rounded-full">
-              <CustomButton color="green" text="apply now" />
-            </div>
+            <button className="bg-secondary-light text-white rounded-full mt-5 py-2 px-12 text-center font-btnBody text-sm md:text-base">
+              Apply Now
+            </button>
           </div>
         </div>
       ))}
