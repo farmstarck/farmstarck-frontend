@@ -19,7 +19,7 @@ const Faq: React.FC<AccordionItems> = ({ accordionItems }) => {
 
   return (
     <div className="p-5 py-10  md:py-28  bg-secondary-veryLight">
-      <div className="max-w-6xl m-auto flex flex-col gap-5 md:gap-10 items-center">
+      <div className="max-w-5xl m-auto flex flex-col gap-5 md:gap-10 items-center">
         <div className="rounded-md bg-[#FFBB28] p-2 sm:p-3 md:p-4">
           <p className="uppercase font-subHeading  text-secondary-dark text-center text-xs  sm:text-sm md:text-base">
             Frequently Asked Questions

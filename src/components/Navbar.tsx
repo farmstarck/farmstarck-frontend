@@ -41,7 +41,7 @@ const menuItems = [
         title: "Procurement",
         description:
           "Streamline your agricultural supply chain with tailored procurement solutions",
-        link: "#",
+        link: "procurement",
         comingSoon: false,
       },
       {
@@ -49,14 +49,14 @@ const menuItems = [
         title: "Food Vault",
         description:
           "Our Food Vault helps you securely save for food purchases while earning exclusive benefits",
-        link: "#",
+        link: "foodvault",
         comingSoon: false,
       },
       {
         img: ProductImg4,
         title: "Smart Inventory",
         description: "Manage all your agricultural assets in one place",
-        link: "#",
+        link: "inventory",
         comingSoon: true,
       },
     ],
@@ -64,10 +64,10 @@ const menuItems = [
   {
     title: "Your Journey",
     submenu: [
-      { img: JourneyImg1, title: "Farmer", link: "#" },
-      { img: JourneyImg2, title: "Merchant", link: "#" },
-      { img: JourneyImg3, title: "Business", link: "#" },
-      { img: JourneyImg4, title: "Investment", link: "#" },
+      { img: JourneyImg1, title: "Farmer", link: "farm-empowerment" },
+      { img: JourneyImg2, title: "Merchant", link: "become-merchant" },
+      { img: JourneyImg3, title: "Business", link: "business" },
+      { img: JourneyImg4, title: "Investment", link: "investment" },
     ],
   },
   {
@@ -87,6 +87,12 @@ const Navbar = () => {
     btn.classList.toggle("open");
     menu.classList.toggle("flex");
     setMobileMenuOpen(!mobileMenuOpen);
+  };
+
+  const handleLinkClick = () => {
+    setMobileMenuOpen(false);
+    setOpenAccordion(null); // Optionally close open accordion too
+    menuToggle();
   };
 
   useEffect(() => {
@@ -156,6 +162,7 @@ const Navbar = () => {
                             <Link
                               to={sub.link}
                               key={sIdx}
+                              onClick={handleLinkClick}
                               className="flex gap-3 items-center p-2 rounded w-1/4"
                             >
                               <img
@@ -186,6 +193,7 @@ const Navbar = () => {
                               to={sub.link}
                               key={sIdx}
                               className="flex gap-3 flex-col items-start w-1/5"
+                              onClick={handleLinkClick}
                             >
                               <img
                                 src={sub.img}
@@ -271,7 +279,9 @@ const Navbar = () => {
                   {item.submenu ? (
                     item.title
                   ) : (
-                    <Link to="about">{item.title}</Link>
+                    <Link onClick={handleLinkClick} to="about">
+                      {item.title}
+                    </Link>
                   )}
                   {item.submenu && (
                     <ChevronDown
@@ -290,6 +300,7 @@ const Navbar = () => {
                           <Link
                             to={sub.link}
                             key={sIdx}
+                            onClick={handleLinkClick}
                             className="flex gap-3 items-center p-2 rounded"
                           >
                             <img
@@ -319,6 +330,7 @@ const Navbar = () => {
                           <Link
                             to={sub.link}
                             key={sIdx}
+                            onClick={handleLinkClick}
                             className="flex gap-3 flex-col w-[130px] items-center "
                           >
                             <img
@@ -342,12 +354,14 @@ const Navbar = () => {
             <div className="pt-4  mt-4 flex flex-col gap-3">
               <Link
                 to="#"
+                onClick={handleLinkClick}
                 className="  w-full px-4 py-3 text-center bg-secondary-light text-white text-base rounded-md font-btnBody transition-all duration-300 hover:bg-white hover:text-secondary-light"
               >
                 Sign In
               </Link>
               <Link
                 to="#"
+                onClick={handleLinkClick}
                 className="w-full px-4 py-3 text-center text-secondary-light bg-white text-base rounded-md font-btnBody transition-all duration-300 hover:text-white hover:bg-secondary-light"
               >
                 Create Account

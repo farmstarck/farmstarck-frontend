@@ -24,7 +24,8 @@ const Market = () => {
             inclusion.
           </p>
           <Link
-            to="shop"
+            // to="shop"
+            to="underconstruction"
             className="px-12 self-auto text-center py-2  md:py-4 bg-secondary-light text-white text-base rounded-full font-btnBody transition-all duration-300 hover:bg-white hover:text-secondary-light"
           >
             View Marketplace

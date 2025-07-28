@@ -1,17 +1,17 @@
 const MapSection = () => {
   return (
-    <div className="bg-secondary-light w-full px-5 py-20">
-      <div className="relative w-full max-w-3xl mx-auto px-5">
+    <div className=" w-full ">
+      <div className="relative w-full max-w-3xl mx-auto">
         <div className="flex flex-col gap-5 items-center md:items-start">
-          <h5 className="text-xs uppercase">our offices</h5>
-          <h2 className="uppercase w-full text-center md:text-start  sm:text-2xl md:text-3xl">
+          <h5 className="text-sm font-subHeading2 uppercase">our offices</h5>
+          <h2 className="uppercase font-subHeading2 w-full text-center md:text-start  sm:text-2xl md:text-3xl">
             298, herbert macaulay way, sabo yaba, lagos state, nigeria.
           </h2>
-          <h2 className="uppercase w-full text-center mt-3 md:text-start  sm:text-2xl md:text-3xl">
-            +234 705 353 9199
+          <h2 className="uppercase font-subHeading2 w-full text-center mt-3 md:text-start  sm:text-2xl md:text-3xl">
+            +234 813 039 5444
           </h2>
-          <h2 className="w-full text-center md:text-start  sm:text-2xl md:text-3xl">
-            hello@farmstarck.com
+          <h2 className="w-full font-subHeading2 text-center md:text-start  sm:text-2xl md:text-3xl">
+            support@farmstarck.com
           </h2>
           <div className="w-full mt-10">
             <iframe

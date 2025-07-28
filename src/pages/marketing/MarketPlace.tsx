@@ -36,7 +36,7 @@ const MarketPlace = () => {
             <h2 className="uppercase text-sm md:text-base text-center text-secondary-veryDark font-subHeading leading-relaxed">
               our product
             </h2>
-            <h1 className="font-subHeading text-2xl md:text-3xl text-secondary-veryDark font-extrabold">
+            <h1 className="font-subHeading text-2xl md:text-4xl text-secondary-veryDark font-extrabold">
               Marketplace
             </h1>
           </div>
@@ -88,7 +88,8 @@ const MarketPlace = () => {
                 real-time sales and bulk delivery — we help you.
               </p>
               <Link
-                to="shop"
+                // to="shop"
+                to="underconstruction"
                 className="px-12 self-auto text-center py-2  md:py-4 md:px-28 bg-secondary-light text-white text-base rounded-full font-btnBody transition-all duration-300 hover:bg-white hover:text-secondary-light"
               >
                 Get Started
